@@ -1,6 +1,9 @@
 <h1 align="center">Athena Elkowars Wacky Widgets</h1>
 
 <p align="center">
+  <img src="https://img.shields.io/badge/Language-Lisp-blue?style=flat-square&logo=gnu" />
+  <img src="https://img.shields.io/badge/Language-Python-yellow?style=flat-square&logo=python" />
+  <img src="https://img.shields.io/badge/Shell-Script-2C2C2C?style=flat-square&logo=gnu-bash" />
   <a href="https://github.com/haikal-hakim/athena-eww/blob/main/LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-orange.svg" />
   </a>
