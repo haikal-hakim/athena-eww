@@ -132,5 +132,6 @@ You can install the required packages using `pacman`:
 
 ```bash
 sudo pacman -S inotify-tools jq curl python libnotify
+```
 
 ---
