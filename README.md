@@ -55,7 +55,7 @@ chmod +x ~/.config/eww/scripts/*.sh
 > [!IMPORTANT]
 > The Todo widget requires a local text file to function. Ensure the following path exists:
 
-- **Path:** `~/Documents/file.txt`
+- **Path:** `~/Documents/todo.txt`
 - **Format:** A simple text file containing your tasks (maximum 3 lines).
 
 Example content:
@@ -69,10 +69,10 @@ Task three
 
 ## Configuration Weather Location
 
-The weather widget fetches data from wttr.in. To change the location:
+The weather widget fetches data from wttr.in. To change the location, open:
 
 ```text
-Open eww/scripts/weather.sh
+eww/scripts/weather.sh
 ```
 
 Edit the curl URL:
@@ -85,7 +85,7 @@ DATA=$(curl -s "wttr.in/YOUR_CITY?format=j1")
 
 ## Customizing Folder Shortcuts
 
-To change the folder paths for `widget_folders`, edit `eww/src/folders.yuck`. Look for the section and update the `onclick` commands:
+To change the folder path and file manager customization for `widget_folders`, edit `eww/src/folders.yuck`. Find that section and update the `onclick` directive:
 
 **Example:**
 
