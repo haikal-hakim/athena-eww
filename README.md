@@ -80,7 +80,7 @@ The dashboard can be toggled using the provided script in the scripts/ directory
 Add the following to your `hyprland.conf`:
 
 ```text
-bind = $SUPER, SPACE, exec, ~/.config/eww/scripts/toggle_dashboard.sh
+bind = $mainMod, SPACE, exec, ~/.config/eww/scripts/toggle_dashboard.sh
 ```
 
 ---
