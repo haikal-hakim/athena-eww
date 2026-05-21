@@ -18,6 +18,12 @@ This repository is my personal ecosystem for **Eww (Elkowar's Wacky Widgets)**, 
 
 ---
 
+## Preview
+
+<img width="2880" height="1800" alt="20260521_165926" src="https://github.com/user-attachments/assets/a5ae1cd0-e5dd-4452-b387-84457dd7fd2d" />
+
+---
+
 This repository is structured to maintain a clean separation between **logic** (scripts), **structure** (Yuck markup), and **style** (SCSS tokens), ensuring that the dashboard remains modular, maintainable, and easily extendable for future iterations.
 
 ## Project Structure
