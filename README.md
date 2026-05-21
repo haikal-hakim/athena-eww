@@ -19,7 +19,9 @@
 
 ## About Repository
 
-This repository is structured to maintain a clean separation between **logic** (scripts), **structure** (Yuck markup), and **style** (SCSS tokens), ensuring that the dashboard remains modular, maintainable, and easily extendable for future iterations.
+This repository is structured to maintain a clean separation between **logic** (scripts), **structure** (Yuck markup), and **style** (SCSS), ensuring that the dashboard remains modular, maintainable, and easily extendable for future iterations.
+
+I will add some other components in the near future
 
 ---
 
@@ -32,7 +34,7 @@ This repository is structured to maintain a clean separation between **logic** (
 ## Project Structure
 
 ```text
-atheneww/
+athena-eww/
 └── eww/
     ├── assets/          # Icons, images, and visual assets
     ├── scripts/         # Bash & Python scripts for data
@@ -74,22 +76,6 @@ chmod +x ~/.config/eww/scripts/*.sh
 
 ---
 
-## Configuration Note
-
-The Todo widget requires a local text file to function. Ensure the following path exists:
-
-- **Path:** `~/Documents/todo.txt`
-- **Format:** A simple text file containing your tasks (maximum 3 lines).
-
-Example content:
-```text
-Task one
-Task two
-Task three
-```
-
----
-
 ## Configuration Weather Location
 
 The weather widget fetches data from wttr.in. To change the location, open:
@@ -102,6 +88,22 @@ Edit the curl URL:
 
 ```Bash
 DATA=$(curl -s "wttr.in/YOUR_CITY?format=j1")
+```
+
+---
+
+## Configuration Note
+
+The Todo widget requires a local text file to function. Ensure the following path exists:
+
+- **Path:** `~/Documents/todo.txt`
+- **Format:** A simple text file containing your tasks (maximum 3 lines).
+
+Example content:
+```text
+Task one
+Task two
+Task three
 ```
 
 ---
