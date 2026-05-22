@@ -5,6 +5,9 @@
   <img src="https://img.shields.io/badge/Python-FFD43B?style=flat-square&logo=python&logoColor=black" />
   <img src="https://img.shields.io/badge/Shell_Script-121011?style=flat&logo=gnu-bash&logoColor=white" />
   <br />
+  <img src="https://img.shields.io/github/last-commit/haikal-hakim/athena-eww?style=flat-square&color=purple&logo=github" />
+  <img src="https://img.shields.io/badge/dynamic/json?color=blue&label=Clone&query=count&url=https://gist.githubusercontent.com/haikal-hakim/10a07e69ca0835e5557794011b24b771/raw/clone.json&logo=github&style=flat-square" />
+  <br />
   <a href="https://github.com/haikal-hakim/athena-eww/blob/main/LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-orange.svg?style=flat-square" />
   </a>
