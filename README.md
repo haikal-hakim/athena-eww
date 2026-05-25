@@ -30,7 +30,7 @@ This project is still under development, therefore please forgive if this struct
 
 ## Preview
 
-<img width="2880" height="1800" alt="20260521_165926" src="https://github.com/user-attachments/assets/a5ae1cd0-e5dd-4452-b387-84457dd7fd2d" />
+<img width="2880" height="1800" alt="20260525_102925" src="https://github.com/user-attachments/assets/a6db0291-0cf7-4d01-9cde-637136efaad5" />
 
 ---
 
