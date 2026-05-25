@@ -122,7 +122,7 @@ chmod +x ~/.config/eww/scripts/dashboard/*.sh
 
 ---
 
-# Features Bar
+<h1 align="center">Features Bar</h1>
 
 ## Notifications 
 
@@ -133,7 +133,7 @@ onrightclick `dunstctl history-clear && dunstctl close-all`
 
 ---
 
-# Features Dashboard
+<h1 align="center">Features Dashboard</h1>
 
 ## Customizing profile
 
