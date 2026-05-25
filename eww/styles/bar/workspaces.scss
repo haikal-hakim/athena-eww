@@ -1,18 +1,16 @@
 @import "../tokens.scss";
 
 .workspaces {
-  padding: 0 4px;
   background-color: $bg-night ;
-
+  border-radius: 0 0 $rad $rad;
 
   .ws-dot {
     background-color: transparent;
-    border: none;
-    transition: none;
+    border-radius: 0 0 $rad $rad;
 
     &.active {
       color: $hover;
-      font-size: 15px;
+      font-size: 18px;
     }
 
     &.occupied {

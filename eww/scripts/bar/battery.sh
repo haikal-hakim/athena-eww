@@ -7,9 +7,9 @@ STATUS=$(cat "$BAT/status")
 LOW_LOCK="/tmp/battery_low_notified"
 CRIT_LOCK="/tmp/battery_crit_notified"
 
+# --- 1. LOGIKA PILIH ICON (Murni Cuma Nyari Icon doang) ---
 if [ "$STATUS" = "Charging" ]; then
-  rm -f "$LOW_LOCK" "$CRIT_LOCK"
-  ICON="󰂄"
+  ICON="󱐌"
 else
   if [ "$PER" -gt 90 ]; then
     ICON="󰁹"
@@ -27,20 +27,29 @@ else
     ICON="󰁽"
   elif [ "$PER" -gt 20 ]; then
     ICON="󰁼"
-    rm -f "$LOW_LOCK" "$CRIT_LOCK"
   elif [ "$PER" -gt 10 ]; then
     ICON="󰁻"
+  else
+    ICON="󰁺"
+  fi
+fi
+
+if [ "$STATUS" = "Charging" ]; then
+  rm -f "$LOW_LOCK" "$CRIT_LOCK"
+else
+  if [ "$PER" -le 10 ]; then
+    if [ ! -f "$CRIT_LOCK" ]; then
+      notify-send -u critical "Battery Critical" "Connect Charger NOW"
+      touch "$CRIT_LOCK"
+    fi
+  elif [ "$PER" -le 20 ] && [ "$PER" -gt 10 ]; then
     if [ ! -f "$LOW_LOCK" ]; then
       notify-send -u normal "Battery Low" "Connect Charger"
       touch "$LOW_LOCK"
     fi
     rm -f "$CRIT_LOCK"
   else
-    ICON="󰁺"
-    if [ ! -f "$CRIT_LOCK" ]; then
-      notify-send -u critical "Battery Critical" "Connect Charger NOW"
-      touch "$CRIT_LOCK"
-    fi
+    rm -f "$LOW_LOCK" "$CRIT_LOCK"
   fi
 fi
 

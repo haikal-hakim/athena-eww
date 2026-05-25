@@ -1,11 +1,17 @@
 @import "../tokens.scss";
 
 .bar {
-  background: #1e1e2e;
-}
+  background: transparent;
 
-.right-container {
-  background-color: #313244;
-  padding: 0 12px;
-  border-radius: 6px;
+  .center-container {
+    background-color: $bg-night;
+    padding: 0 20px;
+    border-radius: 0 0 $rad $rad;
+  }
+
+  .right-container {
+    background-color: $bg-night;
+    padding: 0 12px 0 12px;
+    border-radius: 0 0 $rad $rad;
+  }
 }

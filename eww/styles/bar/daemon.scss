@@ -1,0 +1,34 @@
+@import "../tokens.scss";
+
+.daemon-btn {
+  background: transparent;
+  border-radius: 0 0 0 $rad;
+
+  &:hover {
+    background: transparent;
+  }
+
+  &.performance {
+    .power-icon {
+      color: $maroon-primary;
+      margin-right: 3px;
+    }
+
+  }
+
+  &.balanced {
+    .power-icon {
+      color: $text-muted;
+      margin-right: 3px;
+    }
+  }
+
+  &.power-saver {
+    .power-icon {
+      color: $green-primary;
+      margin-right: 3px;
+    }
+
+  }
+
+}

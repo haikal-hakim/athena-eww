@@ -1,19 +1,38 @@
 @import "../tokens.scss";
 
-
-
 .battery-container {
-  background-color: #313244;
-  padding: 0 4px;
-  border-radius: 6px;
+  margin: 0 6px;
 
   .bar-battery-icon {
     font-size: $icon;
   }
 
   .bar-battery-percent {
-    font-size: 14px;
+    font-size: $normal;
     color: $text-muted;
-    margin-right: 6px;
+  }
+
+  &.charging {
+    .bar-battery-icon {
+      color: $green-primary;
+    }
+  }
+
+  &.low {
+    .bar-battery-icon {
+      color: $maroon-primary;
+    }
+  }
+
+  &.warning {
+    .bar-battery-icon {
+      color: $orange-primary;
+    }
+  }
+
+  &.good {
+    .bar-battery-icon {
+      color: $green-primary;
+    }
   }
 }

@@ -2,10 +2,11 @@
 
 //--- Import bar --- //
 @import "bar/bar";
+@import "bar/daemon.scss";
 @import "bar/battery";
+@import "bar/notification.scss";
 @import "bar/network";
 @import "bar/clock.scss";
-@import "bar/volume.scss";
 @import "bar/workspaces.scss";
 
 // --- Import dashboard --- //
