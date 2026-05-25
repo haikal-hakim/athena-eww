@@ -24,7 +24,7 @@
        :spacing 10
 
        ;; Athena
-       (folder_btn :class "git"
+       (folder_btn :class "mus"
                    :icon "󱍙"
                    :label "Music" 
                    :cmd "thunar ~/Music/ &")
