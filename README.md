@@ -34,6 +34,28 @@ This project is still under development, therefore please forgive if this struct
 
 ---
 
+## Resolution & Positioning
+
+This config is optimized for **2880x1800 (HiDPI)** screens. Since this setup uses absolute coordinates.
+
+| Window | X | Y | Width | Height | Anchor / Note |
+|--------|---|---|-------|--------|---------------|
+| calendar | 930px | 120px | 320 | 320 | - |
+| folders | 765px | 325px | 155 | 235 | - |
+| launcher | 280px | 360px | 230 | 200 | - |
+| music | 20px | 700px | 320 | 127 | - |
+| profile | 280px | 120px | 230 | 232 | - |
+| sysinfo | 517px | 325px | 240 | 240 | - |
+| todo | 930px | 450px | 320 | 200 | - |
+| uptime | 720px | 570px | 200 | 80 | - |
+| weather | 0px | 120px | 400 | 180 | `top center` |
+| website | 280px | 570px | 430 | 80 | - |
+
+> [!TIP]
+> You will need to adjust the geometry values in `X` and `Y` in `eww/src/dashboard/dashboard.yuck`.
+
+---
+
 ## Project Structure
 
 Here is the folder structure of the Eww configuration (`athena-eww`):
@@ -47,7 +69,7 @@ athena-eww/
 │
 ├── src/                     # Source code .yuck
 │   ├── bar/                 # Top Bar
-│   │   ├── bar.yuck         # Layouts& include widget bar
+│   │   ├── bar.yuck         # Layouts & include widget bar
 │   │   └── [widgets].yuck
 │   └── dashboard/           # Widget Dashboard
 │       ├── dashboard.yuck   # Layouts & include widget dashboard
