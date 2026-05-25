@@ -29,7 +29,7 @@ This project is still under development, therefore please forgive if this struct
 
 ## Preview
 
-<img width="2880" height="1800" alt="20260525_102925" src="https://github.com/user-attachments/assets/a6db0291-0cf7-4d01-9cde-637136efaad5" />
+<img width="2880" height="1800" alt="20260525_231808" src="https://github.com/user-attachments/assets/e00b8376-b724-40e5-94ff-0cdd6491fa41" />
 
 ---
 
