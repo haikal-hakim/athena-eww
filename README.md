@@ -74,14 +74,16 @@ To ensure all features of the Athena Eww setup work correctly, make sure the fol
 | **`inotify-tools`** | Required for real-time file monitoring. |
 | **`jq`** | JSON processor, used to parse weather data and system info. |
 | **`curl`** | Used to fetch weather data from `wttr.in`. |
-| **`python`** | Required for helper scripts. |
 | **`libnotify`** | Needed for desktop notifications. |
+| **`lm_sensors`** | Linux monitoring temperature for system info. |
+| **`socat`** | Required for workspace. |
+| **`python`** | Required for helper scripts. |
 
 ### Installation (Arch Linux)
 You can install the required packages using `pacman`:
 
 ```bash
-sudo pacman -S inotify-tools jq curl python libnotify
+sudo pacman -S inotify-tools jq curl libnotify lm_sensors socat python
 ```
 
 ---
