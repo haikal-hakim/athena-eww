@@ -48,8 +48,8 @@ This Rofi display,
 
 | Rofi Launcher | Clipboard Manager |
 | :---: | :---: |
-| <img src="https://github.com/user-attachments/assets/d6121184-0162-449d-999c-93b9dc92d6d9" /> | <img src="https://github.com/user-attachments/assets/3001d6bc-5deb-44f6-903c-a1c117afb043" /> |
-
+| <img src="https://github.com/user-attachments/assets/2c04699c-4ff1-49a7-9bbd-1548b23314fd" /> | <img src="https://github.com/user-attachments/assets/1a959cae-91a0-42e2-80d2-c75659826cc0" /> |
+ 
 ---
 
 Here is the folder structure of the eww configuration (`athena-eww`):
