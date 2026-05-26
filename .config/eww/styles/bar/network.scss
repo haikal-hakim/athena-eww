@@ -1,0 +1,40 @@
+@import "../tokens.scss";
+
+.network-container {
+  button {
+    background: transparent;
+
+    &:hover {
+      background: transparent;
+    }
+  }
+
+  .bar-network-icon {
+    font-size: $icon;
+    margin-right: 4px;
+  }
+
+  &.wired {
+    .bar-network-icon {
+      color: $blue-primary;
+    }
+  }
+
+  &.wifi-ok {
+    .bar-network-icon {
+      color: $text-primary;
+    }
+  }
+
+  &.wifi-low {
+    .bar-network-icon {
+      color: $yellow-primary;
+    }
+  }
+
+  &.disconnected {
+    .bar-network-icon {
+      color: $text-dim;
+    }
+  }
+}

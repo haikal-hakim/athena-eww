@@ -1,0 +1,76 @@
+(deflisten cal_data
+  :initial '{"month_year": "", "weeks": [], "year": 0, "month": 0}'
+  "bash ~/.config/eww/scripts/dashboard/cal_watch.sh")
+(defvar selected_day 0)
+
+;; --- WIDGET --- ;;
+(defwidget widget_calendar []
+  (box :class "calendar-card"
+       :orientation "vertical"
+
+       (box :class "header"
+            :orientation "horizontal"
+            :hexpand true
+
+            (label :class "cal-header"
+                   :text {cal_data.month_year}
+                   :hexpand true
+                   :halign "start")
+
+            (box :orientation "horizontal"
+                 :halign "end"
+                 :spacing 8
+
+                 (button :class "cal-nav"
+                         :style "background: none; box-shadow: none;"
+                         :onclick "bash ~/.config/eww/scripts/dashboard/cal_nav.sh prev"
+                         "‹")
+
+                 (button :class "cal-nav"
+                         :style "background: none; box-shadow: none;"
+                         :onclick "bash ~/.config/eww/scripts/dashboard/cal_nav.sh next"
+                         "›")
+                 )
+            )
+
+       (box :class "cal-weekdays"
+            :space-evenly true
+            :spacing 10
+
+            (label :text "Mon")
+            (label :text "Tue")
+            (label :text "Wed")
+            (label :text "Thu")
+            (label :text "Fri")
+            (label :text "Sat")
+            (label :text "Sun")
+            )
+
+       (for week in {cal_data.weeks}
+            (box :space-evenly true
+
+                 (for day_info in {week}
+                      (eventbox :onclick "eww update selected_day=${day_info.day}"
+
+                                (label
+                                 :class {
+                                 day_info.today
+                                 ? "cal-today"
+                                 : day_info.day == selected_day
+                                 ? "cal-selected"
+                                 : day_info.day == 0
+                                 ? "cal-empty"
+                                 : "cal-day"
+                                 }
+                                 :halign "center"
+                                 :text {day_info.day == 0 ? "" : day_info.day}
+                                 )
+                                )
+                      )
+                 )
+            )
+       )
+  )
+
+
+

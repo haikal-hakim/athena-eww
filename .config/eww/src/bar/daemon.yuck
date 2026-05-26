@@ -1,0 +1,11 @@
+(defpoll power_profile :interval "5s" "powerprofilesctl get")
+
+(defwidget widget_daemon []
+  (button :class "daemon-btn ${power_profile}"
+          :onclick "bash ~/.config/eww/scripts/bar/daemon_toggle.sh &"
+          :tooltip "Mode ${power_profile}"
+    (label :text {power_profile == "performance" ? "" :
+                  power_profile == "power-saver" ? "" : "󰶘"}
+           :class "power-icon")
+  )
+)

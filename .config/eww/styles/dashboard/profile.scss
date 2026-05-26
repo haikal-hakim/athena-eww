@@ -1,0 +1,26 @@
+@import "../tokens.scss";
+
+.profile-card {
+  background: $bg-night;
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.profile-avatar {
+  background-position: center;
+  background-size: cover;
+  border: 3px solid #3b4252;
+}
+
+.profile-info {
+  .profile-name {
+    color: #eceff4;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .profile-tag {
+    color: #81a1c1;
+    font-size: 13px;
+  }
+}

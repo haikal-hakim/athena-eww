@@ -1,0 +1,144 @@
+;; --- Dashboard Modules ---
+(include "./src/dashboard/calendar.yuck")
+(include "./src/dashboard/folders.yuck")
+(include "./src/dashboard/launcher.yuck")
+(include "./src/dashboard/music.yuck")
+(include "./src/dashboard/profile.yuck")
+(include "./src/dashboard/sysinfo.yuck")
+(include "./src/dashboard/todo.yuck")
+(include "./src/dashboard/uptime.yuck")
+(include "./src/dashboard/website.yuck")
+(include "./src/dashboard/weather.yuck")
+
+
+;; --- DASHBOARD ---
+;; calendar
+(defwindow window_calendar
+  :monitor 0
+  :geometry (geometry :x "930px"
+                      :y "120px"
+                      :width 320
+                      :height 320)
+  :stacking "overlay"
+  :windowtype "dialog"
+  :wm-ignore true
+  :namespace "eww-calendar"
+  (widget_calendar))
+
+;; folders
+(defwindow window_folders
+  :monitor 0
+  :geometry (geometry :x "765px"
+                      :y "325px"
+                      :width 155
+                      :height 235)
+  :stacking "overlay"
+  :windowtype "dialog"
+  :wm-ignore true
+  :namespace "eww-folders"
+  (widget_folders))
+
+;; launcher
+(defwindow window_launcher
+  :monitor 0
+  :geometry (geometry :x "280px"
+                      :y "360px"
+                      :width 230
+                      :height 200)
+  :stacking "overlay"
+  :windowtype "dialog"
+  :wm-ignore true
+  :namespace "eww-launcher"
+  (widget_launcher))
+
+;; music
+(defwindow window_music
+  :monitor 0
+  :geometry (geometry :x "20px"
+                      :y "700px"
+                      :width 320
+                      :height 127)
+  :stacking "overlay"
+  :windowtype "dialog"
+  :wm-ignore true
+  :namespace "eww-music"
+  (widget_music))
+
+;; profile
+(defwindow window_profile
+  :monitor 0
+  :geometry (geometry :x "280px"
+                      :y "120px"
+                      :width 230
+                      :height 232)
+  :stacking "overlay"
+  :windowtype "dialog"
+  :wm-ignore true
+  :namespace "eww-profile"
+  (widget_profile))
+
+;; sysinfo
+(defwindow window_sysinfo
+  :monitor 0
+  :geometry (geometry :x "517px"
+                      :y "325px"
+                      :width 240
+                      :height 240)
+  :stacking "overlay"
+  :windowtype "dialog"
+  :wm-ignore true
+  :namespace "eww-sysinfo"
+  (widget_sysinfo))
+
+;; todo
+(defwindow window_todo
+  :monitor 0
+  :geometry (geometry :x "930px"
+                      :y "450px"
+                      :width 320
+                      :height 200)
+  :stacking "overlay"
+  :windowtype "dialog"
+  :wm-ignore true
+  :namespace "eww-todo"
+  (widget_todo))
+
+;; uptime
+(defwindow window_uptime
+  :monitor 0
+  :geometry (geometry :x "720px"
+                      :y "570px"
+                      :width 200
+                      :height 80)
+  :stacking "overlay"
+  :windowtype "dialog"
+  :wm-ignore true
+  :namespace "eww-uptime"
+  (widget_uptime))
+
+;; weather
+(defwindow window_weather
+  :monitor 0
+  :geometry (geometry :x "0px"
+                      :y "120px"
+                      :width 400
+                      :height 180
+                      :anchor "top center")
+  :stacking "overlay"
+  :windowtype "dialog"
+  :wm-ignore true
+  :namespace "eww-weather"
+  (widget_weather))
+
+;; website
+(defwindow window_website
+  :monitor 0
+  :geometry (geometry :x "280px"
+                      :y "570px"
+                      :width 430
+                      :height 80)
+  :stacking "overlay"
+  :windowtype "dialog"
+  :wm-ignore true
+  :namespace "eww-website"
+  (widget_website))

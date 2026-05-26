@@ -1,0 +1,26 @@
+;; --- REUSABLE ---
+(defwidget web_btn [class arg icon]
+  (box :class "web-${class}"
+       (eventbox :cursor "pointer"
+                 (button :class "web-btn"
+                         :style "background: none; box-shadow: none;"
+                         :onclick "bash ~/.config/eww/scripts/dashboard/toggle_dashboard.sh close && bash ~/.config/eww/scripts/dashboard/web_open.sh ${arg}"
+                         (label :class "web-icon ${class}-icon"
+                                :halign "center"
+                                :valign "center"
+                                :text icon))))
+  )
+
+;; --- WIDGET ---
+(defwidget widget_website []
+  (box :orientation "horizontal"
+       :spacing 8
+       :space-evenly true
+
+       (web_btn :class "github"    :arg "--gh"   :icon "")
+       (web_btn :class "instagram" :arg "--ig"   :icon "")
+       (web_btn :class "whatsapp"  :arg "--wa"   :icon "")
+       (web_btn :class "gmail"     :arg "--mail" :icon "󰊫")
+       (web_btn :class "incognito" :arg "--inc"  :icon "󰗹")
+       )
+  )

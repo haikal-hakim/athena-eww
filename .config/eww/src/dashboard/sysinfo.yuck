@@ -1,0 +1,124 @@
+;; --- Variables ---
+(defpoll sysinfo :interval "1s"
+  :initial "{\"cpu\": 0, \"ram_used\": 0, \"ram_total\": 0, \"ram_percent\": 0, \"disk_used\": \"0G\", \"disk_total\": \"0G\", \"disk_percent\": 0, \"temp\": 0}"
+  "bash ~/.config/eww/scripts/dashboard/sysinfo.sh")
+
+;; --- WIDGET --- ;;
+(defwidget widget_sysinfo []
+  (box :orientation "vertical"
+       :space-evenly false
+       :spacing 8
+
+       ;; Top Row (CPU & RAM)
+       (box :orientation "horizontal"
+            :space-evenly true
+            :spacing 0
+
+            ;; CPU
+            (box :orientation "vertical"
+                 :halign "center"
+                 :spacing 4
+
+                 (box :class "sysinfo-card"
+                      :orientation "vertical"
+                      :halign "center"
+                      :spacing 4
+
+                      (circular-progress
+                        :value {sysinfo.cpu}
+                        :class "sysinfo-cpu"
+                        :thickness 9
+                        :width 90
+                        :height 90
+
+                        (label :class "sysinfo-icon"
+                               :text "󰻠"
+                               :halign "center"
+                               :valign "center")
+                      )
+                 )
+            )
+
+            ;; RAM
+            (box :orientation "vertical"
+                 :halign "center"
+                 :spacing 4
+
+                 (box :class "sysinfo-card"
+                      :orientation "vertical"
+                      :halign "center"
+                      :spacing 4
+
+                      (circular-progress
+                        :value {sysinfo.ram_percent}
+                        :class "sysinfo-ram"
+                        :thickness 9
+                        :width 90
+                        :height 90
+
+                        (label :class "sysinfo-icon"
+                               :text "󰍛"
+                               :halign "center"
+                               :valign "center")
+                      )
+                 )
+            )
+       )
+
+       ;; Bottom Row (Disk & Temperature)
+       (box :orientation "horizontal"
+            :space-evenly true
+            :spacing 0
+
+            ;; Disk
+            (box :orientation "vertical"
+                 :halign "center"
+                 :spacing 4
+
+                 (box :class "sysinfo-card"
+                      :orientation "vertical"
+                      :halign "center"
+                      :spacing 4
+
+                      (circular-progress
+                        :value {sysinfo.disk_percent}
+                        :class "sysinfo-disk"
+                        :thickness 9
+                        :width 90
+                        :height 90
+
+                        (label :class "sysinfo-icon-disk"
+                               :text "󰋊"
+                               :halign "center"
+                               :valign "center")
+                      )
+                 )
+            )
+
+            ;; Temperature
+            (box :orientation "vertical"
+                 :halign "center"
+                 :spacing 4
+
+                 (box :class "sysinfo-card"
+                      :orientation "vertical"
+                      :halign "center"
+                      :spacing 4
+
+                      (circular-progress
+                        :value {sysinfo.temp}
+                        :class "sysinfo-temp"
+                        :thickness 9
+                        :width 90
+                        :height 90
+
+                        (label :class "sysinfo-icon-temp"
+                               :text ""
+                               :halign "center"
+                               :valign "center")
+                      )
+                 )
+            )
+       )
+  )
+)

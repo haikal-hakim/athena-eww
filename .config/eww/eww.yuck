@@ -1,0 +1,20 @@
+;; --- ROOT --- ;;
+(include "./src/bar/bar.yuck")
+(include "./src/dashboard/dashboard.yuck")
+
+
+;; --- BAR ---
+(defwindow window_bar
+  :monitor 0
+  :geometry (geometry :x "0%"
+                      :y "0%"
+                      :width "97%"
+                      :height "35px"
+                      :anchor "top center")
+  :stacking "fg"
+  :windowtype "dock"
+  :exclusive true
+  :wm-ignore false
+  :namespace "eww-bar"
+  (widget_bar))
+

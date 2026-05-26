@@ -1,0 +1,17 @@
+(defpoll battery_data :interval "5s"
+  :initial '{"icon": "󱉞", "percent": 0, "status": "Unknown"}'
+  "bash ~/.config/eww/scripts/bar/battery.sh")
+
+(defwidget widget_battery []
+  (box :class "battery-container ${battery_data.status == 'Charging' ? 'charging' :
+       battery_data.percent < 31 ? 'low' :
+       battery_data.percent < 51 ? 'warning' : 'good'}"
+       :orientation "horizontal"
+       :space-evenly false
+       :spacing 6
+       (label :class "bar-battery-icon"
+              :text {battery_data.icon})
+       (label :class "bar-battery-percent"
+              :text "${battery_data.percent}%")
+       )
+  )

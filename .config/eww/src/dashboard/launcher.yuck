@@ -1,0 +1,39 @@
+;; --- REUSABLE ---
+(defwidget launcher-btn [icon cmd]
+  (eventbox :cursor "pointer"
+            (button :class "launcher-btn"
+                    :style "background-image: url('${icon}');"
+                    :onclick "bash ~/.config/eww/scripts/dashboard/toggle_dashboard.sh close && ${cmd}"))
+  )
+
+;;--- WIDGET ---
+(defwidget widget_launcher []
+  (box :class "launcher-card"
+       :orientation "vertical"
+       :spacing 10
+
+       ;; row 1
+       (box :orientation "horizontal"
+            :spacing 10
+            :space-evenly true
+            (launcher-btn :icon "${EWW_CONFIG_DIR}/assets/apps/code.png" :cmd "code &")
+            (launcher-btn :icon "${EWW_CONFIG_DIR}/assets/apps/nvim.png" :cmd "kitty nvim &")
+            (launcher-btn :icon "${EWW_CONFIG_DIR}/assets/apps/onlyoffice.png" :cmd "onlyoffice-desktopeditors &"))
+
+       ;; row 2
+       (box :orientation "horizontal"
+            :spacing 10
+            :space-evenly true
+            (launcher-btn :icon "${EWW_CONFIG_DIR}/assets/apps/obsidian.png" :cmd "obsidian &")
+            (launcher-btn :icon "${EWW_CONFIG_DIR}/assets/apps/thunar.png" :cmd "thunar &")
+            (launcher-btn :icon "${EWW_CONFIG_DIR}/assets/apps/kitty.png" :cmd "kitty &"))
+
+       ;; row 3
+       (box :orientation "horizontal"
+            :spacing 10
+            :space-evenly true
+            (launcher-btn :icon "${EWW_CONFIG_DIR}/assets/apps/discord.png" :cmd "discord &")
+            (launcher-btn :icon "${EWW_CONFIG_DIR}/assets/apps/spotify.png" :cmd "spotify-launcher &")
+            (launcher-btn :icon "${EWW_CONFIG_DIR}/assets/apps/firefox.png" :cmd "firefox &"))
+       )
+  )

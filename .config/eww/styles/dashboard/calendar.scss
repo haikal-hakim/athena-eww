@@ -1,0 +1,56 @@
+@import "../tokens.scss";
+
+.calendar-card {
+  background: $bg-night;
+  color: $text-primary;
+  padding: 0 0 6px 0;
+  border-radius: $rad;
+}
+
+.header {
+  background-color: $blue-primary;
+  border-top-left-radius: $rad;
+  border-top-right-radius: $rad;
+}
+
+.cal-header {
+  margin-left: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.cal-nav {
+  font-size: 18px;
+
+  &:hover {
+    color: #000000;
+  }
+}
+
+/* Calendar grid */
+.cal-weekdays {
+  margin: 5px 12px;
+  color: $blue-primary;
+}
+
+.cal-day {
+  color: $text-primary;
+}
+
+.cal-empty {
+  color: $text-dim;
+}
+
+.cal-today {
+  min-width: 45px;
+  background: $orange-primary;
+  color: $fg;
+  border-radius: 50%;
+}
+
+.cal-selected {
+  min-width: 45px;
+  background: $accent-soft;
+  color: $text-primary;
+  border-radius: 50%;
+}

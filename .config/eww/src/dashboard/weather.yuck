@@ -1,0 +1,121 @@
+;; --- Variables ---
+(defpoll weather_time :interval "60s" "date '+%H.%M'")
+
+(defpoll weather :interval "60m"
+  :initial '{"location": "Loading...", "temp": "0", "desc": "Unknown", "type": "day"}'
+  "bash ~/.config/eww/scripts/dashboard/weather.sh")
+
+;; --- WIDGET --- ;;
+(defwidget widget_weather []
+  (box :class "weather-card"
+       :orientation "vertical"
+       :space-evenly false
+
+       (box :orientation "horizontal"
+            :space-evenly false
+            :hexpand true
+
+            ;; Color
+            (label :class "weather-icon"
+                   :style {
+                   weather.desc == "Clear" || weather.desc == "Sunny" ? 
+                   (weather.type == "night" ? "color: #b4befe;" : "color: #f9e2af;") :
+
+                   weather.desc == "Partly Cloudy" ? 
+                   (weather.type == "night" ? "color: #cba6f7;" : "color: #cdd6f4;") :
+
+                   weather.desc == "Cloudy" || weather.desc == "Overcast" ?
+                   "color: #94e2d5;" :
+
+                   weather.desc == "Mist" || weather.desc == "Fog" || weather.desc == "Freezing Fog" ?
+                   "color: #fab387;" :
+
+                   weather.desc == "Patchy Rain Nearby" || weather.desc == "Patchy Light Rain" ||
+                   weather.desc == "Light Rain" || weather.desc == "Light Drizzle" ||
+                   weather.desc == "Patchy Light Drizzle" || weather.desc == "Light Rain Shower" ?
+                   "color: #89b4fa;" :
+
+                   weather.desc == "Moderate Rain" || weather.desc == "Heavy Rain" ||
+                   weather.desc == "Heavy Rain At Times" || weather.desc == "Moderate Or Heavy Rain Shower" ||
+                   weather.desc == "Moderate Rain At Times" || weather.desc == "Heavy Rain Shower" ?
+                   "color: #74c7ec;" :
+
+                   weather.desc == "Thundery Outbreaks Possible" || weather.desc == "Patchy Light Rain With Thunder" ||
+                   weather.desc == "Moderate Or Heavy Rain With Thunder" || weather.desc == "Patchy Heavy Rain With Thunder" ?
+                   "color: #f38ba8;" :
+
+                   weather.desc == "Blizzard" || weather.desc == "Heavy Snow" || weather.desc == "Patchy Heavy Snow" ||
+                   weather.desc == "Light Snow" || weather.desc == "Patchy Light Snow" ||
+                   weather.desc == "Patchy Snow Nearby" || weather.desc == "Light Snow Showers" ||
+                   weather.desc == "Ice Pellets" || weather.desc == "Light Sleet" || weather.desc == "Moderate Or Heavy Sleet" ?
+                   "color: #a6e3a1;" : "color: #ffffff;"
+                   }
+
+                   ;; icon
+                   :text {
+                   weather.desc == "Clear" || weather.desc == "Sunny" ?
+                   (weather.type == "night" ? "󰖔" : "󰖙") :
+
+                   weather.desc == "Partly Cloudy" ?
+                   (weather.type == "night" ? "" : "") :
+
+                   weather.desc == "Cloudy" || weather.desc == "Overcast" ?
+                   "" :
+
+                   weather.desc == "Mist" ?
+                   "" :
+
+                   weather.desc == "Fog" || weather.desc == "Freezing Fog" ?
+                   (weather.type == "night" ? "" : "") :
+
+                   weather.desc == "Patchy Light Drizzle" || weather.desc == "Light Drizzle" ?
+                   "󰖗" :
+
+                   weather.desc == "Patchy Rain Nearby" || weather.desc == "Patchy Light Rain" ||
+                   weather.desc == "Light Rain" || weather.desc == "Light Rain Shower" ?
+                   (weather.type == "night" ? "" : "") :
+
+                   weather.desc == "Moderate Rain" || weather.desc == "Moderate Rain At Times" ||
+                   weather.desc == "Moderate Or Heavy Rain Shower" || weather.desc == "Heavy Rain Shower" ?
+                   (weather.type == "night" ? "" : "") :
+
+                   weather.desc == "Thundery Outbreaks Possible" ?
+                   "󰖓" :
+
+                   weather.desc == "Patchy Light Rain With Thunder" ||
+                   weather.desc == "Moderate Or Heavy Rain With Thunder" ||
+                   weather.desc == "Patchy Heavy Rain With Thunder" ?
+                   (weather.type == "night" ? "" : "") :
+
+                   weather.desc == "Blizzard" || weather.desc == "Heavy Snow" ||
+                   weather.desc == "Patchy Heavy Snow" ?
+                   "" :
+
+                   weather.desc == "Light Snow" || weather.desc == "Patchy Light Snow" ||
+                   weather.desc == "Patchy Snow Nearby" || weather.desc == "Light Snow Showers" ?
+                   "󰖘" :
+
+                   weather.desc == "Ice Pellets" || weather.desc == "Light Sleet" ||
+                   weather.desc == "Moderate Or Heavy Sleet" ?
+                   "󰖒" :
+                   ""})
+
+            ;; Temp & Clock
+            (box :orientation "vertical"
+                 :space-evenly false
+                 :hexpand true
+                 :halign "end"
+                 :valign "center"
+                 (label :class "weather-temp"
+                        :text "${weather.temp}°C")
+                 (label :class "weather-time"
+                        :text " ${weather_time}"))
+            )
+
+            ;; location & Desc
+            (label :class "weather-location"
+                   :text "${weather.location}")
+            (label :class "weather-desc"
+                   :text "${weather.desc}")
+    )
+)

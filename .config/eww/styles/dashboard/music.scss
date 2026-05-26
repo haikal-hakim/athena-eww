@@ -1,0 +1,28 @@
+@import "../tokens.scss";
+
+.music-card {
+  background: $bg-night;
+  border-radius: $rad;
+}
+
+.music-cover,
+.music-info {
+  margin: 10px 0 10px 10px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+}
+
+.music-title {
+  font-weight: bold;
+  margin: 16px 35px 0 0;
+}
+
+.music-artist {
+  font-size: 14px;
+  margin-right: 35px;
+}
+
+.music-controls {
+  margin-right: 35px;
+}

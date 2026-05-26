@@ -1,0 +1,22 @@
+@import "../tokens.scss";
+
+.uptime-card {
+  background: $bg-night;
+  border-radius: $rad;
+}
+
+.uptime-icon {
+  color: $orange-primary;
+  font-size: 48px;
+  margin-left: 18px;
+}
+
+.uptime-h {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.uptime-m {
+  font-size: 16px;
+  font-weight: bold;
+}

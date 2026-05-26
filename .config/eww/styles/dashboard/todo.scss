@@ -1,0 +1,32 @@
+@import "../tokens.scss";
+
+.todo-card {
+  background: $bg-night;
+  border-radius: $rad;
+}
+
+.todo-header {
+  color: $orange-primary;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 12px;
+}
+
+.todo-content {
+  background: $text-dim;
+  border-radius: $rad;
+  padding: 14px;
+
+  label {
+    color: #e5e9f0;
+    font-family: "Inter";
+    font-size: 15px;
+  }
+
+  .icon-one,
+  .icon-two,
+  .icon-three {
+    color: #88c0d0;
+    font-size: 13px;
+  }
+}

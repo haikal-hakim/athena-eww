@@ -1,0 +1,35 @@
+@import "../tokens.scss";
+
+.workspaces {
+  background-color: $bg-night ;
+  border-radius: 0 0 $rad $rad;
+
+  .ws-dot {
+    background-color: transparent;
+    border-radius: 0 0 $rad $rad;
+
+    &.active {
+      color: $hover;
+      font-size: 18px;
+    }
+
+    &.occupied {
+      color: $text-primary;
+      font-size: 16px;
+    }
+
+    &.urgent {
+      color: $maroon-primary;
+      font-size: 12px;
+    }
+
+    &.empty {
+      color: $text-dim;
+      font-size: 15px;
+    }
+
+    &:hover {
+      color: $text-muted;
+    }
+  }
+}

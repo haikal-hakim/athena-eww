@@ -1,0 +1,58 @@
+;; --- Variables ---
+(deflisten music_status "playerctl --player=spotify --follow status")
+(deflisten music_title "playerctl --player=spotify --follow metadata title")
+(deflisten music_artist "playerctl --player=spotify --follow metadata artist")
+
+;; --- WIDGET --- ;;
+(defwidget widget_music []
+  (box :class "music-card"
+       :orientation "horizontal"
+       :space-evenly false
+       :spacing 10
+
+       ;; Cover Art
+       (box :class "music-cover"
+            :style "background-image: url('${EWW_CONFIG_DIR}/assets/music.png');"
+            :width 120
+            :height 100)
+
+       ;; Info & Controls
+       (box :class "music-info"
+            :orientation "vertical"
+            :space-evenly false
+            :spacing 8
+            :valign "center"
+
+            (label :class "music-title"
+                   :text {music_title == "" ? "Nothing Playing" : music_title}
+                   :limit-width 20
+                   :halign "center")
+
+            (label :class "music-artist"
+                   :text {music_artist == "" ? "No Artist" : music_artist}
+                   :limit-width 20
+                   :halign "center")
+
+            ;; Buttons
+            (box :class "music-controls"
+                 :orientation "horizontal"
+                 :space-evenly true
+
+                 (eventbox :cursor "pointer"
+                           (button :onclick "playerctl --player=spotify previous"
+                                   :style "background: none; box-shadow: none;"
+                                   (label :text "󰒮")))
+
+                 (eventbox :cursor "pointer"
+                           (button :onclick "playerctl --player=spotify play-pause"
+                                   :style "background: none; box-shadow: none;"
+                                   (label :text {music_status == "Playing" ? "󰏤" : "󰐊"})))
+
+                 (eventbox :cursor "pointer"
+                           (button :onclick "playerctl --player=spotify next"
+                                   :style "background: none; box-shadow: none;"
+                                   (label :text "󰒭")))
+                 )
+            )
+       )
+  )

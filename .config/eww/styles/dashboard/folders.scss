@@ -1,0 +1,70 @@
+@import "../tokens.scss";
+
+.folders-card {
+  background: $bg-night;
+  border-radius: $rad;
+}
+
+.folder-btn {
+  margin-left: 6px;
+  padding: 0 14px;
+
+  &:hover {
+
+    .folder-icon,
+    .folder-text {
+      color: $hover;
+    }
+  }
+}
+
+.folder-icon {
+  font-size: 24px;
+}
+
+.folder-text {
+  font-family: "Inter";
+  font-size: 14px;
+}
+
+/* Folder variants */
+.mus {
+  margin-top: 14px;
+
+  .folder-icon,
+  .folder-text {
+    color: $orange-primary;
+  }
+}
+
+.doc {
+
+  .folder-icon,
+  .folder-text {
+    color: $maroon-primary;
+  }
+}
+
+.dl {
+
+  .folder-icon,
+  .folder-text {
+    color: $green-primary;
+  }
+}
+
+.pic {
+
+  .folder-icon,
+  .folder-text {
+    color: $blue-primary;
+  }
+}
+
+.cfg {
+
+  .folder-icon,
+  .folder-text {
+    color: $purple-primary;
+  }
+}

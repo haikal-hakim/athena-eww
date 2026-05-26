@@ -1,0 +1,41 @@
+@import "../tokens.scss";
+
+.weather-card {
+  background: $bg-night;
+  border-radius: $rad;
+  padding: 12px 16px;
+}
+
+.weather-icon {
+  font-size: 95px;
+  margin-top: -8px;
+  margin-left: 5px;
+}
+
+.weather-temp {
+  color: $green-primary;
+  font-size: 50px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.weather-time {
+  color: $orange-primary;
+  font-size: 20px;
+}
+
+.weather-desc {
+  margin: 0 0 4px 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.weather-righ-card {
+  background: $accent-soft;
+  border-radius: 16px;
+  padding: 10px 12px;
+}
+
+.weather-location {
+  font-family: "Inter";
+}

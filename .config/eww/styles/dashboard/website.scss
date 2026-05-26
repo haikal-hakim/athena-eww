@@ -1,0 +1,95 @@
+@import "../tokens.scss";
+
+.web-btn {
+  font-size: 40px;
+}
+
+.web-github {
+  background: $bg-night;
+  border-radius: $rad;
+
+  .web-icon {
+    color: rgba(245, 245, 245, 1.0);
+    margin: 0 7px 3px 0;
+  }
+
+  &:hover {
+    background: rgba(245, 245, 245, 1.0);
+
+    .web-icon {
+      color: $bg-night;
+    }
+  }
+}
+
+.web-instagram {
+  background: rgba(225, 48, 108, 1.0);
+  border-radius: $rad;
+
+  .web-icon {
+    color: rgba(245, 245, 245, 1.0);
+    margin-right: 9px;
+  }
+
+  &:hover {
+    background: rgba(245, 245, 245, 1.0);
+
+    .web-icon {
+      color: rgba(225, 48, 108, 1.0);
+    }
+  }
+}
+
+.web-whatsapp {
+  background: rgba(37, 211, 102, 1.0);
+  border-radius: $rad;
+
+  .web-icon {
+    color: rgba(245, 245, 245, 1.0);
+    margin-right: 8px;
+  }
+
+  &:hover {
+    background: rgba(245, 245, 245, 1.0);
+
+    .web-icon {
+      color: rgba(37, 211, 102, 1.0);
+    }
+  }
+}
+
+.web-gmail {
+  background: rgba(245, 245, 245, 1.0);
+  border-radius: $rad;
+
+  .web-icon {
+    color: rgba(234, 67, 53, 1.0);
+    margin-right: 9px;
+  }
+
+  &:hover {
+    background: rgba(234, 67, 53, 1.0);
+
+    .web-icon {
+      color: rgba(245, 245, 245, 1.0);
+    }
+  }
+}
+
+.web-incognito {
+  background: rgba(76, 86, 106, 1.0);
+  border-radius: $rad;
+
+  .web-icon {
+    color: rgba(245, 245, 245, 1.0);
+    margin-right: 9px;
+  }
+
+  &:hover {
+    background: rgba(245, 245, 245, 1.0);
+
+    .web-icon {
+      color: rgba(76, 86, 106, 1.0);
+    }
+  }
+}

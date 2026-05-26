@@ -1,0 +1,56 @@
+;; --- Reusable Widget ---
+(defwidget folder_btn [class icon label cmd]
+  (eventbox :cursor "pointer"
+            (button :class "folder-btn ${class}"
+                    :onclick "bash ~/.config/eww/scripts/dashboard/toggle_dashboard.sh close && ${cmd}"
+                    :style "background: none; box-shadow: none;"
+                    (box :orientation "horizontal"
+                         :space-evenly false
+                         :spacing 16
+                         (label :class "folder-icon"
+                                :text icon)
+                         (label :class "folder-text"
+                                :text label)
+                         )
+                    )
+            )
+  )
+
+;; --- WIDGET ---
+(defwidget widget_folders []
+  (box :class "folders-card"
+       :orientation "vertical"
+       :space-evenly false
+       :spacing 10
+
+       ;; Athena
+       (folder_btn :class "mus"
+                   :icon "󱍙"
+                   :label "Music" 
+                   :cmd "thunar ~/Music/ &")
+
+       ;; Documents
+       (folder_btn :class "doc"
+                   :icon "󱧶"
+                   :label "Documents" 
+                   :cmd "thunar ~/Documents &")
+
+       ;; Downloads
+       (folder_btn :class "dl"
+                   :icon "󰉍"
+                   :label "Downloads" 
+                   :cmd "thunar ~/Downloads &")
+
+       ;; Pictures
+       (folder_btn :class "pic"
+                   :icon "󰉏"
+                   :label "Pictures" 
+                   :cmd "thunar ~/Pictures &")
+
+       ;; Config
+       (folder_btn :class "cfg"
+                   :icon "󱁿"
+                   :label "~/.config" 
+                   :cmd "kitty --class yazi -e yazi ~/.config &")
+       )
+  )

@@ -1,0 +1,11 @@
+(defpoll network_data :interval "5s"
+  :initial '{"icon": "󰤭", "status": "disconnected", "ssid": "Disconnected"}'
+  "bash ~/.config/eww/scripts/bar/network.sh")
+
+(defwidget widget_network []
+  (box :class "network-container ${network_data.status}"
+       :tooltip "${network_data.ssid}"
+    (button :onclick "kitty -e nmtui &"
+      (label :class "bar-network-icon"
+             :text {network_data.icon})))
+)

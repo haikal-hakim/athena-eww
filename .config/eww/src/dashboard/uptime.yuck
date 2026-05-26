@@ -1,0 +1,33 @@
+;; --- Variables ---
+(defpoll uptime_hours :interval "60s"
+  "echo $(( $(cat /proc/uptime | awk '{print int($1)}') / 3600 ))")
+
+(defpoll uptime_minutes :interval "60s"
+  "echo $(( ($(cat /proc/uptime | awk '{print int($1)}') % 3600) / 60 ))")
+
+;; --- WIDGET --- ;;
+(defwidget widget_uptime []
+  (box :class "uptime-card"
+       :orientation "horizontal"
+       :space-evenly false
+       :spacing 30
+
+       ;; Icon
+       (label :class "uptime-icon"
+              :text "󰔛")
+
+       ;; Details
+       (box :orientation "vertical"
+            :space-evenly false
+            :valign "center"
+
+            (label :class "uptime-h"
+                   :halign "start"
+                   :text "${uptime_hours} hours")
+
+            (label :class "uptime-m"
+                   :halign "start"
+                   :text "${uptime_minutes} minutes")
+       )
+  )
+)
