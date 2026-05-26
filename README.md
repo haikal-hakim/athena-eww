@@ -1,9 +1,6 @@
 <h1 align="center">Athena Elkowars Wacky Widgets</h1>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Arch_Linux-1793D1?style=flat-square&logo=arch-linux&logoColor=white" />
-  <img src="https://img.shields.io/badge/Hyprland-33CCEE?style=flat-square&logo=hyprland&logoColor=white" />
-  <img src="https://img.shields.io/badge/Status-WIP-red?style=flat-square" />
   <br />
   <img src="https://img.shields.io/github/last-commit/haikal-hakim/athena-eww?style=flat-square&color=purple&logo=github" />
   <img src="https://img.shields.io/badge/dynamic/json?color=blue&label=Clone&query=count&url=https://gist.githubusercontent.com/haikal-hakim/10a07e69ca0835e5557794011b24b771/raw/clone.json&logo=github&style=flat-square" />
@@ -11,6 +8,7 @@
   <a href="https://github.com/haikal-hakim/athena-eww/blob/main/LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-orange.svg?style=flat-square" />
   </a>
+    <img src="https://img.shields.io/badge/Status-WIP-red?style=flat-square" />
 </p>
 
 <p align="center">
