@@ -28,7 +28,6 @@ window {
     anchor:            center;
     width:             400px;
     background-color:  @bg;
-    border-color:      @border-win;
     border-radius:     12px;
 }
 
