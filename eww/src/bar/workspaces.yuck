@@ -1,6 +1,0 @@
-(deflisten workspaces_listen
-  :initial "" "bash ~/.config/eww/scripts/bar/workspaces.sh")
-
-(defwidget widget_workspaces []
-  (literal :content workspaces_listen)
-)

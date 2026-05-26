@@ -1,7 +1,0 @@
-(defpoll bar_time :interval "60s" "date '+%H:%M'")
-
-(defwidget widget_clock []
-  (label :class "bar-clock"
-         :halign "center"
-         :text {bar_time})
-)
