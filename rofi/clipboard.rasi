@@ -1,0 +1,30 @@
+@import "config.rasi"
+
+inputbar {
+  enabled: false;
+}
+window {
+  width: 530px;
+}
+
+listview {
+  columns: 1;
+  lines: 5;
+  cycle: false;
+  dynamic: true;
+}
+
+element {
+  orientation: horizontal;
+  padding: 12px;
+  children: [ element-text ];
+}
+
+element-icon {
+  size: 24px;
+}
+
+element-text {
+  vertical-align: 0.5;
+  horizontal-align: 0.0;
+}

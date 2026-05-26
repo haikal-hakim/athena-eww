@@ -1,0 +1,100 @@
+@import "mocha.rasi"
+
+configuration {
+    modi:                "drun,filebrowser,window,run";
+    show-icons:          true;
+    drun-display-format: "{name}";
+
+    display-drun:        " ";
+
+    hover-select:        true;
+    me-select-entry:     "";
+    me-accept-entry:     "MousePrimary";
+    icon-theme:          "Tela-circle-dark";
+
+    matching:            "prefix";
+    tokenize:            false;
+    case-sensitive:      false;
+    sort:                true;
+    sorting-method:      "levenshtein";
+}
+
+* {
+    font:               "JetBrainsMono Nerd Font 11";
+}
+
+window {
+    location:          center;
+    anchor:            center;
+    width:             400px;
+    background-color:  @bg;
+    border-color:      @border-win;
+    border-radius:     12px;
+}
+
+mainbox {
+    orientation:      vertical;
+    background-color: transparent;
+    children:         [ "inputbar", "listview" ];
+}
+
+inputbar {
+    enabled:          true;
+    padding:          20px 20px 10px 20px;
+    background-color: transparent;
+    children:         [ "prompt", "entry" ];
+}
+
+entry {
+    background-color:  transparent;
+    text-color:        @fg-muted;
+    placeholder:       "Search...";
+    placeholder-color: @placeholder-clr;
+    padding:           0 10px;
+}
+
+prompt {
+    background-color: transparent;
+    text-color:       @fg-prompt;
+}
+
+listview {
+    background-color: transparent;
+    columns:          2;
+    lines:            6;
+    spacing:          10px;
+    padding:          10px 20px 20px 20px;
+    fixed-columns:    true;
+    fixed-height:     true;
+    cycle:            false;
+}
+
+element {
+    orientation:      horizontal;
+    padding:          10px;
+    border-radius:    12px;
+    spacing:          15px;
+    background-color: @bg-element;
+    text-color:       @fg-muted;
+    children:         [ element-icon, element-text ];
+}
+
+element selected {
+    background-color: @bg-selected; 
+    text-color:       @fg-selected;
+}
+
+element-icon {
+    background-color: inherit;
+    text-color:       inherit;
+    size:              28px;
+    horizontal-align: 0.0;
+}
+
+element-text {
+    background-color: inherit;
+    text-color:       inherit; 
+    horizontal-align: 0.0;
+    vertical-align:   0.5;
+    font:              "JetBrainsMono Nerd Font 11";
+}
