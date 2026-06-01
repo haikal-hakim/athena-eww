@@ -2,6 +2,9 @@
 
 <p align="center">
   <br />
+    <a href="https://github.com/haikal-hakim/athena/stargazers">
+    <img src="https://img.shields.io/github/stars/haikal-hakim/athena?style=flat-square&color=yellow&logo=github" />
+  </a>
   <img src="https://img.shields.io/github/last-commit/haikal-hakim/athena-eww?style=flat-square&color=purple&logo=github" />
   <img src="https://img.shields.io/badge/dynamic/json?color=blue&label=Clone&query=count&url=https://gist.githubusercontent.com/haikal-hakim/10a07e69ca0835e5557794011b24b771/raw/clone.json&logo=github&style=flat-square" />
   <br />
@@ -11,17 +14,14 @@
     <img src="https://img.shields.io/badge/Status-WIP-red?style=flat-square" />
 </p>
 
-<p align="center">
-  My personal Eww (Elkowar's Wacky Widgets) ecosystem for the Athena setup.
-</p>
 
 ---
 
 ## About Repository
 
-This repo is actually just for fun, coding, creating layouts, and other things. Maybe I'll add something new, like a bar, in the future.
+My personal Eww configuration tailored for the Athena setup.
 
-This project is still under development, therefore please forgive if this structure is not neat. Thanks.
+This project is still a work in progress, so some parts might still be a bit messy. Thanks for understanding!
 
 ---
 
@@ -29,12 +29,6 @@ This project is still under development, therefore please forgive if this struct
 
 <img width="2880" height="1800" alt="20260525_231808" src="https://github.com/user-attachments/assets/e00b8376-b724-40e5-94ff-0cdd6491fa41" />
 
-### Resolution & Positioning
-
-This config is optimized for **2880x1800 (HiDPI)** screens. Since this setup uses absolute coordinates.
-
-> [!TIP]
-> You will need to adjust the geometry values in `X` and `Y` in `eww/src/dashboard/dashboard.yuck`.
 
 ---
 
@@ -56,7 +50,7 @@ athena-eww/
     ├── dunst/
     ├── fastfetch/
     ├── rofi/
-    └── eww/                 # Main widget ecosystem
+    └── eww/                 # Main
         ├── assets/          # Images & icons
         ├── eww.scss
         ├── eww.yuck
@@ -65,10 +59,14 @@ athena-eww/
         │   └── dashboard/   < toggle_dashboard.sh is here
         ├── src/             # .yuck
         │   ├── bar/
-        │   └── dashboard/
+        │   ├── corner/
+        │   ├── dashboard/
+        │   └── panel/
         └── styles/          # .scss
             ├── bar/
+            ├── corner/
             ├── dashboard/
+            ├── panel/
             ├── _index.scss  # Main import styles
             └── tokens.scss  # Style variables
 ```
@@ -77,27 +75,33 @@ athena-eww/
 
 ## Dependencies
 
+<details>
+  <summary><b>Click to see dependencies</b></summary>
+
 To ensure all features of the Athena Eww setup work correctly, make sure the following packages are installed on your system:
 
 | Dependency | Purpose |
 | :--- | :--- |
 | **`dunst`** | Notifications daemon. |
 | **`jq`** | JSON processor, for weather data and system info. |
-| **`curl`** | Used to fetch weather data from `wttr.in`. |
+| **`curl`** | Used to fetch weather data from OpenWeatherMap API. |
 | **`socat`** | Required for workspace. |
 | **`python`** | Required for helper scripts. |
+| **`python-psutil`** | Required for stats system info. |
 | **`libnotify`** | Needed for desktop notifications. |
 | **`lm_sensors`** | Linux monitoring temperature for system info. |
 | **`inotify-tools`** | Required for real-time file monitoring. |
-| **`networkmanager`** | Provides `nmcli` to handle Wi-Fi |
+| **`networkmanager`** | Provides `nmcli` to handle Wi-Fi. |
 | **`power-profiles-daemon`** | Manages system power profiles. |
 
 ### Installation (Arch Linux)
 You can install the required packages using `pacman`:
 
 ```bash
-sudo pacman -S dunst jq curl socat python libnotify lm_sensors inotify-tools networkmanager power-profiles-daemon
+sudo pacman -S dunst jq curl socat python python-psutil libnotify lm_sensors inotify-tools networkmanager power-profiles-daemon
 ```
+
+</details>
 
 ---
 
@@ -106,7 +110,9 @@ sudo pacman -S dunst jq curl socat python libnotify lm_sensors inotify-tools net
 
 ```bash
 chmod +x ~/.config/eww/scripts/bar/*.sh
+chmod +x ~/.config/eww/scripts/corner/*.sh
 chmod +x ~/.config/eww/scripts/dashboard/*.sh
+chmod +x ~/.config/eww/scripts/panel/*.sh
 ```
 
 ---
@@ -117,42 +123,52 @@ chmod +x ~/.config/eww/scripts/dashboard/*.sh
 
 | Module | Action | Command |
 | :--- | :--- | :--- |
+| **`Distro Icon`** | Click | `show dashboard` |
 | **`Notifications`** | Click | `dunstctl history-pop` |
 | | Right-Click | `dunstctl history-clear && dunstctl close-all` |
-| **`Network`** | Click | `show nmcli` |
+| **`Panel Trigger`** | Click | `show panel` |
 
 ---
+
+<h1 align="center">Panel Features</h1>
+
+## Interactive Controls
+
+| Module | Action | Command / Function |
+| :--- | :--- | :--- |
+
+| **`Wi-Fi`** | Click (Icon) | Toggles Wi-Fi status via `nmcli` |
+| | Click `󰅂` | Opens `nmtui` inside terminal |
+| **`Power Mode`** | Click | Cycles profiles via `powerprofilesctl` |
+| **`Bluetooth`** | Click (icon) | Toggles Bluetooth adapter status |
+| | Click `󰅂` | Opens `blueman-manager` |
+| **`Do Not Disturb`** | Click | Toggles Dunst notifications status |
+| **`Screenshot`** | Click | Runs local script `~/.config/hypr/scripts/screenshot.sh` |
+| **`Screen Record`** | Click | Runs local script `~/.config/hypr/scripts/record.sh` |
+
+> [!TIP]
+> The **Screenshot** and **Screen Record** features are tied to my custom Hyprland scripts. If you use different tools (like `grimblast` or `wf-recorder`), adjust the script paths directly inside `eww/src/panel/quicktoggle.yuck`.
 
 <h1 align="center">Dashboard Features</h1>
 
-## Customizing profile
-
-Put the photo into the `eww/assets` folder and change the photo, name and tags, open:
-
-```
-eww/src/dashboard/profile.yuck
-```
-
-Edit the code:
-
-```lisp
-:style "background-image: url('${EWW_CONFIG_DIR}/assets/NAME_FILE.png'); border-radius: 99px;"
-```
-
----
-
 ## Configuration Weather Location
 
-The weather widget fetches data from wttr.in. To change the location, open:
+>[!TIP]
+>1. **Get an API Key**: Sign up at [OpenWeatherMap](https://openweathermap.org/) and generate a free API key from your account dashboard.
+>2. **Find Your Coordinates**: Find the latitude (`LAT`) and longitude (`LON`) for your location (you can use Google Maps or any coordinate finder tool).
+
+Open the weather script in your setup:
 
 ```text
-eww/scripts/dashboard/weather.sh
+eww/scripts/corner/weather.py
 ```
 
-Edit the curl URL:
+Edit your coordinates and API Key inside the script:
 
 ```Bash
-DATA=$(curl -s "wttr.in/YOUR_CITY?format=j1")
+API_KEY="YOUR_API_KEY"
+LAT="YOUR_LATITUDE"
+LON="YOUR_LONGITUDE"
 ```
 
 ---
@@ -174,25 +190,30 @@ To change the folder path and file manager customization for `widget_folders`, e
 The Todo widget requires a local text file to function. Ensure the following path exists:
 
 - **Path:** `~/Documents/todo.txt`
-- **Format:** A simple text file containing your tasks (maximum 3 lines).
+- **Format:** A simple text file containing your tasks (maximum 2 lines).
 
 Example content:
 ```text
 Task one
 Task two
-Task three
 ```
 
 ---
 
 <h1 align="center">Autostart & Keybindings</h1>
 
-## Launch Bar
+## Autostart
 
-You need to launch the Eww daemon and open the bar window inside your Window Manager configuration.
+You need to launch the Eww daemon and open the window inside your Window Manager configuration.
+Example:
 
 ```text
-exec-once = eww daemon && eww open window_bar
+exec-once = eww daemon
+exec-once = sleep 2 && eww open window_bar
+exec-once = sleep 3 && eww open window_weather
+exec-once = sleep 4 && eww open window_clock
+exec-once = sleep 5 && eww open window_launcher
+exec-once = sleep 20 && eww open window_power
 ```
 
 ---
@@ -217,3 +238,14 @@ bind = $mainMod, SPACE, exec, ~/.config/eww/scripts/dashboard/toggle_dashboard.s
 ```
 
 ---
+
+* **[Eww](https://github.com/elkowar/eww)** - Created by **Elkowar**. Huge thanks to the creator and contributors for this amazing widget ecosystem.
+* Also thanks to everyone whose open source configurations were inspiring.
+
+## Epilogue
+
+This configuration is a reflection of constant iteration and the pursuit of an enhanced workflow. Use it as a foundation, or take only what is useful.
+
+> "Freedom is when a person obeys his own conscience, not what other people say."
+
+*Muhammad Haikal Hakim*
