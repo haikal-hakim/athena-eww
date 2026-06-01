@@ -1,5 +1,4 @@
 <h1 align="center">Athena Elkowars Wacky Widgets</h1>
-
 <p align="center">
   <br />
     <a href="https://github.com/haikal-hakim/athena-eww/stargazers">
@@ -119,7 +118,7 @@ chmod +x ~/.config/eww/scripts/panel/*.sh
 
 <h1 align="center">Bar Features</h1>
 
-## Interactive
+### Interactive
 
 | Module | Action | Command |
 | :--- | :--- | :--- |
@@ -132,7 +131,7 @@ chmod +x ~/.config/eww/scripts/panel/*.sh
 
 <h1 align="center">Panel Features</h1>
 
-## Interactive Controls
+### Interactive Controls
 
 | Module | Action | Command / Function |
 | :--- | :--- | :--- |
@@ -152,7 +151,7 @@ chmod +x ~/.config/eww/scripts/panel/*.sh
 
 <h1 align="center">Dashboard Features</h1>
 
-## Configuration Weather Location
+### Configuration Weather Location
 
 1. **Get an API Key**: Sign up at [OpenWeatherMap](https://openweathermap.org/) and generate a free API key from your account dashboard.
 2. **Find Your Coordinates**: Find the latitude (`LAT`) and longitude (`LON`) for your location (you can use Google Maps or any coordinate finder tool).
@@ -171,9 +170,7 @@ LAT="YOUR_LATITUDE"
 LON="YOUR_LONGITUDE"
 ```
 
----
-
-## Customizing Folder Shortcuts
+### Customizing Folder Shortcuts
 
 To change the folder path and file manager customization for `widget_folders`, edit `eww/src/dashboard/folders.yuck`. Find that section and update the `cmd` directive:
 
@@ -183,9 +180,7 @@ To change the folder path and file manager customization for `widget_folders`, e
 :cmd "thunar ~/Documents &"
 ```
 
----
-
-## Configuration Note
+### Configuration Note
 
 The Todo widget requires a local text file to function. Ensure the following path exists:
 
@@ -202,7 +197,7 @@ Task two
 
 <h1 align="center">Autostart & Keybindings</h1>
 
-## Autostart
+### Autostart
 
 You need to launch the Eww daemon and open the window inside your Window Manager configuration.
 Example:
@@ -216,9 +211,7 @@ exec-once = sleep 5 && eww open window_launcher
 exec-once = sleep 20 && eww open window_power
 ```
 
----
-
-## Keybindings
+### Keybindings
 
 To toggle the dashboard, map the execution script to your Window Manager configuration.
 
