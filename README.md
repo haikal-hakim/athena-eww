@@ -137,10 +137,10 @@ chmod +x ~/.config/eww/scripts/panel/*.sh
 | Module | Action | Command / Function |
 | :--- | :--- | :--- |
 | **`Wi-Fi`** | Click (Icon) | Toggles Wi-Fi status via `nmcli` |
-| | Click `󰅂` | Opens `nmtui` inside terminal |
+| | Click (Row) | Opens `nmtui` inside terminal |
 | **`Power Mode`** | Click | Cycles profiles via `powerprofilesctl` |
 | **`Bluetooth`** | Click (icon) | Toggles Bluetooth adapter status |
-| | Click `󰅂` | Opens `blueman-manager` |
+| | Click (Row) | Opens `blueman-manager` |
 | **`Do Not Disturb`** | Click | Toggles Dunst notifications status |
 | **`Screenshot`** | Click | Runs local script `~/.config/hypr/scripts/screenshot.sh` |
 | **`Screen Record`** | Click | Runs local script `~/.config/hypr/scripts/record.sh` |
