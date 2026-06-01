@@ -136,7 +136,6 @@ chmod +x ~/.config/eww/scripts/panel/*.sh
 
 | Module | Action | Command / Function |
 | :--- | :--- | :--- |
-
 | **`Wi-Fi`** | Click (Icon) | Toggles Wi-Fi status via `nmcli` |
 | | Click `󰅂` | Opens `nmtui` inside terminal |
 | **`Power Mode`** | Click | Cycles profiles via `powerprofilesctl` |
@@ -153,9 +152,8 @@ chmod +x ~/.config/eww/scripts/panel/*.sh
 
 ## Configuration Weather Location
 
->[!TIP]
->1. **Get an API Key**: Sign up at [OpenWeatherMap](https://openweathermap.org/) and generate a free API key from your account dashboard.
->2. **Find Your Coordinates**: Find the latitude (`LAT`) and longitude (`LON`) for your location (you can use Google Maps or any coordinate finder tool).
+1. **Get an API Key**: Sign up at [OpenWeatherMap](https://openweathermap.org/) and generate a free API key from your account dashboard.
+2. **Find Your Coordinates**: Find the latitude (`LAT`) and longitude (`LON`) for your location (you can use Google Maps or any coordinate finder tool).
 
 Open the weather script in your setup:
 
