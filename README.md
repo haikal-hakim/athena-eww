@@ -148,6 +148,8 @@ chmod +x ~/.config/eww/scripts/panel/*.sh
 > [!TIP]
 > The **Screenshot** and **Screen Record** features are tied to my custom Hyprland scripts. If you use different tools (like `grimblast` or `wf-recorder`), adjust the script paths directly inside `eww/src/panel/quicktoggle.yuck`.
 
+---
+
 <h1 align="center">Dashboard Features</h1>
 
 ## Configuration Weather Location
