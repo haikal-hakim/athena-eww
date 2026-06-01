@@ -239,12 +239,14 @@ bind = $mainMod, SPACE, exec, ~/.config/eww/scripts/dashboard/toggle_dashboard.s
 
 ---
 
+## Acknowledgments
+
 * **[Eww](https://github.com/elkowar/eww)** - Created by **Elkowar**. Huge thanks to the creator and contributors for this amazing widget ecosystem.
 * Also thanks to everyone whose open source configurations were inspiring.
 
-## Epilogue
+### Epilogue
 
-This configuration is a reflection of constant iteration and the pursuit of an enhanced workflow. Use it as a foundation, or take only what is useful.
+This configuration is the basis of freedom. Use it as a basis, or take only the parts that are useful.
 
 > "Freedom is when a person obeys his own conscience, not what other people say."
 
