@@ -2,7 +2,7 @@
 
 <p align="center">
   <br />
-    <a href="https://github.com/haikal-hakim/athena/stargazers">
+    <a href="https://github.com/haikal-hakim/athena-eww/stargazers">
     <img src="https://img.shields.io/github/stars/haikal-hakim/athena?style=flat-square&color=yellow&logo=github" />
   </a>
   <img src="https://img.shields.io/github/last-commit/haikal-hakim/athena-eww?style=flat-square&color=purple&logo=github" />
