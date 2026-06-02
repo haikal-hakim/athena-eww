@@ -1,9 +1,14 @@
 #!/bin/bash
-HYPRLAND_INSTANCE_SIGNATURE=$(ls /run/user/$(id -u)/hypr/ | head -1)
+
+if [ -z "$HYPRLAND_INSTANCE_SIGNATURE" ]; then
+  HYPRLAND_INSTANCE_SIGNATURE=$(ls -t /run/user/$(id -u)/hypr/ | head -1)
+fi
 
 generate() {
-  ACTIVE=$(hyprctl monitors -j | jq '.[] | select(.focused == true) | .activeWorkspace.id')
-  OCCUPIED=$(hyprctl workspaces -j | jq -r '.[] | select(.windows > 0) | .id' | tr '\n' ' ')
+  ACTIVE=$(hyprctl monitors -j | jq '.[] | select(.focused == true) | .activeWorkspace.id' 2>/dev/null)
+  ACTIVE=${ACTIVE:-0}
+
+  OCCUPIED=$(hyprctl workspaces -j | jq -r '.[] | select(.windows > 0) | .id' 2>/dev/null | tr '\n' ' ')
 
   echo -n '['
   for i in {1..6}; do
@@ -21,10 +26,18 @@ generate() {
 }
 
 generate
-socat -u UNIX-CONNECT:/run/user/$(id -u)/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock - | while read -r line; do
-  case ${line%>>*} in
-  workspace | focusedmon | destroyworkspace | createworkspace | urgent)
-    generate
-    ;;
-  esac
-done
+
+# Socket path
+SOCKET_PATH="/run/user/$(id -u)/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock"
+
+if [ -S "$SOCKET_PATH" ]; then
+  socat -u UNIX-CONNECT:"$SOCKET_PATH" - | while read -r line; do
+    case ${line%>>*} in
+    workspace | focusedmon | destroyworkspace | createworkspace | urgent)
+      generate
+      ;;
+    esac
+  done
+else
+  echo "Error: Socket Hyprland kagak ketemu!" >&2
+fi
