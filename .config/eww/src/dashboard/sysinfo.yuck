@@ -1,7 +1,3 @@
-(defpoll sysinfo :interval "2s"
-  :initial "{\"temp\": 0}"
-  "python3 ~/.config/eww/scripts/dashboard/sysinfo.py")
-
 (defvar open_cpu false)
 (defvar open_ram false)
 (defvar open_disk false)
@@ -104,7 +100,7 @@
                       :halign "center"
                       (eventbox :onhover "eww update open_temp=true"
                                 :onhoverlost "eww update open_temp=false"
-                                (circular-progress :value {sysinfo.temp}
+                                (circular-progress :value {EWW_TEMPS["YOUR_SENSOR_KEY"] ?: EWW_TEMPS["Tdie"] ?: 0}
                                                    :class "sysinfo-temp"
                                                    :thickness 6
                                                    :width 90
@@ -114,7 +110,8 @@
                                                           (label :class "sysinfo-icon-temp"
                                                                  :text "")
                                                           (label :class "sysinfo-stat"
-                                                                 :text "${sysinfo.temp}°C")
+                                                                 :text "${EWW_TEMPS["YOUR_SENSOR_KEY"]}°C")
+
                                                           )
                                                    )
                                 )
@@ -123,4 +120,6 @@
             )
 )
 )
+
+
 

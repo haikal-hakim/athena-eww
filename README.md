@@ -90,9 +90,7 @@ To ensure all features of the Athena Eww setup work correctly, make sure the fol
 | **`curl`** | Used to fetch weather data from OpenWeatherMap API. |
 | **`socat`** | Required for workspace. |
 | **`python`** | Required for helper scripts. |
-| **`python-psutil`** | Required for stats system info. |
 | **`libnotify`** | Needed for desktop notifications. |
-| **`lm_sensors`** | Linux monitoring temperature for system info. |
 | **`inotify-tools`** | Required for real-time file monitoring. |
 | **`networkmanager`** | Provides `nmcli` to handle Wi-Fi. |
 | **`hyprshutdown`** | power menu protection for exit hyprland. |
@@ -102,7 +100,7 @@ To ensure all features of the Athena Eww setup work correctly, make sure the fol
 You can install the required packages using `pacman`:
 
 ```bash
-sudo pacman -S dunst jq curl socat python python-psutil libnotify lm_sensors inotify-tools networkmanager hyprshutdown power-profiles-daemon
+sudo pacman -S dunst jq curl socat python libnotify inotify-tools networkmanager hyprshutdown power-profiles-daemon
 ```
 
 </details>
@@ -150,18 +148,18 @@ chmod +x ~/.config/eww/scripts/panel/*.sh
 | **`Screen Record`** | Click | Runs local script `~/.config/hypr/scripts/record.sh` |
 
 > [!TIP]
-> The **Screenshot** and **Screen Record** features are tied to my custom Hyprland scripts. If you use different tools (like `grimblast` or `wf-recorder`), adjust the script paths directly inside `eww/src/panel/quicktoggle.yuck`.
+> The **Screenshot** and **Screen Record** features are tied to my custom Hyprland scripts. Paths directly inside `eww/src/panel/quicktoggle.yuck`.
 
 ---
 
-<h1 align="center">Dashboard Features</h1>
+<h1 align="center">Configuration & Customization</h1>
 
-### Configuration Weather Location
+### Weather Location
 
 1. **Get an API Key**: Sign up at [OpenWeatherMap](https://openweathermap.org/) and generate a free API key from your account dashboard.
-2. **Find Your Coordinates**: Find the latitude (`LAT`) and longitude (`LON`) for your location (you can use Google Maps or any coordinate finder tool).
+2. **Find Your Coordinates**: Find the latitude (`LAT`) and longitude (`LON`) for your location.
 
-Open the weather script in your setup:
+Open the weather script:
 
 ```text
 eww/scripts/corner/weather.py
@@ -175,7 +173,9 @@ LAT="YOUR_LATITUDE"
 LON="YOUR_LONGITUDE"
 ```
 
-### Customizing Folder Shortcuts
+### Hardware Temperature
+
+### Folder Shortcuts
 
 To change the folder path and file manager customization for `widget_folders`, edit `eww/src/dashboard/folders.yuck`. Find that section and update the `cmd` directive:
 
