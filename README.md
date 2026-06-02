@@ -21,7 +21,7 @@
 
 ## About Repository
 
-My personal Eww configuration tailored for the Athena setup.
+My personal Eww configuration tailored for the Athena.
 
 This project is still a work in progress, so some parts might still be a bit messy. Thanks for understanding!
 
@@ -177,7 +177,7 @@ LON="YOUR_LONGITUDE"
 
 This setting uses Eww's built-in [Magic Variables](https://elkowar.github.io/eww/magic-vars.html), not external scripts.
 
-By default, the widget is configured with **`CORETEMP_PACKAGE_ID_0`** because my device uses an Intel CPU. Your device may have different hardware.
+By default, configured with **`CORETEMP_PACKAGE_ID_0`** because my device uses an Intel CPU. Your device may have different hardware.
 
 1. Find your actual CPU temperature key by running this command in your terminal:
 
@@ -188,15 +188,17 @@ eww get EWW_TEMPS
 2. Look at the output, find your `main/package temperature sensor name`, and update it inside `eww/src/dashboard/sysinfo.yuck`:
 
 ```clojure
-(circular-progress :value {EWW_TEMPS["YOUR_SENSOR_KEY"]}
+(circular-progress :value {EWW_TEMPS["YOUR_SENSOR_KEY"] ?: EWW_TEMPS["Tdie"] ?: 0}
                    :class "sysinfo-temp"
                    :thickness 6
                    :width 90
                    :height 90
                    (stack :selected {open_temp ? 1 : 0}
                           :transition "slideleft"
-                          (label :class "sysinfo-icon-temp" :text "")
-                          (label :class "sysinfo-stat" :text "${EWW_TEMPS["YOUR_SENSOR_KEY"]}°C")
+                          (label :class "sysinfo-icon-temp"
+                                 :text "")
+                                 (label :class "sysinfo-stat"
+                                        :text "${EWW_TEMPS["YOUR_SENSOR_KEY"] ?: EWW_TEMPS["Tdie"] ?: 0}°C")
                    )
 )
 ```
