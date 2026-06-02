@@ -1,5 +1,8 @@
 <h1 align="center">Athena Elkowars Wacky Widgets</h1>
 <p align="center">
+    <img src="https://img.shields.io/badge/Arch_Linux-1793D1?style=flat-square&logo=arch-linux&logoColor=white" />
+  <img src="https://img.shields.io/badge/Hyprland-33CCEE?style=flat-square&logo=hyprland&logoColor=white" />
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
   <br />
     <a href="https://github.com/haikal-hakim/athena-eww/stargazers">
     <img src="https://img.shields.io/github/stars/haikal-hakim/athena-eww?style=flat-square&color=yellow&logo=github" />
@@ -92,13 +95,14 @@ To ensure all features of the Athena Eww setup work correctly, make sure the fol
 | **`lm_sensors`** | Linux monitoring temperature for system info. |
 | **`inotify-tools`** | Required for real-time file monitoring. |
 | **`networkmanager`** | Provides `nmcli` to handle Wi-Fi. |
+| **`hyprshutdown`** | power menu protection for exit hyprland. |
 | **`power-profiles-daemon`** | Manages system power profiles. |
 
 ### Installation (Arch Linux)
 You can install the required packages using `pacman`:
 
 ```bash
-sudo pacman -S dunst jq curl socat python python-psutil libnotify lm_sensors inotify-tools networkmanager power-profiles-daemon
+sudo pacman -S dunst jq curl socat python python-psutil libnotify lm_sensors inotify-tools networkmanager hyprshutdown power-profiles-daemon
 ```
 
 </details>
@@ -231,7 +235,7 @@ Add the following to your `hyprland.conf`:
 bind = $mainMod, SPACE, exec, ~/.config/eww/scripts/dashboard/toggle_dashboard.sh
 ```
 
-### Laptop Multimedia Keys
+### Multimedia Keys
 
 To enable the OSD volume and brightness buttons on your keyboard, add this to `hyprland.conf`. Example:
 
