@@ -1,5 +1,5 @@
 (defpoll sysinfo :interval "2s"
-  :initial "{\"cpu\": 0, \"ram_used\": 0, \"ram_total\": 0, \"ram_percent\": 0, \"disk_used\": \"0G\", \"disk_total\": \"0G\", \"disk_percent\": 0, \"temp\": 0}"
+  :initial "{\"temp\": 0}"
   "python3 ~/.config/eww/scripts/dashboard/sysinfo.py")
 
 (defvar open_cpu false)
@@ -16,26 +16,27 @@
        ;; Top Row
        (box :orientation "horizontal"
             :spacing 10
+
             ;; CPU
             (box :orientation "vertical"
                  :halign "center"
                  (box :class "sysinfo-card"
                       :orientation "vertical"
                       :halign "center"
-                      (eventbox :cursor "pointer"
-                                :onclick "eww update open_cpu=${!open_cpu}"
-                                (circular-progress :value {sysinfo.cpu}
+                      (eventbox :cursor "default"
+                                :onhover "eww update open_cpu=true"
+                                :onhoverlost "eww update open_cpu=false"
+                                (circular-progress :value {EWW_CPU.avg}
                                                    :class "sysinfo-cpu"
                                                    :thickness 6
                                                    :width 90
                                                    :height 90
-
                                                    (stack :selected {open_cpu ? 1 : 0}
                                                           :transition "slideright"
                                                           (label :class "sysinfo-icon"
                                                                  :text "󰻠")
                                                           (label :class "sysinfo-stat"
-                                                                 :text "${sysinfo.cpu}%")
+                                                                 :text "${round(EWW_CPU.avg, 0)}%")
                                                           )
                                                    )
                                 )
@@ -48,20 +49,20 @@
                  (box :class "sysinfo-card"
                       :orientation "vertical"
                       :halign "center"
-                      (eventbox :cursor "pointer"
-                                :onclick "eww update open_ram=${!open_ram}"
-                                (circular-progress :value {sysinfo.ram_percent}
+                      (eventbox :cursor "default"
+                                :onhover "eww update open_ram=true"
+                                :onhoverlost "eww update open_ram=false"
+                                (circular-progress :value {EWW_RAM.used_mem_perc}
                                                    :class "sysinfo-ram"
                                                    :thickness 6
                                                    :width 90
                                                    :height 90
-
                                                    (stack :selected {open_ram ? 1 : 0}
                                                           :transition "slideleft"
                                                           (label :class "sysinfo-icon"
                                                                  :text "󰍛")
                                                           (label :class "sysinfo-stat"
-                                                                 :text "${sysinfo.ram_percent}%")
+                                                                 :text "${round(EWW_RAM.used_mem_perc, 0)}%")
                                                           )
                                                    )
                                 )
@@ -78,20 +79,20 @@
                  (box :class "sysinfo-card"
                       :orientation "vertical"
                       :halign "center"
-                      (eventbox :cursor "pointer"
-                                :onclick "eww update open_disk=${!open_disk}"
-                                (circular-progress :value {sysinfo.disk_percent}
+                      (eventbox :cursor "default"
+                                :onhover "eww update open_disk=true"
+                                :onhoverlost "eww update open_disk=false"
+                                (circular-progress :value {EWW_DISK["/"].used_perc}
                                                    :class "sysinfo-disk"
                                                    :thickness 6
                                                    :width 90
                                                    :height 90
-
                                                    (stack :selected {open_disk ? 1 : 0}
                                                           :transition "slideright"
                                                           (label :class "sysinfo-icon-disk"
                                                                  :text "󰋊")
                                                           (label :class "sysinfo-stat"
-                                                                 :text "${sysinfo.disk_used}")
+                                                                 :text "${round(EWW_DISK["/"].used_perc, 0)}%")
                                                           )
                                                    )
                                 )
@@ -104,14 +105,14 @@
                  (box :class "sysinfo-card"
                       :orientation "vertical"
                       :halign "center"
-                      (eventbox :cursor "pointer"
-                                :onclick "eww update open_temp=${!open_temp}"
+                      (eventbox :cursor "default"
+                                :onhover "eww update open_temp=true"
+                                :onhoverlost "eww update open_temp=false"
                                 (circular-progress :value {sysinfo.temp}
                                                    :class "sysinfo-temp"
                                                    :thickness 6
                                                    :width 90
                                                    :height 90
-
                                                    (stack :selected {open_temp ? 1 : 0}
                                                           :transition "slideleft"
                                                           (label :class "sysinfo-icon-temp"
@@ -126,3 +127,4 @@
             )
 )
 )
+
