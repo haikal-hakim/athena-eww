@@ -175,13 +175,39 @@ LON="YOUR_LONGITUDE"
 
 ### Hardware Temperature
 
+This setting uses Eww's built-in [Magic Variables](https://elkowar.github.io/eww/magic-vars.html), not external scripts.
+
+By default, the widget is configured with **`CORETEMP_PACKAGE_ID_0`** because my device uses an Intel CPU. Your device may have different hardware.
+
+1. Find your actual CPU temperature key by running this command in your terminal:
+
+```bash
+eww get EWW_TEMPS
+```
+
+2. Look at the output, find your `main/package temperature sensor name`, and update it inside `eww/src/dashboard/sysinfo.yuck`:
+
+```clojure
+(circular-progress :value {EWW_TEMPS["YOUR_SENSOR_KEY"]}
+                   :class "sysinfo-temp"
+                   :thickness 6
+                   :width 90
+                   :height 90
+                   (stack :selected {open_temp ? 1 : 0}
+                          :transition "slideleft"
+                          (label :class "sysinfo-icon-temp" :text "")
+                          (label :class "sysinfo-stat" :text "${EWW_TEMPS["YOUR_SENSOR_KEY"]}°C")
+                   )
+)
+```
+
 ### Folder Shortcuts
 
 To change the folder path and file manager customization for `widget_folders`, edit `eww/src/dashboard/folders.yuck`. Find that section and update the `cmd` directive:
 
 **Example:**
 
-```lisp
+```clojure
 :cmd "thunar ~/Documents &"
 ```
 
