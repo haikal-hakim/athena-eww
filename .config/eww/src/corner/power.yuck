@@ -17,10 +17,6 @@
             :onhoverlost "eww update hover_power=false && eww update power_confirm=''"
 
             (box :orientation "horizontal"
-                 :space-evenly false
-                 :halign "end"
-                 :valign "center"
-
                  (revealer :transition "slideleft"
                            :reveal hover_power
                            :duration "250ms"
@@ -40,9 +36,9 @@
                                            :cmd "")
                                 (power-btn :icon "󰍃"
                                            :class_name "p-logout"
-                                           :cmd "")))
+                                           :cmd ""))
+                           )
 
-                 (box :class "ghost-trigger-zone")
                  )
             )
   )
