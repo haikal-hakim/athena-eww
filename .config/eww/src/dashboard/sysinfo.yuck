@@ -110,7 +110,7 @@
                                                           (label :class "sysinfo-icon-temp"
                                                                  :text "")
                                                           (label :class "sysinfo-stat"
-                                                                 :text "${EWW_TEMPS["CORETEMP_PACKAGE_ID_0"]}°C")
+                                                                 :text "${EWW_TEMPS["CORETEMP_PACKAGE_ID_0"] ?: EWW_TEMPS["Tdie"] ?: 0}°C")
 
                                                           )
                                                    )
@@ -118,7 +118,7 @@
                       )
                  )
             )
-)
+  )
 )
 
 
