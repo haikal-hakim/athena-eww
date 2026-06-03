@@ -18,12 +18,12 @@
             :hexpand true
 
             (label :class "music-title"
-                   :text {music_title == "No Media" || music_title == "" ? "Nothing Playing" : music_title}
+                   :text {music_data.title == "No Media" || music_data.title == "" ? "Nothing Playing" : music_data.title}
                    :limit-width 20
                    :halign "center")
 
             (label :class "music-artist"
-                   :text {music_artist == "No Artist" || music_artist == "" ? "No Artist" : music_artist}
+                   :text {music_data.artist == "No Artist" || music_data.artist == "" ? "No Artist" : music_data.artist}
                    :limit-width 20
                    :halign "center")
 
@@ -39,7 +39,7 @@
                  (eventbox :cursor "pointer"
                            (button :onclick "playerctl --player=spotify play-pause"
                                    :style "background: none; box-shadow: none;"
-                                   (label :text {music_status == "Playing" ? "󰏤" : "󰐊"})))
+                                   (label :text {music_data.status == "Playing" ? "󰏤" : "󰐊"})))
 
                  (eventbox :cursor "pointer"
                            (button :onclick "playerctl --player=spotify next"

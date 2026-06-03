@@ -1,9 +1,7 @@
 @import "../tokens.scss";
 
 .bt-card {
-  background-image: linear-gradient(to right, $surface0, $base);
-  border-radius: $rad;
-  padding: 0;
+  background-color: transparent;
 
   button {
     background: transparent;

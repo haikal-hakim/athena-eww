@@ -1,9 +1,7 @@
 @import "../tokens.scss";
 
 .wifi-card {
-  background-image: linear-gradient(to right, $surface0, $base);
-  border-radius: $rad;
-  padding: 0;
+  background: transparent;
 
   button {
     background: transparent;
@@ -16,8 +14,8 @@
 
     .wifi-icon {
       font-size: 25px;
-
-      margin-right: 4px;
+      margin-right: 10px;
+      margin-left: -4px;
       transition: color 0.2s ease;
     }
   }

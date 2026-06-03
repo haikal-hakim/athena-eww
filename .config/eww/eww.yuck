@@ -9,8 +9,8 @@
 (defwindow window_bar
   :monitor 0
   :geometry (geometry :x "0%"
-                      :y "0%"
-                      :width "97.5%"
+                      :y "1%"
+                      :width "70%"
                       :height "0px"
                       :anchor "top center")
   :stacking "fg"
@@ -45,4 +45,3 @@
   :stacking "fg"
   :namespace "eww-panel"
   (widget_panel))
-

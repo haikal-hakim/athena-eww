@@ -1,7 +1,7 @@
 @import "../tokens.scss";
 
 .clock-card {
-  background-color: $base;
+  background-color: $glass;
   padding: 10px 26px;
   border-radius: 0px 60px 60px 0px;
 }
@@ -9,7 +9,7 @@
 .clock-text {
   font-size: 50px;
   font-weight: bold;
-  color: $peach;
+  color: $lavender;
 }
 
 .uptime-layout {

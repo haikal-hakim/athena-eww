@@ -1,19 +1,19 @@
 @import "../tokens.scss";
 
 .panel-card {
-  background-color: rgba(26, 27, 38, 0.7);
+  background-color: $glass;
   border-radius: $rad;
   padding: 20px;
 
   .left-box {
-    background-color: rgba($base, 0.95);
+    background-color: $glass;
     padding: 14px;
     border-radius: $rad;
   }
 
   .dnd-card,
   .sub-right-box {
-    background-color: rgba($base, 0.95);
+    background-color: $glass;
     padding: 20px 16px;
     border-radius: $rad;
   }

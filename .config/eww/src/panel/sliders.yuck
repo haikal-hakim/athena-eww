@@ -2,12 +2,12 @@
   :initial '{"volume": 0, "brightness": 0}' "bash ~/.config/eww/scripts/panel/sliders.sh")
 
 (defwidget widget_sliders []
-  (box :orientation "vertical"
+  (box :class "slider-wrapper" 
+       :orientation "vertical"
        :space-evenly false
-       :spacing 12
+       :spacing 18
 
-       (box :class "slider-wrapper"
-            :orientation "horizontal"
+       (box :orientation "horizontal"
             :space-evenly false
             :spacing 12
             :hexpand true
@@ -23,8 +23,7 @@
                    :value {slider_data.brightness}
                    :onchange "brightnessctl set {}% && eww update osd_value={} osd_type=brightness osd_icon=󰖨"))
 
-       (box :class "slider-wrapper"
-            :orientation "horizontal"
+       (box :orientation "horizontal"
             :space-evenly false
             :spacing 12
             :hexpand true

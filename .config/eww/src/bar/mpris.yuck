@@ -1,11 +1,6 @@
-(deflisten music_title :initial "No Media"
-  "playerctl -p spotify -F metadata -f '{{title}}' 2>/dev/null || echo 'No Media'")
-
-(deflisten music_artist :initial "No Artist"
-  "playerctl -p spotify -F metadata -f '{{artist}}' 2>/dev/null || echo 'No Artist'")
-
-(deflisten music_status :initial "Stopped"
-  "playerctl -p spotify -F status 2>/dev/null || echo 'Stopped'")
+(deflisten music_data
+  :initial '{"title": "No Media", "artist": "No Artist", "status": "Stopped"}'
+  "bash ~/.config/eww/scripts/bar/mpris.sh")
 
 (defpoll current_date :interval "60m"
   "date '+%d %B %Y'")
@@ -22,12 +17,12 @@
 
             (label :class "icon"
                    :valign "center"
-                   :visible {music_title != "" && music_title != "No Media"}
+                   :visible {music_data.title != "" && music_data.title != "No Media"}
                    :text "󰎈")
 
             (label :class "title"
                    :valign "center"
-                   :text {music_title != "" && music_title != "No Media" ? music_title : current_date}
+                   :text {music_data.title != "" && music_data.title != "No Media" ? music_data.title : current_date}
                    :limit-width 18)
             )
        )
