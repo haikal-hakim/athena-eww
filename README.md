@@ -178,7 +178,6 @@ LON="YOUR_LONGITUDE"
 This setting uses Eww's built-in [Magic Variables](https://elkowar.github.io/eww/magic-vars.html), not external scripts.
 
 By default, configured with **`CORETEMP_PACKAGE_ID_0`** because my device uses an Intel CPU. Your device may have different hardware.
-
 1. Find your actual CPU temperature key by running this command in your terminal:
 
 ```bash
@@ -200,6 +199,42 @@ eww get EWW_TEMPS
                                  (label :class "sysinfo-stat"
                                         :text "${EWW_TEMPS["YOUR_SENSOR_KEY"] ?: EWW_TEMPS["Tdie"] ?: 0}°C")
                    )
+)
+```
+
+### Hardware Battery
+
+The battery widget also uses magic variables.
+
+Default uses **`BAT0`** and maybe your device is different.
+1. Find your actual battery identifier key by running this command in your terminal:
+
+```bash
+eww get EWW_BATTERY
+```
+
+2. Look at the output, find your battery name, and update it inside `eww/src/bar/battery.yuck`:
+
+```lisp
+(defwidget widget_battery []
+  (box :class "battery-container ${EWW_BATTERY["YOUR_BATTERY_KEY"].status == 'AC' ? 'ac' :
+       EWW_BATTERY["YOUR_BATTERY_KEY"].status == 'Charging' ? 'charging' :
+       EWW_BATTERY["YOUR_BATTERY_KEY"].capacity < 11 ? 'critical' :
+       EWW_BATTERY["YOUR_BATTERY_KEY"].capacity < 26 ? 'low' :
+       EWW_BATTERY["YOUR_BATTERY_KEY"].capacity < 41 ? 'warning-low' :
+       EWW_BATTERY["YOUR_BATTERY_KEY"].capacity < 61 ? 'warning-high' :
+       EWW_BATTERY["YOUR_BATTERY_KEY"].capacity < 81 ? 'good' :
+       EWW_BATTERY["YOUR_BATTERY_KEY"].capacity < 91 ? 'high' : 'full'}"
+       :orientation "horizontal"
+       :space-evenly false
+       :tooltip "${EWW_BATTERY["YOUR_BATTERY_KEY"].capacity}% | ${EWW_BATTERY["YOUR_BATTERY_KEY"].status}"
+
+       (circular-progress :class "battery-circle"
+                          :value "${EWW_BATTERY["YOUR_BATTERY_KEY"].capacity ?: 0}"
+                          :thickness 4
+                          (label :class "battery-space-holder"
+                                 :text ""))
+  )
 )
 ```
 
