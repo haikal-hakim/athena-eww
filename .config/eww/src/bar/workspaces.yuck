@@ -3,14 +3,15 @@
   "bash ~/.config/eww/scripts/bar/workspaces.sh")
 
 (defwidget widget_workspaces []
-  (box :orientation "h"
+  (box :class "ws-container"
+       :orientation "horizontal"
        :space-evenly false
        :spacing 10
        :valign "center"
-    (for ws in {workspaces_data}
-      (eventbox :cursor "pointer"
-        (button :class "ws-pill ${ws.state}"
-                :onclick "hyprctl dispatch workspace ${ws.id}"
-                )))
+       (for ws in {workspaces_data}
+            (eventbox :cursor "pointer"
+                      (button :class "ws ${ws.state}"
+                              :onclick "hyprctl dispatch workspace ${ws.id}"
+                              )))
+       )
   )
-)
