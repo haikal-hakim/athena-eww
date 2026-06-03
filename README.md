@@ -29,9 +29,9 @@ This project is still a work in progress, so some parts might still be a bit mes
 
 ## Preview
 
-<img width="2880" height="1800" alt="eww-priview" src="https://github.com/user-attachments/assets/21b4ecd8-873a-4efe-83ab-2135226495f5" />
+<img width="2880" height="1800" alt="prieview" src="https://github.com/user-attachments/assets/3231e0cf-0547-4ac1-a574-063450c5cdff" />
 
-https://github.com/user-attachments/assets/ac15f448-8339-403a-bb59-688ef2c30191
+https://github.com/user-attachments/assets/17d52262-4f6b-4110-b140-c2e752420a64
 
 ---
 
