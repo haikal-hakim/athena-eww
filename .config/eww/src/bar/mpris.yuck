@@ -20,7 +20,7 @@
                    :visible {music_data.title != "" && music_data.title != "No Media"}
                    :text "󰎈")
 
-            (label :class "title"
+            (label :class {music_data.title != "" && music_data.title != "No Media" ? "title" : "date-text"}
                    :valign "center"
                    :text {music_data.title != "" && music_data.title != "No Media" ? music_data.title : current_date}
                    :limit-width 18)
