@@ -1,23 +1,24 @@
-(deflisten bat_notif_daemon "bash ~/.config/eww/scripts/bar/battery.sh")
+(defpoll battery_data :interval "2s"
+  :initial '{"icon": "󱉞", "percent": 100, "status": "Unknown", "time": "--:--"}'
+  "bash ~/.config/eww/scripts/bar/battery.sh")
 
 (defwidget widget_battery []
-  (box :class "battery-container ${EWW_BATTERY.BAT0.status == 'AC' ? 'ac' :
-       EWW_BATTERY.BAT0.status == 'Charging' ? 'charging' :
-       EWW_BATTERY.BAT0.capacity < 11 ? 'critical' :
-       EWW_BATTERY.BAT0.capacity < 26 ? 'low' :
-       EWW_BATTERY.BAT0.capacity < 41 ? 'warning-low' :
-       EWW_BATTERY.BAT0.capacity < 61 ? 'warning-high' :
-       EWW_BATTERY.BAT0.capacity < 81 ? 'good' :
-       EWW_BATTERY.BAT0.capacity < 91 ? 'high' : 'full'}"
+  (box :class "battery-container ${battery_data.status == 'AC' ? 'ac' :
+       battery_data.status == 'Charging' ? 'charging' :
+       battery_data.percent < 11 ? 'critical' :
+       battery_data.percent < 26 ? 'low' :
+       battery_data.percent < 41 ? 'warning-low' :
+       battery_data.percent < 61 ? 'warning-high' :
+       battery_data.percent < 81 ? 'good' :
+       battery_data.percent < 91 ? 'high' : 'full'}"
        :orientation "horizontal"
        :space-evenly false
-       :tooltip "${EWW_BATTERY.BAT0.capacity}% | ${EWW_BATTERY.BAT0.status}"
+       :tooltip "${battery_data.percent}% | ${battery_data.status == 'AC' || battery_data.status == 'Charging' ? battery_data.status : battery_data.time}"
 
        (circular-progress :class "battery-circle"
-                          :value "${EWW_BATTERY.BAT0.capacity ?: 0}"
+                          :value "${battery_data.percent ?: 0}"
                           :thickness 4
                           (label :class "battery-space-holder"
                                  :text ""))
        )
   )
-
