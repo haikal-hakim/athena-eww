@@ -8,7 +8,7 @@ touch "$FILE_TODO"
 generate_json() {
   line1=$(sed -n '1p' "$FILE_TODO" | sed 's/"/\\"/g')
   line2=$(sed -n '2p' "$FILE_TODO" | sed 's/"/\\"/g')
-  line3=$(sed -n '2p' "$FILE_TODO" | sed 's/"/\\"/g')
+  line3=$(sed -n '3p' "$FILE_TODO" | sed 's/"/\\"/g')
 
   echo "{\"line1\":\"$line1\", \"line2\":\"$line2\", \"line3\":\"$(sed -n '3p' "$FILE_TODO" | sed 's/"/\\"/g')\"}"
 }
