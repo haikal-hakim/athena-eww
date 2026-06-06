@@ -52,17 +52,16 @@ Here is the folder structure configuration:
 athena-eww/
 └── .config/
     ├── dunst/
-    ├── eww
-    │   ├── assets/
-    │   ├── eww.scss
-    │   ├── eww.yuck
+    ├── eww/
+    │   ├── assets/           # Icons and widget images
     │   ├── bar/
     │   ├── corner/
     │   ├── dashboard/
     │   ├── panel/
-    │   └── theme/
-    │       ├── manifest.scss
-    │       └── tokens.scss
+    │   ├── theme/            # Theme state and color palettes
+    │   ├── eww.yuck
+    │   ├── eww.scss
+    │   └── toggle_theme.sh   # Switcher theme script
     ├── fastfetch/
     └── rofi/
 ```
@@ -104,6 +103,7 @@ sudo pacman -S dunst jq curl socat python libnotify inotify-tools networkmanager
 > All scripts located in the scripts/ directory require execution permissions. Before running the widgets, ensure you have applied the necessary permissions:
 
 ```bash
+chmod +x ~/.config/eww/toggle_theme.sh
 chmod +x ~/.config/eww/bar/scripts/*.sh
 chmod +x ~/.config/eww/corner/scripts/*.sh
 chmod +x ~/.config/eww/dashboard/scripts/*.sh
