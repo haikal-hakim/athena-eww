@@ -140,7 +140,7 @@ chmod +x ~/.config/eww/panel/scripts/*.sh
 | **`Screen Record`** | Click | Runs local script `~/.config/hypr/scripts/record.sh` |
 
 > [!TIP]
-> The **Screenshot** and **Screen Record** features are tied to my custom Hyprland scripts. Paths directly inside `eww/src/panel/quicktoggle.yuck`.
+> The **Screenshot** and **Screen Record** features are tied to my custom Hyprland scripts. Paths directly inside `eww/panel/panel/quicktoggle.yuck`.
 
 ---
 
