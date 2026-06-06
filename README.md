@@ -216,11 +216,11 @@ You need to launch the Eww daemon and open the window inside your Window Manager
 Example `Hyprland`:
 
 ```lua
-	hl.exec_cmd("eww daemon")
-	hl.exec_cmd("sleep 2 && eww open window_bar")
-	hl.exec_cmd("sleep 3 && eww open window_website")
-	hl.exec_cmd("sleep 4 && eww open window_launcher")
-	hl.exec_cmd("sleep 5 && eww open window_power")
+hl.exec_cmd("eww daemon")
+hl.exec_cmd("sleep 2 && eww open window_bar")
+hl.exec_cmd("sleep 3 && eww open window_website")
+hl.exec_cmd("sleep 4 && eww open window_launcher")
+hl.exec_cmd("sleep 5 && eww open window_power")
 ```
 
 ### Keybindings
@@ -236,9 +236,8 @@ bash ~/.config/eww/dashboard/scripts/toggle_dashboard.sh
 
 ### Example (Hyprland)
 
-Add the following to your `hyprland.conf`:
+Add the following to your `hyprland.lua`:
 
-```lua
 ```lua
 hl.bind(mainMod .. " + D", function()
 	hl.dispatch(hl.dsp.exec_cmd(home .. "/.config/eww/dashboard/scripts/toggle_dashboard.sh"))
