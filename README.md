@@ -176,8 +176,8 @@ eww get EWW_TEMPS
 
 2. Look at the output, find your `main/package temperature sensor name`, and update it inside `eww/dashboard/src/sysinfo.yuck`:
 
-```clojure
-(circular-progress :value {EWW_TEMPS["YOUR_SENSOR_KEY"] ?: EWW_TEMPS["Tdie"] ?: 0}
+```lips
+(circular-progress :value {((EWW_TEMPS["YOUR_SESOR_KEY"] ?: EWW_TEMPS["Tdie"] ?: 0) / 100) * 100}
                    :class "sysinfo-temp"
                    :thickness 6
                    :width 90
@@ -187,7 +187,7 @@ eww get EWW_TEMPS
                           (label :class "sysinfo-icon-temp"
                                  :text "")
                                  (label :class "sysinfo-stat"
-                                        :text "${EWW_TEMPS["YOUR_SENSOR_KEY"] ?: EWW_TEMPS["Tdie"] ?: 0}°C")
+                                        :text "${EWW_TEMPS["YOUR_SESOR_KEY"] ?: EWW_TEMPS["Tdie"] ?: 0}°C")
                    )
 )
 ```
