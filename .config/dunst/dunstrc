@@ -29,7 +29,7 @@ follow = mouse
   padding = 8
   horizontal_padding = 8
   text_icon_padding = 15
-  frame_width = 2
+  frame_width = 0
   frame_color = "#313244"
   corner_radius = 12
   corners = all
@@ -63,8 +63,8 @@ follow = mouse
   enable_recursive_icon_lookup = true
   icon_theme = "Tela-circle-dark"
   icon_position = left
-  min_icon_size = 32
-  max_icon_size = 32
+  min_icon_size = 40
+  max_icon_size = 40
   icon_corner_radius = 12
   icon_corners = all
 
@@ -104,15 +104,14 @@ follow = mouse
   [urgency_low]
   background = "#181825"
   foreground = "#cdd6f4"
-  timeout = 10
+  timeout = 8
   default_icon = dialog-information
 
 
   [urgency_normal]
-  background = "#24283b"
+  background = "#1e1e2e"
   foreground = "#cdd6f4"
-  frame_color = "#181825"
-  timeout = 10
+  timeout = 8
   override_pause_level = 30
   default_icon = dialog-information
 
@@ -120,7 +119,6 @@ follow = mouse
   [urgency_critical]
   background = "#500c19eb"
   foreground = "#cdd6f4"
-  frame_color = "#ff50648c"
   timeout = 0
   override_pause_level = 60
   default_icon = dialog-warning
