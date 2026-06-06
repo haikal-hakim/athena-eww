@@ -45,33 +45,25 @@ This Rofi display
  
 ---
 
-Here is the folder structure of the eww configuration (`athena-eww`):
+Here is the folder structure configuration:
 
 ```directory
 athena-eww/
 └── .config/
     ├── dunst/
+    ├── eww
+    │   ├── assets/
+    │   ├── eww.scss
+    │   ├── eww.yuck
+    │   ├── bar/
+    │   ├── corner/
+    │   ├── dashboard/
+    │   ├── panel/
+    │   └── theme/
+    │       ├── manifest.scss
+    │       └── tokens.scss
     ├── fastfetch/
-    ├── rofi/
-    └── eww/                 # Main
-        ├── assets/          # Images & icons
-        ├── eww.scss
-        ├── eww.yuck
-        ├── scripts/         # Backend data scripts
-        │   ├── bar/
-        │   └── dashboard/   < toggle_dashboard.sh is here
-        ├── src/             # .yuck
-        │   ├── bar/
-        │   ├── corner/
-        │   ├── dashboard/
-        │   └── panel/
-        └── styles/          # .scss
-            ├── bar/
-            ├── corner/
-            ├── dashboard/
-            ├── panel/
-            ├── _index.scss  # Main import styles
-            └── tokens.scss  # Style variables
+    └── rofi/
 ```
 
 ---
@@ -111,10 +103,10 @@ sudo pacman -S dunst jq curl socat python libnotify inotify-tools networkmanager
 > All scripts located in the scripts/ directory require execution permissions. Before running the widgets, ensure you have applied the necessary permissions:
 
 ```bash
-chmod +x ~/.config/eww/scripts/bar/*.sh
-chmod +x ~/.config/eww/scripts/corner/*.sh
-chmod +x ~/.config/eww/scripts/dashboard/*.sh
-chmod +x ~/.config/eww/scripts/panel/*.sh
+chmod +x ~/.config/eww/bar/scripts/*.sh
+chmod +x ~/.config/eww/corner/scripts/*.sh
+chmod +x ~/.config/eww/dashboard/scripts/*.sh
+chmod +x ~/.config/eww/panel/scripts/*.sh
 ```
 
 ---
@@ -156,21 +148,19 @@ chmod +x ~/.config/eww/scripts/panel/*.sh
 
 ### Weather Location
 
-1. **Get an API Key**: Sign up at [OpenWeatherMap](https://openweathermap.org/) and generate a free API key from your account dashboard.
-2. **Find Your Coordinates**: Find the latitude (`LAT`) and longitude (`LON`) for your location.
+1. **Get an API Key**: Sign up at [OpenWeatherMap](https://openweathermap.org/) generate a API key from your account. Find your location.
 
 Open the weather script:
 
 ```text
-eww/scripts/corner/weather.py
+eww/dashboard/scripts/weather.py
 ```
 
 Edit your coordinates and API Key inside the script:
 
 ```Bash
 API_KEY="YOUR_API_KEY"
-LAT="YOUR_LATITUDE"
-LON="YOUR_LONGITUDE"
+CITY="YOUR_CITY"
 ```
 
 ### Hardware Temperature
@@ -184,7 +174,7 @@ By default, configured with **`CORETEMP_PACKAGE_ID_0`** because my device uses a
 eww get EWW_TEMPS
 ```
 
-2. Look at the output, find your `main/package temperature sensor name`, and update it inside `eww/src/dashboard/sysinfo.yuck`:
+2. Look at the output, find your `main/package temperature sensor name`, and update it inside `eww/dashboard/src/sysinfo.yuck`:
 
 ```clojure
 (circular-progress :value {EWW_TEMPS["YOUR_SENSOR_KEY"] ?: EWW_TEMPS["Tdie"] ?: 0}
@@ -202,16 +192,6 @@ eww get EWW_TEMPS
 )
 ```
 
-### Folder Shortcuts
-
-To change the folder path and file manager customization for `widget_folders`, edit `eww/src/dashboard/folders.yuck`. Find that section and update the `cmd` directive:
-
-**Example:**
-
-```clojure
-:cmd "thunar ~/Documents &"
-```
-
 ### Configuration Note
 
 The Todo widget requires a local text file to function. Ensure the following path exists:
@@ -223,6 +203,7 @@ Example content:
 ```text
 Task one
 Task two
+Task Three
 ```
 
 ---
@@ -232,15 +213,14 @@ Task two
 ### Autostart
 
 You need to launch the Eww daemon and open the window inside your Window Manager configuration.
-Example:
+Example `Hyprland`:
 
-```text
-exec-once = eww daemon
-exec-once = sleep 2 && eww open window_bar
-exec-once = sleep 3 && eww open window_weather
-exec-once = sleep 4 && eww open window_clock
-exec-once = sleep 5 && eww open window_launcher
-exec-once = sleep 20 && eww open window_power
+```lua
+	hl.exec_cmd("eww daemon")
+	hl.exec_cmd("sleep 2 && eww open window_bar")
+	hl.exec_cmd("sleep 3 && eww open window_website")
+	hl.exec_cmd("sleep 4 && eww open window_launcher")
+	hl.exec_cmd("sleep 5 && eww open window_power")
 ```
 
 ### Keybindings
@@ -251,26 +231,42 @@ To toggle the dashboard, map the execution script to your Window Manager configu
 >You can test the toggle script directly from your terminal by running:
 
 ```bash
-bash ~/.config/eww/scripts/dashboard/toggle_dashboard.sh
+bash ~/.config/eww/dashboard/scripts/toggle_dashboard.sh
 ```
 
 ### Example (Hyprland)
 
 Add the following to your `hyprland.conf`:
 
-```text
-bind = $mainMod, SPACE, exec, ~/.config/eww/scripts/dashboard/toggle_dashboard.sh
+```lua
+```lua
+hl.bind(mainMod .. " + D", function()
+	hl.dispatch(hl.dsp.exec_cmd(home .. "/.config/eww/dashboard/scripts/toggle_dashboard.sh"))
+end)
 ```
 
 ### Multimedia Keys
 
-To enable the OSD volume and brightness buttons on your keyboard, add this to `hyprland.conf`. Example:
+To enable the OSD volume and brightness buttons on your keyboard, add this to `hyprland.lua`. Example:
 
-```text
-bindel = ,XF86AudioRaiseVolume, exec, bash ~/.config/eww/scripts/corner/osd_vol.sh vol-up
-bindel = ,XF86AudioLowerVolume, exec, bash ~/.config/eww/scripts/corner/osd_vol.sh vol-down
-bindel = ,XF86MonBrightnessUp, exec, bash ~/.config/eww/scripts/corner/osd_bright.sh bright-up
-bindel = ,XF86MonBrightnessDown, exec, bash ~/.config/eww/scripts/corner/osd_bright.sh bright-down
+```lua
+-- Volume --
+hl.bind("XF86AudioRaiseVolume", function()
+	hl.dispatch(hl.dsp.exec_cmd("bash " .. home .. "/.config/eww/corner/scripts/osd_vol.sh vol-up"))
+end, { repeating = true })
+
+hl.bind("XF86AudioLowerVolume", function()
+	hl.dispatch(hl.dsp.exec_cmd("bash " .. home .. "/.config/eww/corner/scripts/osd_vol.sh vol-down"))
+end, { repeating = true })
+
+-- Brightness --
+hl.bind("XF86MonBrightnessUp", function()
+	hl.dispatch(hl.dsp.exec_cmd("bash " .. home .. "/.config/eww/corner/scripts/osd_bright.sh bright-up"))
+end, { repeating = true })
+
+hl.bind("XF86MonBrightnessDown", function()
+	hl.dispatch(hl.dsp.exec_cmd("bash " .. home .. "/.config/eww/corner/scripts/osd_bright.sh bright-down"))
+end, { repeating = true })
 ```
 
 ---
