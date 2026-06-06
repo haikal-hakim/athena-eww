@@ -29,9 +29,9 @@ This project is still a work in progress, so some parts might still be a bit mes
 
 ## Preview
 
-<img src="https://github.com/user-attachments/assets/16365ef7-b42f-4b95-a2f1-58954822444e" /> <img src="https://github.com/user-attachments/assets/0f32f1e9-cc21-4530-9836-9809d325fa25" />
+<img src="https://github.com/user-attachments/assets/a8d019df-6909-4e9e-9801-f6994b5e02aa" /> <img src="https://github.com/user-attachments/assets/982cc07f-043e-4050-a1d3-c529204cb0dc" />
 
-https://github.com/user-attachments/assets/e3c054da-ab60-47d9-a619-54c39f30998e
+https://github.com/user-attachments/assets/53c9fb07-47c8-47c6-868a-e05d8c80ebe5
 
 ---
 
