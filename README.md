@@ -31,7 +31,7 @@ This project is still a work in progress, so some parts might still be a bit mes
 
 <img src="https://github.com/user-attachments/assets/a8d019df-6909-4e9e-9801-f6994b5e02aa" /> <img src="https://github.com/user-attachments/assets/982cc07f-043e-4050-a1d3-c529204cb0dc" />
 
-https://github.com/user-attachments/assets/53c9fb07-47c8-47c6-868a-e05d8c80ebe5
+https://github.com/user-attachments/assets/0954f470-4e62-480a-9cf7-3b219e3ee9f1
 
 ---
 
