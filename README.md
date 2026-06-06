@@ -29,7 +29,7 @@ This project is still a work in progress, so some parts might still be a bit mes
 
 ## Preview
 
-<img width="2880" height="1800" alt="desktop" src="https://github.com/user-attachments/assets/16365ef7-b42f-4b95-a2f1-58954822444e" />
+<img src="https://github.com/user-attachments/assets/16365ef7-b42f-4b95-a2f1-58954822444e" /> <img src="https://github.com/user-attachments/assets/0f32f1e9-cc21-4530-9836-9809d325fa25" />
 
 https://github.com/user-attachments/assets/e3c054da-ab60-47d9-a619-54c39f30998e
 
