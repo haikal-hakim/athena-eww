@@ -29,9 +29,9 @@ This project is still a work in progress, so some parts might still be a bit mes
 
 ## Preview
 
-<img width="2880" height="1800" alt="prieview" src="https://github.com/user-attachments/assets/3231e0cf-0547-4ac1-a574-063450c5cdff" />
+<img width="2880" height="1800" alt="desktop" src="https://github.com/user-attachments/assets/16365ef7-b42f-4b95-a2f1-58954822444e" />
 
-https://github.com/user-attachments/assets/17d52262-4f6b-4110-b140-c2e752420a64
+https://github.com/user-attachments/assets/e3c054da-ab60-47d9-a619-54c39f30998e
 
 ---
 
