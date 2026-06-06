@@ -12,96 +12,77 @@
             :space-evenly true
             :spacing 12
 
-            ;; =========================
-            ;; MOCHA
-            ;; =========================
-
+            ;; mocha
             (eventbox :cursor "pointer"
-              (button
-                :class "btn-theme mocha"
+                      (button :class "btn-theme mocha"
+                              :onclick "~/.config/eww/toggle_theme.sh catppuccin_mocha"
 
-                :onclick "~/.config/eww/toggle_theme.sh catppuccin_mocha"
+                              (box :orientation "vertical"
+                                   :spacing 6
+                                   (box :class "sw-box mocha-box"
+                                        :halign "center"
+                                        :valign "center"
 
-                (box :orientation "vertical"
-                     :spacing 6
+                                        (label :class "icon-mocha"
+                                               :text ""))
+                                   (label :class "theme-label"
+                                          :text "Mocha"))
+                              )
+                      )
 
-                     (box :class "sw-box mocha-box"
-                          :halign "center"
-                          :valign "center"
-
-                          (label :class "icon-mocha"
-                                 :text ""))
-
-                     (label :class "theme-label"
-                            :text "Mocha"))))
-
-            ;; =========================
-            ;; LATTE
-            ;; =========================
-
+            ;; latte
             (eventbox :cursor "pointer"
-              (button
-                :class "btn-theme latte"
+                      (button :class "btn-theme latte"
+                              :onclick "~/.config/eww/toggle_theme.sh catppuccin_latte"
 
-                :onclick "~/.config/eww/toggle_theme.sh catppuccin_latte"
+                              (box :orientation "vertical"
+                                   :spacing 6
+                                   (box :class "sw-box latte-box"
+                                        :halign "center"
+                                        :valign "center"
 
-                (box :orientation "vertical"
-                     :spacing 6
+                                        (label :class "icon-latte"
+                                               :text ""))
+                                   (label :class "theme-label"
+                                          :text "Latte"))
+                              )
+                      )
 
-                     (box :class "sw-box latte-box"
-                          :halign "center"
-                          :valign "center"
-
-                          (label :class "icon-latte"
-                                 :text ""))
-
-                     (label :class "theme-label"
-                            :text "Latte"))))
-
-            ;; =========================
-            ;; TOKYO NIGHT
-            ;; =========================
-
+            ;; tokyo_night
             (eventbox :cursor "pointer"
-              (button
-                :class "btn-theme night"
+                      (button :class "btn-theme night"
+                              :onclick "~/.config/eww/toggle_theme.sh tokyo_night"
 
-                :onclick "~/.config/eww/toggle_theme.sh tokyo_night"
+                              (box :orientation "vertical"
+                                   :spacing 6
+                                   (box :class "sw-box night-box"
+                                        :halign "center"
+                                        :valign "center"
 
-                (box :orientation "vertical"
-                     :spacing 6
+                                        (label :class "icon-night"
+                                               :text "󰊠"))
+                                   (label :class "theme-label"
+                                          :text "Night"))
+                              )
+                      )
 
-                     (box :class "sw-box night-box"
-                          :halign "center"
-                          :valign "center"
-
-                          (label :class "icon-night"
-                                 :text "󰊠"))
-
-                     (label :class "theme-label"
-                            :text "Night"))))
-
-            ;; =========================
-            ;; SLOT 4
-            ;; =========================
-
+            ;; tokyo_night_light
             (eventbox :cursor "pointer"
-              (button
-                :class "btn-theme light"
+                      (button :class "btn-theme light"
+                              :onclick "~/.config/eww/toggle_theme.sh tokyo_night_light"
 
-                :onclick "~/.config/eww/toggle_theme.sh tokyo_night_light"
+                              (box :orientation "vertical"
+                                   :spacing 6
+                                   (box :class "sw-box light-box"
+                                        :halign "center"
+                                        :valign "center"
 
-                (box :orientation "vertical"
-                     :spacing 6
-
-                     (box :class "sw-box light-box"
-                          :halign "center"
-                          :valign "center"
-
-                          (label :class "icon-light"
-                                 :text "󱁂"))
-
-                     (label :class "theme-label"
-                            :text "Light"))))
+                                        (label :class "icon-light"
+                                               :text "󱁂"))
+                                   (label :class "theme-label"
+                                          :text "Light"))
+                              )
+                      )
+            )
        )
-))
+  )
