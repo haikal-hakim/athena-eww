@@ -50,20 +50,22 @@ Here is the folder structure configuration:
 
 ```directory
 athena-eww/
-└── .config/
-    ├── dunst/
-    ├── eww/
-    │   ├── assets/           # Icons and widget images
-    │   ├── bar/
-    │   ├── corner/
-    │   ├── dashboard/
-    │   ├── panel/
-    │   ├── theme/            # Theme state and color palettes
-    │   ├── eww.yuck
-    │   ├── eww.scss
-    │   └── toggle_theme.sh   # Switcher theme script
-    ├── fastfetch/
-    └── rofi/
+├── .config/
+│   ├── dunst/
+│   ├── eww/
+│   │   ├── assets/           # Icons and widget images
+│   │   ├── bar/
+│   │   ├── corner/
+│   │   ├── dashboard/
+│   │   ├── panel/
+│   │   ├── theme/            # Theme state and color palettes
+│   │   ├── eww.yuck
+│   │   ├── eww.scss
+│   │   └── toggle_theme.sh   # Switcher theme script
+│   ├── fastfetch/
+│   ├── kitty/
+│   └── rofi/
+└── .zshrc
 ```
 
 ---
