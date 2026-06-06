@@ -1,6 +1,6 @@
 (defwidget widget_network []
   (box :class "network-container ${network_data.status == 'disconnected' ? 'is-off' :
-       network_data.status == 'not-connected' ? 'is-not-connected' :
+       network_data.status == 'not-connected' ? 'wifi-low' :
        'is-on'}"
        :orientation "horizontal"
        :space-evenly false
@@ -8,10 +8,7 @@
        network_data.status == 'not-connected' ? 'Wi-Fi On (Not Connected)' :
        '${network_data.ssid} (${network_data.signal}%)'}"
 
-       (circular-progress :class "network-circle"
-                          :value "${network_data.status == 'disconnected' ? 0 : network_data.signal}"
-                          :thickness 4
-                          (label :class "network-space-holder"
-                                 :text ""))
+       (label :class "network-icon"
+              :text "${network_data.icon}")
        )
   )

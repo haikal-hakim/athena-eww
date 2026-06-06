@@ -5,11 +5,13 @@
   border-radius: 24px;
 
   .sep {
-    color: rgba($overlay0, 0.6);
+    color: rgba($overlay1, 0.4);
   }
 
   .left-container {
-    padding: 0 12px;
+    background-color: rgba($base, 0.9);
+    padding: 0 12px 0 8px;
+    border-radius: 99px;
 
     .arch-icon {
       font-size: 20px;
@@ -23,11 +25,15 @@
     .time {
       font-size: $larger;
       font-weight: bold;
+      color: $text;
     }
   }
 
   .right-container {
-    padding: 0 12px;
+    background-color: rgba($base, 0.9);
+    padding: 0 12px 0 14px;
+    border-radius: 99px;
+
   }
 
   .panel-trigger {

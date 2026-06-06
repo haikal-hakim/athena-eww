@@ -5,9 +5,9 @@
 
 (defwidget widget_sysinfo []
   (box :class "sys-container"
-       :orientation "vertical"
+       :orientation "vertical" ;; DIUBAH SINI BIAR NUMPUK KE BAWAH
        :space-evenly true
-       :spacing 12
+       :spacing 12 ;; Jarak antar lingkaran dari atas ke bawah
 
        ;; CPU
        (box :class "sysinfo-card"

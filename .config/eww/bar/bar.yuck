@@ -48,8 +48,6 @@
 
                        (widget_mic)
                        (widget_audio)
-                       (label :class "sep"
-                              :text "|")
                        (widget_network)
                        (widget_battery)
                        (label :class "sep"

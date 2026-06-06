@@ -1,40 +1,39 @@
 @import "../../theme/tokens.scss";
 
 .network-container {
-  .network-circle {
-    background-color: rgba(255, 255, 255, 0.12);
-  }
+  .network-icon {
+    font-size: 20px;
+    margin: 0 4px 0 2px;
 
-  .network-space-holder {
-    padding: 11px;
+    transition: all 0.15s ease;
   }
 
   &.wired {
-    .network-circle {
+    .network-icon {
       color: $green;
     }
   }
 
   &.is-on {
-    .network-circle {
-      color: $lavender;
+    .network-icon {
+      color: $blue;
     }
   }
 
   &.wifi-ok {
-    .network-circle {
+    .network-icon {
       color: $peach;
     }
   }
 
   &.wifi-low {
-    .network-circle {
+    .network-icon {
       color: $red;
     }
   }
 
   &.is-off {
-    .network-circle {
+    .network-icon {
       color: rgba($text, 0.30);
     }
   }

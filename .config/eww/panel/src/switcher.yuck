@@ -1,0 +1,107 @@
+(defwidget widget_switcher []
+  (box :class "switcher-card"
+       :orientation "vertical"
+       :space-evenly false
+       :spacing 8
+
+       (label :class "switcher-title"
+              :text "System Theme"
+              :halign "start")
+
+       (box :orientation "horizontal"
+            :space-evenly true
+            :spacing 12
+
+            ;; =========================
+            ;; MOCHA
+            ;; =========================
+
+            (eventbox :cursor "pointer"
+              (button
+                :class "btn-theme mocha"
+
+                :onclick "~/.config/eww/toggle_theme.sh catppuccin_mocha"
+
+                (box :orientation "vertical"
+                     :spacing 6
+
+                     (box :class "sw-box mocha-box"
+                          :halign "center"
+                          :valign "center"
+
+                          (label :class "icon-mocha"
+                                 :text ""))
+
+                     (label :class "theme-label"
+                            :text "Mocha"))))
+
+            ;; =========================
+            ;; LATTE
+            ;; =========================
+
+            (eventbox :cursor "pointer"
+              (button
+                :class "btn-theme latte"
+
+                :onclick "~/.config/eww/toggle_theme.sh catppuccin_latte"
+
+                (box :orientation "vertical"
+                     :spacing 6
+
+                     (box :class "sw-box latte-box"
+                          :halign "center"
+                          :valign "center"
+
+                          (label :class "icon-latte"
+                                 :text ""))
+
+                     (label :class "theme-label"
+                            :text "Latte"))))
+
+            ;; =========================
+            ;; TOKYO NIGHT
+            ;; =========================
+
+            (eventbox :cursor "pointer"
+              (button
+                :class "btn-theme night"
+
+                :onclick "~/.config/eww/toggle_theme.sh tokyo_night"
+
+                (box :orientation "vertical"
+                     :spacing 6
+
+                     (box :class "sw-box night-box"
+                          :halign "center"
+                          :valign "center"
+
+                          (label :class "icon-night"
+                                 :text "󰊠"))
+
+                     (label :class "theme-label"
+                            :text "Night"))))
+
+            ;; =========================
+            ;; SLOT 4
+            ;; =========================
+
+            (eventbox :cursor "pointer"
+              (button
+                :class "btn-theme light"
+
+                :onclick "~/.config/eww/toggle_theme.sh tokyo_night_light"
+
+                (box :orientation "vertical"
+                     :spacing 6
+
+                     (box :class "sw-box light-box"
+                          :halign "center"
+                          :valign "center"
+
+                          (label :class "icon-light"
+                                 :text "󱁂"))
+
+                     (label :class "theme-label"
+                            :text "Light"))))
+       )
+))

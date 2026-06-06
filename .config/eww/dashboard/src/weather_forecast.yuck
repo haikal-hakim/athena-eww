@@ -3,7 +3,8 @@
        :orientation "vertical"
        :space-evenly false
        :spacing 12
-       :width 560
+       :width 563
+       :height 311
 
        ;; Day Cards
        (box :class "forecast-cards"

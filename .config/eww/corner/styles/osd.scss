@@ -11,14 +11,14 @@
 
   .osd-icon {
     font-size: $larger;
-    color: #ffffff;
+    color: $text;
     margin-right: 10px;
   }
 
   .osd-scale {
 
     trough {
-      background-color: rgba(255, 255, 255, 0.1);
+      background-color: $trough;
       border-radius: 10px;
       min-height: 14px;
     }

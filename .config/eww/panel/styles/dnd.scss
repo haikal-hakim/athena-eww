@@ -19,7 +19,7 @@
 
   &.dnd-on {
     .dnd-box {
-      background-color: $red;
+      background-image: linear-gradient(to right, $red, $maroon);
 
       .dnd-icon {
         color: rgba($mantle, 0.95);
@@ -35,7 +35,7 @@
 
   &.dnd-off {
     .dnd-box {
-      background-color: rgba($subtext1, 0.30);
+      background-color: rgba($subtext1, 0.3);
 
       .dnd-icon {
         color: $lavender;
@@ -44,7 +44,7 @@
 
     &:hover {
       .dnd-box {
-        background-color: rgba($overlay1, 0.75);
+        background-color: rgba($surface1, 0.6);
       }
     }
   }

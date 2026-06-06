@@ -4,6 +4,7 @@
 (include "./panel/src/network.yuck")
 (include "./panel/src/quicktoggle.yuck")
 (include "./panel/src/sliders.yuck")
+(include "./panel/src/switcher.yuck")
 
 (defwidget widget_panel []
   (box :class "panel-card"
@@ -40,6 +41,7 @@
        (box :orientation "vertical"
             :space-evenly false
             :spacing 16
+            (widget_switcher)
             (widget_sliders))
        )
   )

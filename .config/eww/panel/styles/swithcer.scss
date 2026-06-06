@@ -1,0 +1,143 @@
+@import "../../theme/tokens.scss";
+
+.switcher-card {
+  background-color: $base;
+  border-radius: $rad;
+  padding: 12px;
+
+  .switcher-title {
+    font-size: $normal;
+    font-weight: bold;
+    color: $text;
+
+    margin-left: 5px;
+    margin-bottom: 8px;
+  }
+
+  .btn-theme {
+    background: none;
+    border: none;
+    box-shadow: none;
+
+    padding: 2px;
+
+    transition: all 0.15s ease;
+
+    .sw-box {
+      min-width: 44px;
+      min-height: 44px;
+
+      border-radius: 99px;
+
+      transition: all 0.15s ease;
+    }
+
+    .theme-label {
+      font-size: $small;
+      color: rgba($text, 0.8);
+
+      transition: all 0.15s ease;
+    }
+
+    &:hover {
+      .theme-label {
+        color: $text;
+      }
+    }
+  }
+
+  // moccha
+
+  .mocha-box {
+    background-image: linear-gradient(to right, #cba6f7, #f5c2e7);
+  }
+
+  .icon-mocha {
+    color: $crust;
+    font-size: 20px;
+    margin-right: 5px;
+
+    transition: all 0.15s ease;
+  }
+
+  .btn-theme.mocha:hover {
+    .mocha-box {
+      background-image: linear-gradient(to right, #b4befe, #cba6f7);
+    }
+
+    .icon-mocha {
+      color: $base;
+    }
+  }
+
+  // latte
+
+  .latte-box {
+    background-image: linear-gradient(to right, #df8e1d, #fe640b);
+  }
+
+  .icon-latte {
+    color: $crust;
+    font-size: 20px;
+    margin-right: 7px;
+
+    transition: all 0.15s ease;
+  }
+
+  .btn-theme.latte:hover {
+    .latte-box {
+      background-image: linear-gradient(to right, #dd7878, #df8e1d);
+    }
+
+    .icon-latte {
+      color: $base;
+    }
+  }
+
+  // night
+  .night-box {
+    background-image: linear-gradient(to right, #7aa2f7, #bb9af7);
+  }
+
+  .icon-night {
+    color: #1a1b26;
+    font-size: 20px;
+    margin-right: 2px;
+
+    transition: all 0.15s ease;
+  }
+
+  .btn-theme.night:hover {
+    .night-box {
+      background-image: linear-gradient(to right, #7dcfff, #7aa2f7);
+    }
+
+    .icon-night {
+      color: #24283b;
+    }
+  }
+
+  // light
+  .light-box {
+    background-image: linear-gradient(to right, #d8dae4, #9aa5ce);
+  }
+
+  .icon-light {
+    color: #343b58;
+    font-size: 20px;
+    margin-right: 2px;
+
+    transition: all 0.15s ease;
+  }
+
+  .btn-theme.light:hover {
+
+    .light-box {
+      background-image: linear-gradient(to right, #9aa5ce, #6c6e75);
+    }
+
+    .icon-light {
+      color: #2959aa;
+    }
+  }
+}
