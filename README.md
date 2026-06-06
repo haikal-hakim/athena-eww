@@ -139,6 +139,7 @@ chmod +x ~/.config/eww/panel/scripts/*.sh
 | **`Do Not Disturb`** | Click | Toggles Dunst notifications status |
 | **`Screenshot`** | Click | Runs local script `~/.config/hypr/scripts/screenshot.sh` |
 | **`Screen Record`** | Click | Runs local script `~/.config/hypr/scripts/record.sh` |
+| **`System Theme`** | Click | Change theme variant Mocha, Latte, Night and Light|
 
 > [!TIP]
 > The **Screenshot** and **Screen Record** features are tied to my custom Hyprland scripts. Paths directly inside `eww/panel/src/quicktoggle.yuck`.
