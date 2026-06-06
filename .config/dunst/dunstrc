@@ -83,7 +83,7 @@ follow = mouse
   ignore_dbusclose = false
 
 # Wayland
-  layer = top
+  layer = overlay
   force_xwayland = false
 
 # Legacy
