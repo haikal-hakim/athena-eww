@@ -277,6 +277,7 @@ end, { repeating = true })
 ## Acknowledgments
 
 * **[Eww](https://github.com/elkowar/eww)** - Created by **Elkowar**. Huge thanks to the creator and contributors for this amazing widget ecosystem.
+* **My Friend** Huge thanks for taking the time to teach me the ropes, helping me understand backend scripts, and guiding me through Eww's configuration.
 * Also thanks to everyone whose open source configurations were inspiring.
 
 ### Epilogue
