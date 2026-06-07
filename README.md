@@ -167,6 +167,17 @@ API_KEY="YOUR_API_KEY"
 CITY="YOUR_CITY"
 ```
 
+### Weather Forecast
+
+Widget weather forecast uses a vertical progress bar that serves as a visual graph. My local tropical climate ranges from **15°C** to **36°C**, and yours may be different.
+
+Open the forecast file: `.config/eww/dashboard/src/weather_forecast.yuck`
+find section code `forecast_temp`:
+
+```lips
+:value {(day.temp - MIN_TEMP) / (MAX_TEMP - MIN_TEMP) * 100}
+```
+
 ### Hardware Temperature
 
 This setting uses Eww's built-in [Magic Variables](https://elkowar.github.io/eww/magic-vars.html), not external scripts.
