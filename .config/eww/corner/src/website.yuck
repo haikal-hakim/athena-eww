@@ -11,43 +11,42 @@
   )
 
 (defwidget widget_website []
-  (eventbox
-    :onhover "eww update hover_web=true"
-    :onhoverlost "eww update hover_web=false"
+  (eventbox :onhover "eww update hover_web=true"
+            :onhoverlost "eww update hover_web=false"
 
-    (revealer :transition "slideright"
-              :duration "250ms"
-              :reveal hover_web
+            (revealer :transition "slideright"
+                      :duration "250ms"
+                      :reveal hover_web
 
-              (box :class "web-card"
-                   :orientation "vertical"
-                   :spacing 8
-                   :space-evenly false
+                      (box :class "web-card"
+                           :orientation "vertical"
+                           :spacing 8
+                           :space-evenly false
 
-                   (web_btn :class "arch"
-                            :arg "--arch"
-                            :icon "")
+                           (web_btn :class "arch"
+                                    :arg "--arch"
+                                    :icon "")
 
-                   (web_btn :class "github"
-                            :arg "--gh"
-                            :icon "")
+                           (web_btn :class "github"
+                                    :arg "--gh"
+                                    :icon "")
 
-                   (web_btn :class "instagram"
-                            :arg "--ig"
-                            :icon "")
+                           (web_btn :class "instagram"
+                                    :arg "--ig"
+                                    :icon "")
 
-                   (web_btn :class "whatsapp"
-                            :arg "--wa"
-                            :icon "")
+                           (web_btn :class "whatsapp"
+                                    :arg "--wa"
+                                    :icon "")
 
-                   (web_btn :class "gmail"
-                            :arg "--mail"
-                            :icon "󰊫")
+                           (web_btn :class "gmail"
+                                    :arg "--mail"
+                                    :icon "󰊫")
 
-                   (web_btn :class "inc"
-                            :arg "--inc"
-                            :icon "󰗹")
-                   )
-              )
-    )
+                           (web_btn :class "inc"
+                                    :arg "--inc"
+                                    :icon "󰗹")
+                           )
+                      )
+            )
   )
