@@ -32,8 +32,6 @@ https://github.com/user-attachments/assets/0954f470-4e62-480a-9cf7-3b219e3ee9f1
 
 ## Rofi Preview
 
-This Rofi display
-
 | Rofi Launcher | Clipboard Manager |
 | :---: | :---: |
 | <img src="https://github.com/user-attachments/assets/2c04699c-4ff1-49a7-9bbd-1548b23314fd" /> | <img src="https://github.com/user-attachments/assets/1a959cae-91a0-42e2-80d2-c75659826cc0" /> |
@@ -144,7 +142,7 @@ chmod +x ~/.config/eww/panel/scripts/*.sh
 
 <h1 align="center">Configuration & Customization</h1>
 
-### Weather Location
+### Weather Location (Dashboard)
 
 **Get an API Key**: Sign up at [OpenWeatherMap](https://openweathermap.org/) generate a API key from your account. Find your location.
 
@@ -161,22 +159,23 @@ API_KEY="YOUR_API_KEY"
 CITY="YOUR_CITY"
 ```
 
-### Weather Forecast
+### Weather Forecast (Dashboard)
 
 Widget weather forecast uses a vertical progress bar that serves as a visual graph. My local tropical climate ranges from **15°C** to **36°C**, and yours may be different.
 
 Open the forecast file: `.config/eww/dashboard/src/weather_forecast.yuck`
 find section code `forecast_temp`:
 
-```lips
+```lisp
 :value {(day.temp - MIN_TEMP) / (MAX_TEMP - MIN_TEMP) * 100}
 ```
 
-### Hardware Temperature
+### Hardware Temperature (Dashboard)
 
 This setting uses Eww's built-in [Magic Variables](https://elkowar.github.io/eww/magic-vars.html), not external scripts.
 
 By default, configured with **`CORETEMP_PACKAGE_ID_0`** because my device uses an Intel CPU. Your device may have different hardware.
+
 1. Find your actual CPU temperature key by running this command in your terminal:
 
 ```bash
@@ -186,7 +185,7 @@ eww get EWW_TEMPS
 2. Look at the output, find your `main/package temperature sensor name`, and update it inside `eww/dashboard/src/sysinfo.yuck`:
 
 ```lisp
-(circular-progress :value {((EWW_TEMPS["YOUR_SESNOR_KEY"] ?: EWW_TEMPS["Tdie"] ?: 0) / 100) * 100}
+(circular-progress :value {((EWW_TEMPS["YOUR_SENSOR_KEY"] ?: EWW_TEMPS["Tdie"] ?: 0) / 100) * 100}
                    :class "sysinfo-temp"
                    :thickness 6
                    :width 90
@@ -196,7 +195,7 @@ eww get EWW_TEMPS
                           (label :class "sysinfo-icon-temp"
                                  :text "")
                                  (label :class "sysinfo-stat"
-                                        :text "${EWW_TEMPS["YOUR_SESNOR_KEY"] ?: EWW_TEMPS["Tdie"] ?: 0}°C")
+                                        :text "${EWW_TEMPS["YOUR_SENSOR_KEY"] ?: EWW_TEMPS["Tdie"] ?: 0}°C")
                    )
 )
 ```
@@ -215,12 +214,46 @@ Task two
 Task three
 ```
 
-### App Launcher
+### Website Shortcuts (Corner)
+
+If you want to change the site shortcut widget
+
+1. Customizing Links
+Open the website dashboard layout file:
+
+```text
+.config/eww/corner/src/website.yuck
+```
+
+Then find the section
+
+```lisp
+(web_btn :class "github"
+         :arg "--gh"
+         :icon "")
+```
+
+2. Script Actions
+After declaring the button, you need to map your flag to the actual URL. Open the handler script:
+
+```text
+.config/eww/corner/scripts/web_open.sh
+```
+
+3. Style Customization
+To customize the colors, hover transitions, and specific button layouts, open the SCSS stylesheet:
+
+```text
+.config/eww/corner/styles/website.scss
+```
+
+### App Launcher (Corner)
 
 The app launcher widget uses custom static PNG icons to match the aesthetic. If you want to change the apps to your preferred daily drivers, you need to update both the visual icons and the execution commands.
 
 1. Replace the Icons
 Put your new `.png` icons inside the assets directory:
+
 ```text
 .config/eww/assets/apps/
 ```
@@ -233,7 +266,7 @@ Open the launcher configuration file `.config/eww/corner/src/launcher.yuck`. Ins
               :cmd "your-app-command &")
 ```
 
-### Theme Customization & Adding New Themes
+### Theme Customization & Adding New Themes (Panel)
 
 If you want to modify an existing theme or add your own custom color scheme, you can do so easily! However, to prevent broken styles, any new theme must use the exact same color variable names (such as `base`, `mantle`, `crust`, `peach`, `mauve`, etc.) as the original theme was Catppuccin Mocha.
 
