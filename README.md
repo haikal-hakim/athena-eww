@@ -15,7 +15,9 @@
   </a>
 </p>
 
-<h1 align="center">My personal Eww configuration tailored for the Athena.</h1>
+<p align="center">
+  My personal Eww configuration tailored for the Athena.
+</p>
 
 ---
 
