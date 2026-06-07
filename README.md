@@ -13,17 +13,9 @@
   <a href="https://github.com/haikal-hakim/athena-eww/blob/main/LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-orange.svg?style=flat-square" />
   </a>
-    <img src="https://img.shields.io/badge/Status-WIP-red?style=flat-square" />
 </p>
 
-
----
-
-## About Repository
-
-My personal Eww configuration tailored for the Athena.
-
-This project is still a work in progress, so some parts might still be a bit messy. Thanks for understanding!
+<h1 align="center">My personal Eww configuration tailored for the Athena.</h1>
 
 ---
 
