@@ -149,7 +149,7 @@ chmod +x ~/.config/eww/panel/scripts/*.sh
 Open the weather script:
 
 ```text
-eww/dashboard/scripts/weather.py
+.config/eww/dashboard/scripts/weather.py
 ```
 
 Edit your coordinates and API Key inside the script:
