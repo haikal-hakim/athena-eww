@@ -6,7 +6,6 @@
        :width 563
        :height 311
 
-       ;; Day Cards
        (box :class "forecast-cards"
             :orientation "horizontal"
             :space-evenly true
@@ -26,7 +25,7 @@
                       )
                  )
             )
-
+       ;; forecast_temp
        (box :orientation "horizontal"
             :space-evenly false
             :spacing 12
@@ -99,5 +98,5 @@
                                   :text {weather.sunset})))
                  )
             )
-  )
+       )
 )
