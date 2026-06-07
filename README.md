@@ -354,7 +354,6 @@ end, { repeating = true })
 
 I don't provide automated install scripts or bloated installation wrappers. This repository is meant to be cloned, read, stripped down, and modified according needs.
 
-### Clone the Repository
 Clone this repository directly into your local machine:
 
 ```bash
@@ -368,20 +367,11 @@ Shell (`.zshrc`):
 cp .zshrc ~/
 ```
 
-Make it your own. Break it, fix it, and customize it until it fits your workflow perfectly.
-
 ---
 
 ## Acknowledgments
 
 * **[Eww](https://github.com/elkowar/eww)** - Created by **Elkowar**. Huge thanks to the creator and contributors for this amazing widget ecosystem.
-* **My Friend** Huge thanks for taking the time to teach me the ropes, helping me understand backend scripts, and guiding me through Eww's configuration.
 * Also thanks to everyone whose open source configurations were inspiring.
-
-### Epilogue
-
-This configuration is the basis of freedom. Use it as a basis, or take only the parts that are useful.
-
-> "Freedom is when a person obeys his own conscience, not what other people say."
 
 *Muhammad Haikal Hakim*
