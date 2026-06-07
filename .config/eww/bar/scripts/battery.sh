@@ -56,7 +56,7 @@ if [ "$STATUS" = "Discharging" ]; then
         -u critical \
         -i battery-caution \
         "Battery Critical" \
-        "Battery left $PER% ($TIME lagi)"
+        "Battery left $PER% ($TIME)"
 
       touch "$LOCK_CRIT"
     fi
@@ -68,7 +68,7 @@ if [ "$STATUS" = "Discharging" ]; then
         -u normal \
         -i battery-low \
         "Battery Low" \
-        "Battery left $PER% ($TIME lagi)"
+        "Battery left $PER% ($TIME)"
 
       touch "$LOCK_LOW"
     fi
