@@ -222,6 +222,8 @@ Task three
 
 ### Themes (panel)
 
+If you want to modify an existing theme or add your own custom color scheme, you can do so. However, to prevent config corruption, any new theme must use the exact same color variable names (such as `base`, `mantle`, `crust`, `peach`, `mauve`, etc.) as the original Catppuccin Mocha theme.
+
 Available themes:
 - Catppuccin Mocha
 - Catppuccin Latte
