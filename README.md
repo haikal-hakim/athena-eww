@@ -276,6 +276,7 @@ Example:
               :cmd "firefox &")
 ```
 
+---
 
 <h1 align="center">Features</h1>
 
