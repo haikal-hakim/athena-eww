@@ -1,10 +1,10 @@
 <h1 align="center">Athena Elkowars Wacky Widgets</h1>
 <p align="center">
-  <img src="https://img.shields.io/badge/Arch_Linux-1793D1?style=flat-square&logo=arch-linux&logoColor=white" />
+    <img src="https://img.shields.io/badge/Arch_Linux-1793D1?style=flat-square&logo=arch-linux&logoColor=white" />
   <img src="https://img.shields.io/badge/Hyprland-33CCEE?style=flat-square&logo=hyprland&logoColor=white" />
   <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
   <br />
-  <a href="https://github.com/haikal-hakim/athena-eww/stargazers">
+    <a href="https://github.com/haikal-hakim/athena-eww/stargazers">
     <img src="https://img.shields.io/github/stars/haikal-hakim/athena-eww?style=flat-square&color=yellow&logo=github" />
   </a>
   <img src="https://img.shields.io/github/last-commit/haikal-hakim/athena-eww?style=flat-square&color=purple&logo=github" />
@@ -38,7 +38,7 @@ https://github.com/user-attachments/assets/0954f470-4e62-480a-9cf7-3b219e3ee9f1
 | Rofi Launcher | Clipboard Manager |
 | :---: | :---: |
 | <img src="https://github.com/user-attachments/assets/2c04699c-4ff1-49a7-9bbd-1548b23314fd" /> | <img src="https://github.com/user-attachments/assets/1a959cae-91a0-42e2-80d2-c75659826cc0" /> |
-
+ 
 ---
 
 Here is the folder structure configuration:
@@ -72,30 +72,30 @@ athena-eww/
 
 To ensure all features of the Athena Eww setup work correctly, make sure the following packages are installed on your system:
 
-  | Dependency | Purpose |
-  | :--- | :--- |
-  | **`awk`** | Text processor for system output parsing.|
-  | **`bluez-utils`** | Bluetooth management tool (bluetoothctl). |
-  | **`brightnessctl`** | Backlight and brightness control. |
-  | **`curl`** | HTTP tool to fetch weather data API. |
-  | **`dunst`** | Notifications daemon. |
-  | **`hyprshutdown`** | Session and power menu backend. |
-  | **`inotify-tools`** | Real-time file & theme change monitor. |
-  | **`jq`** | JSON parser for widget data. |
-  | **`libnotify`** | System notification dispatcher (notify-send). |
-  | **`networkmanager`** | Wi-Fi and network controller (nmcli). |
-  | **`power-profiles-daemon`** | Manages system power profiles. |
-  | **`python`** | Required for helper scripts. |
-  | **`socat`** | Real-time socket listener for Hyprland. |
-  | **`wireplumber`** | Audio volume controller (wpctl). |
+| Dependency | Purpose |
+| :--- | :--- |
+| **`awk`** | Text processor for system output parsing.|
+| **`bluez-utils`** | Bluetooth management tool (bluetoothctl). |
+| **`brightnessctl`** | Backlight and brightness control. |
+| **`curl`** | HTTP tool to fetch weather data API. |
+| **`dunst`** | Notifications daemon. |
+| **`hyprshutdown`** | Session and power menu backend. |
+| **`inotify-tools`** | Real-time file & theme change monitor. |
+| **`jq`** | JSON parser for widget data. |
+| **`libnotify`** | System notification dispatcher (notify-send). |
+| **`networkmanager`** | Wi-Fi and network controller (nmcli). |
+| **`power-profiles-daemon`** | Manages system power profiles. |
+| **`python`** | Required for helper scripts. |
+| **`socat`** | Real-time socket listener for Hyprland. |
+| **`wireplumber`** | Audio volume controller (wpctl). |
 
-  ### Install (Arch Linux)
+### Install (Arch Linux)
 
 You can install the required packages using `pacman`:
 
-  ```bash
+```bash
 sudo pacman -S awk bluez-utils brightnessctl curl dunst hyprshutdown inotify-tools jq libnotify networkmanager power-profiles-daemon python socat wireplumber
-  ```
+```
 
 </details>
 
@@ -188,11 +188,11 @@ Look for your sensor key in the output, update key inside:
 
 ```lisp
 (circular-progress :value {((EWW_TEMPS["YOUR_SENSOR_KEY"] ?: EWW_TEMPS["Tdie"] ?: 0) / 100) * 100}
-....
-....
-(label :class "sysinfo-stat"
-:text "${EWW_TEMPS["YOUR_SENSOR_KEY"] ?: EWW_TEMPS["Tdie"] ?: 0}°C")
-)
+                            ....
+                            ....
+                                 (label :class "sysinfo-stat"
+                                        :text "${EWW_TEMPS["YOUR_SENSOR_KEY"] ?: EWW_TEMPS["Tdie"] ?: 0}°C")
+                   )
 )
 ```
 
@@ -228,14 +228,15 @@ Available themes:
 
 Theme files `.config/eww/theme/`
 
-To add a new theme:
-
 1. Create a new .scss palette and edit:
-* .config/eww/panel/src/switcher.yuck
-  * .config/eww/panel/styles/switcher.scss
+
+`.config/eww/panel/src/switcher.yuck`
+
+`.config/eww/panel/styles/switcher.scss`
 
 2. Update:
-* .config/eww/toggle_theme.sh
+
+`.config/eww/toggle_theme.sh`
 
 ### Website Shortcuts (Corner)
 
@@ -276,7 +277,7 @@ Example:
 
 ```lisp
 (launcher-btn :icon "${EWW_CONFIG_DIR}/assets/apps/firefox.png"
-:cmd "firefox &")
+              :cmd "firefox &")
 ```
 
 
@@ -336,7 +337,7 @@ Example Hyprland configuration:
 
 ```lua
 hl.bind(mainMod .. " + D", function()
-  hl.dispatch(hl.dsp.exec_cmd("eww close window_dashboard || eww open window_dashboard"))
+	hl.dispatch(hl.dsp.exec_cmd("eww close window_dashboard || eww open window_dashboard"))
 end)
 ```
 
@@ -347,20 +348,20 @@ To enable the OSD volume and brightness buttons on your keyboard. Example:
 ```lua
 -- Volume --
 hl.bind("XF86AudioRaiseVolume", function()
-  hl.dispatch(hl.dsp.exec_cmd("bash " .. home .. "/.config/eww/corner/scripts/osd_vol.sh vol-up"))
+	hl.dispatch(hl.dsp.exec_cmd("bash " .. home .. "/.config/eww/corner/scripts/osd_vol.sh vol-up"))
 end, { repeating = true })
 
 hl.bind("XF86AudioLowerVolume", function()
-  hl.dispatch(hl.dsp.exec_cmd("bash " .. home .. "/.config/eww/corner/scripts/osd_vol.sh vol-down"))
+	hl.dispatch(hl.dsp.exec_cmd("bash " .. home .. "/.config/eww/corner/scripts/osd_vol.sh vol-down"))
 end, { repeating = true })
 
 -- Brightness --
 hl.bind("XF86MonBrightnessUp", function()
-  hl.dispatch(hl.dsp.exec_cmd("bash " .. home .. "/.config/eww/corner/scripts/osd_bright.sh bright-up"))
+	hl.dispatch(hl.dsp.exec_cmd("bash " .. home .. "/.config/eww/corner/scripts/osd_bright.sh bright-up"))
 end, { repeating = true })
 
 hl.bind("XF86MonBrightnessDown", function()
-  hl.dispatch(hl.dsp.exec_cmd("bash " .. home .. "/.config/eww/corner/scripts/osd_bright.sh bright-down"))
+	hl.dispatch(hl.dsp.exec_cmd("bash " .. home .. "/.config/eww/corner/scripts/osd_bright.sh bright-down"))
 end, { repeating = true })
 ```
 
