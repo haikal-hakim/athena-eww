@@ -180,11 +180,15 @@ Check your available sensors, command in your terminal:
 eww get EWW_TEMPS
 ```
 
-Look for your sensor key in the output, update key inside:
+Look for your sensor key or `main packages` in the output
+
+Update key inside:
 
 ```text
 .config/eww/dashboard/src/sysinfo.yuck:
 ```
+
+Find section:
 
 ```lisp
 (circular-progress :value {((EWW_TEMPS["YOUR_SENSOR_KEY"] ?: EWW_TEMPS["Tdie"] ?: 0) / 100) * 100}
@@ -230,9 +234,7 @@ Theme files `.config/eww/theme/`
 
 1. Create a new .scss palette and edit:
 
-`.config/eww/panel/src/switcher.yuck`
-
-`.config/eww/panel/styles/switcher.scss`
+`.config/eww/panel/src/switcher.yuck` and `.config/eww/panel/styles/switcher.scss`
 
 2. Update:
 
@@ -246,13 +248,13 @@ Theme files `.config/eww/theme/`
 .config/eww/corner/src/website.yuck
 ```
 
-2. Script Actions
+2. Script Actions:
 
 ```text
 .config/eww/corner/scripts/website.sh
 ```
 
-3. Style Customization
+3. Style Customization:
 
 ```text
 .config/eww/corner/styles/website.scss
