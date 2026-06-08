@@ -15,10 +15,6 @@
   </a>
 </p>
 
-<p align="center">
-  My personal Eww configuration tailored for the Athena.
-</p>
-
 ---
 
 ## Preview
@@ -335,7 +331,7 @@ Dashboard toggle:
 eww open window_dashboard
 ```
 
-Example Hyprland configuration:
+Example `hyprland.lua` style:
 
 ```lua
 hl.bind(mainMod .. " + D", function()
@@ -345,7 +341,7 @@ end)
 
 ### Multimedia Control
 
-To enable the OSD volume and brightness buttons on your keyboard. Example:
+To enable the OSD volume and brightness buttons on your keyboard. Example `hyprland.lua` style:
 
 ```lua
 -- Volume --
