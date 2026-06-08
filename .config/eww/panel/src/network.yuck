@@ -5,14 +5,13 @@
 (defwidget widget_wifi []
   (box :class "wifi-card ${network_data.status == 'disconnected' ? 'is-off' :
        network_data.status == 'not-connected' ? 'is-not-connected' : 'is-on'}"
-
        :orientation "horizontal"
        :space-evenly false
 
        (eventbox :cursor "pointer"
                  :hexpand true
                  (button :class "left-action"
-                         :onclick "nmcli radio wifi ${network_data.status == 'disconnected' ? 'on' : 'off'} &"
+                         :onclick "nmcli radio wifi ${network_data.ssid == 'Off' ? 'on' : 'off'} &"
                          (box :orientation "horizontal"
                               :space-evenly false
                               :spacing 14
