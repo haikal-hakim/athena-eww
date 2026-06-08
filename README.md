@@ -237,7 +237,7 @@ Then find the section
 After declaring the button, you need to map your flag to the actual URL. Open the handler script:
 
 ```text
-.config/eww/corner/scripts/web_open.sh
+.config/eww/corner/scripts/website.sh
 ```
 
 3. Style Customization
