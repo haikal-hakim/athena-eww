@@ -52,7 +52,7 @@
   :stacking "overlay"
   :windowtype "dialog"
   :wm-ignore true
-  :namespace "eww-power"
+  :namespace "eww-website"
   (widget_website))
 
 
