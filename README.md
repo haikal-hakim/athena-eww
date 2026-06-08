@@ -228,7 +228,7 @@ Available themes:
 
 Theme files `.config/eww/theme/`
 
-1. Create a new .scss palette and edit:
+1. Create a new .scss palette inside `.config/eww/theme/`, and edit:
 
 `.config/eww/panel/src/switcher.yuck` and `.config/eww/panel/styles/switcher.scss`
 
