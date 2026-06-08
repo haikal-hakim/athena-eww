@@ -209,6 +209,7 @@ Task three
 
 ---
 
+<br>
 <h1 align="center">Optional Customization</h1>
 <p align="center">
   These settings are optional and purely based on personal preference.
