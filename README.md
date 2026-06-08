@@ -1,10 +1,10 @@
 <h1 align="center">Athena Elkowars Wacky Widgets</h1>
 <p align="center">
-    <img src="https://img.shields.io/badge/Arch_Linux-1793D1?style=flat-square&logo=arch-linux&logoColor=white" />
+  <img src="https://img.shields.io/badge/Arch_Linux-1793D1?style=flat-square&logo=arch-linux&logoColor=white" />
   <img src="https://img.shields.io/badge/Hyprland-33CCEE?style=flat-square&logo=hyprland&logoColor=white" />
   <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
   <br />
-    <a href="https://github.com/haikal-hakim/athena-eww/stargazers">
+  <a href="https://github.com/haikal-hakim/athena-eww/stargazers">
     <img src="https://img.shields.io/github/stars/haikal-hakim/athena-eww?style=flat-square&color=yellow&logo=github" />
   </a>
   <img src="https://img.shields.io/github/last-commit/haikal-hakim/athena-eww?style=flat-square&color=purple&logo=github" />
@@ -28,6 +28,9 @@
 
 https://github.com/user-attachments/assets/0954f470-4e62-480a-9cf7-3b219e3ee9f1
 
+> [!NOTE]
+> This setup is designed specifically for Hyprland and Eww on Arch Linux.
+> Some scripts and widgets may require adjustment for different environments.
 ---
 
 ## Rofi Preview
@@ -35,7 +38,7 @@ https://github.com/user-attachments/assets/0954f470-4e62-480a-9cf7-3b219e3ee9f1
 | Rofi Launcher | Clipboard Manager |
 | :---: | :---: |
 | <img src="https://github.com/user-attachments/assets/2c04699c-4ff1-49a7-9bbd-1548b23314fd" /> | <img src="https://github.com/user-attachments/assets/1a959cae-91a0-42e2-80d2-c75659826cc0" /> |
- 
+
 ---
 
 Here is the folder structure configuration:
@@ -65,40 +68,64 @@ athena-eww/
 ## Dependencies
 
 <details>
-  <summary><b>Click to see dependencies</b></summary>
+  <summary><b>Click here to see dependencies</b></summary>
 
 To ensure all features of the Athena Eww setup work correctly, make sure the following packages are installed on your system:
 
-| Dependency | Purpose |
-| :--- | :--- |
-| **`awk`** | Text processor for system output parsing.|
-| **`bluez-utils`** | Bluetooth management tool (bluetoothctl). |
-| **`brightnessctl`** | Backlight and brightness control. |
-| **`curl`** | HTTP tool to fetch weather data API. |
-| **`dunst`** | Notifications daemon. |
-| **`hyprshutdown`** | Session and power menu backend. |
-| **`inotify-tools`** | Real-time file & theme change monitor. |
-| **`jq`** | JSON parser for widget data. |
-| **`libnotify`** | System notification dispatcher (notify-send). |
-| **`networkmanager`** | Wi-Fi and network controller (nmcli). |
-| **`power-profiles-daemon`** | Manages system power profiles. |
-| **`python`** | Required for helper scripts. |
-| **`socat`** | Real-time socket listener for Hyprland. |
-| **`wireplumber`** | Audio volume controller (wpctl). |
+  | Dependency | Purpose |
+  | :--- | :--- |
+  | **`awk`** | Text processor for system output parsing.|
+  | **`bluez-utils`** | Bluetooth management tool (bluetoothctl). |
+  | **`brightnessctl`** | Backlight and brightness control. |
+  | **`curl`** | HTTP tool to fetch weather data API. |
+  | **`dunst`** | Notifications daemon. |
+  | **`hyprshutdown`** | Session and power menu backend. |
+  | **`inotify-tools`** | Real-time file & theme change monitor. |
+  | **`jq`** | JSON parser for widget data. |
+  | **`libnotify`** | System notification dispatcher (notify-send). |
+  | **`networkmanager`** | Wi-Fi and network controller (nmcli). |
+  | **`power-profiles-daemon`** | Manages system power profiles. |
+  | **`python`** | Required for helper scripts. |
+  | **`socat`** | Real-time socket listener for Hyprland. |
+  | **`wireplumber`** | Audio volume controller (wpctl). |
 
-### Installation (Arch Linux)
+  ### Install (Arch Linux)
+
 You can install the required packages using `pacman`:
 
-```bash
+  ```bash
 sudo pacman -S awk bluez-utils brightnessctl curl dunst hyprshutdown inotify-tools jq libnotify networkmanager power-profiles-daemon python socat wireplumber
-```
+  ```
 
 </details>
 
 ---
 
-> [!IMPORTANT]
-> All scripts located in the scripts/ directory require execution permissions. Before running the widgets, ensure you have applied the necessary permissions:
+## Installation
+
+Clone this repository:
+
+```bash
+git clone https://github.com/haikal-hakim/athena-eww.git
+cd athena-eww
+```
+
+Copy configuration files:
+```bash
+cp -r .config/* ~/.config/
+cp .zshrc ~/
+```
+
+---
+
+<h1 align="center">Required Configuration</h1>
+<p align="center">
+  These settings are required for the widgets to work properly on your system.
+</p>
+
+### Script Permissions
+
+All scripts inside the `scripts/` directories must be executable:
 
 ```bash
 chmod +x ~/.config/eww/toggle_theme.sh
@@ -110,148 +137,127 @@ chmod +x ~/.config/eww/panel/scripts/*.sh
 
 ---
 
-<h1 align="center">Bar Features</h1>
+### Weather API (Dashboard)
 
-### Interactive
-
-| Module | Action | Command |
-| :--- | :--- | :--- |
-| **`Distro Icon`** | Click | `show dashboard` |
-| **`Notifications`** | Click | `dunstctl history-pop` |
-| | Right-Click | `dunstctl history-clear && dunstctl close-all` |
-| **`Panel Trigger`** | Click | `show panel` |
-
----
-
-<h1 align="center">Panel Features</h1>
-
-### Interactive Controls
-
-| Module | Action | Command / Function |
-| :--- | :--- | :--- |
-| **`Wi-Fi`** | Click | Toggles Wi-Fi status via `nmcli` |
-| | Click (Row) | Opens `nmtui` inside terminal |
-| **`Power Mode`** | Click | Cycles profiles via `powerprofilesctl` |
-| **`Bluetooth`** | Click | Toggles Bluetooth adapter status |
-| | Click (Row) | Opens `blueman-manager` |
-| **`Do Not Disturb`** | Click | Toggles Dunst notifications status |
-| **`Screenshot`** | Click | Runs local script `~/.config/hypr/scripts/screenshot.sh` |
-| **`Screen Record`** | Click | Runs local script `~/.config/hypr/scripts/record.sh` |
-| **`System Theme`** | Click | Change theme variant Mocha, Latte, Night and Light|
-
-> [!TIP]
-> The **Screenshot** and **Screen Record** features are tied to my custom Hyprland scripts. Paths directly inside `eww/panel/src/quicktoggle.yuck`.
-
----
-
-<h1 align="center">Configuration & Customization</h1>
-
-### Weather Location (Dashboard)
-
-**Get an API Key**: Sign up at [OpenWeatherMap](https://openweathermap.org/) generate a API key and wait approximately 30 minutes after creating the API key, find your location. Open the weather script:
+Create an API key from [OpenWeatherMap](https://openweathermap.org/). Activation may take around 30 minutes.
+Open the weather script:
 
 ```text
 .config/eww/dashboard/scripts/weather.py
 ```
 
-Edit your city and API Key inside the script:
+Set your API key and city:
 
 ```Bash
 API_KEY="YOUR_API_KEY"
 CITY="YOUR_CITY"
 ```
 
-### Weather Forecast (Dashboard)
+### Weather Forecast Scale (Dashboard)
 
-Widget weather forecast uses a vertical progress bar that serves as a visual graph. My local tropical climate ranges from **15°C** to **36°C**, and yours may be different.
+Widget weather forecast uses a vertical progress bar that serves as a temperature graph. My local tropical climate ranges from **15°C** to **36°C**, and yours may be different.
 
-Open the forecast file: `.config/eww/dashboard/src/weather_forecast.yuck`
-find section code `forecast_temp`:
+Open file:
+
+```text
+.config/eww/dashboard/src/weather_forecast.yuck
+```
+
+Find this section:
 
 ```lisp
 :value {(day.temp - MIN_TEMP) / (MAX_TEMP - MIN_TEMP) * 100}
 ```
 
-### Hardware Temperature (Dashboard)
+### Hardware Temperature Sensor (Dashboard)
 
 This setting uses Eww's built-in [Magic Variables](https://elkowar.github.io/eww/magic-vars.html), not external scripts.
-
 By default, configured with **`CORETEMP_PACKAGE_ID_0`** because my device uses an Intel CPU. Your device may have different hardware.
 
-1. Find your actual CPU temperature key by running this command in your terminal:
+Check your available sensors, command in your terminal:
 
 ```bash
 eww get EWW_TEMPS
 ```
 
-2. Look at the output, find your `main/package temperature sensor name`, and update it inside `eww/dashboard/src/sysinfo.yuck`:
+Look for your sensor key in the output, update key inside:
+
+```text
+.config/eww/dashboard/src/sysinfo.yuck:
+```
 
 ```lisp
 (circular-progress :value {((EWW_TEMPS["YOUR_SENSOR_KEY"] ?: EWW_TEMPS["Tdie"] ?: 0) / 100) * 100}
-                   :class "sysinfo-temp"
-                   :thickness 6
-                   :width 90
-                   :height 90
-                   (stack :selected {open_temp ? 1 : 0}
-                          :transition "slideleft"
-                          (label :class "sysinfo-icon-temp"
-                                 :text "")
-                                 (label :class "sysinfo-stat"
-                                        :text "${EWW_TEMPS["YOUR_SENSOR_KEY"] ?: EWW_TEMPS["Tdie"] ?: 0}°C")
-                   )
+....
+....
+(label :class "sysinfo-stat"
+:text "${EWW_TEMPS["YOUR_SENSOR_KEY"] ?: EWW_TEMPS["Tdie"] ?: 0}°C")
+)
 )
 ```
 
-### Configuration Note (Dashboard)
-
-The Todo widget requires a local text file to function. Ensure the following path exists:
+### Todo Widget File (Dashboard)
 
 - **Path:** `~/Documents/todo.txt`
 - **Format:** A simple text file containing your tasks (maximum 3 lines).
 
-Example content:
+Example:
+
 ```text
 Task one
 Task two
 Task three
 ```
 
+---
+
+<h1 align="center">Optional Customization</h1>
+<p align="center">
+  These settings are optional and purely based on personal preference.
+</p>
+
+---
+
+### Themes (panel)
+
+Available themes:
+- Catppuccin Mocha
+- Catppuccin Latte
+- Tokyo Night
+- Tokyo Night Light
+
+Theme files `.config/eww/theme/`
+
+To add a new theme:
+
+1. Create a new .scss palette and edit:
+* .config/eww/panel/src/switcher.yuck
+  * .config/eww/panel/styles/switcher.scss
+
+2. Update:
+* .config/eww/toggle_theme.sh
+
 ### Website Shortcuts (Corner)
 
-If you want to change the site shortcut widget
-
-1. Customizing Links
-Open the website dashboard layout file:
+1. Widget file:
 
 ```text
 .config/eww/corner/src/website.yuck
 ```
 
-Then find the section
-
-```lisp
-(web_btn :class "github"
-         :arg "--gh"
-         :icon "")
-```
-
 2. Script Actions
-After declaring the button, you need to map your flag to the actual URL. Open the handler script:
 
 ```text
 .config/eww/corner/scripts/website.sh
 ```
 
 3. Style Customization
-To customize the colors, hover transitions, and specific button layouts, open the SCSS stylesheet:
 
 ```text
 .config/eww/corner/styles/website.scss
 ```
 
 ### App Launcher (Corner)
-
-The app launcher widget uses custom static PNG icons to match the aesthetic. If you want to change the apps to your preferred daily drivers, you need to update both the visual icons and the execution commands.
 
 1. Replace the Icons
 Put your new `.png` icons inside the assets directory:
@@ -261,33 +267,52 @@ Put your new `.png` icons inside the assets directory:
 ```
 
 2. Modify the Apps and Commands
-Open the launcher configuration file `.config/eww/corner/src/launcher.yuck`. Inside widget_launcher, look for the:
 
-```lisp
-(launcher-btn :icon "${EWW_CONFIG_DIR}/assets/apps/NAME_ICON.png"
-              :cmd "your-app-command &")
+```text
+.config/eww/corner/src/launcher.yuck.
 ```
 
-### Theme Customization & Adding New Themes (Panel)
+Example:
 
-If you want to modify an existing theme or add your own custom color scheme, you can do so easily! However, to prevent broken styles, any new theme must use the exact same color variable names (such as `base`, `mantle`, `crust`, `peach`, `mauve`, etc.) as the original theme was Catppuccin Mocha.
+```lisp
+(launcher-btn :icon "${EWW_CONFIG_DIR}/assets/apps/firefox.png"
+:cmd "firefox &")
+```
 
-To customize or add a new theme, you will need to modify these specific files:
 
-1. Theme Palette: Add or edit the `.scss` color file inside `.config/eww/theme/`.
+<h1 align="center">Features</h1>
 
-2. Switcher UI: Update the widget layout in `.config/eww/panel/src/switcher.yuck` and its stylesheet `.config/eww/panel/styles/switcher.scss` to add your theme switcher button.
+### Bar
 
-3. **Backend Script:** Change the theme switching logic inside `.config/eww/toggle_theme.sh` so that Eww knows which palette to load when the button is clicked.
+| Module | Action | Command |
+| :--- | :--- | :--- |
+| **`Distro Icon`** | Click | `show dashboard` |
+| **`Notifications`** | Click | `dunstctl history-pop` |
+| | Right-Click | `dunstctl history-clear && dunstctl close-all` |
+| **`Panel Trigger`** | Click | `show panel` |
+
+### Panel
+
+| Module | Action | Command / Function |
+| :--- | :--- | :--- |
+| **`Wi-Fi`** | Click | Toggles Wi-Fi status via `nmcli` |
+| | Row Click | Opens `nmtui` inside terminal |
+| **`Power Mode`** | Click | Cycles profiles via `powerprofilesctl` |
+| **`Bluetooth`** | Click | Toggles Bluetooth adapter status |
+| | Row Click | Opens `blueman-manager` |
+| **`Do Not Disturb`** | Click | Toggles Dunst notifications status |
+| **`Screenshot`** | Click | Runs local script `~/.config/hypr/scripts/screenshot.sh` |
+| **`Screen Record`** | Click | Runs local script `~/.config/hypr/scripts/record.sh` |
+| **`System Theme`** | Click | Change the current theme variant|
+
+> [!TIP]
+> The **Screenshot** and **Screen Record** features are tied to my custom Hyprland scripts. Paths are defined inside `~/.config/eww/panel/src/quicktoggle.yuck`.
 
 ---
 
-<h1 align="center">Autostart & Keybindings</h1>
+<h1 align="center">Autostart</h1>
 
-### Autostart
-
-You need to launch the Eww daemon and open the window inside your Window Manager configuration.
-Example `Hyprland`:
+Example `hyprland.lua` style:
 
 ```lua
 hl.exec_cmd("eww daemon")
@@ -297,68 +322,46 @@ hl.exec_cmd("sleep 4 && eww open window_launcher")
 hl.exec_cmd("sleep 5 && eww open window_power")
 ```
 
-### Keybindings
+---
 
-To toggle the dashboard, map the execution.
+<h1 align="center">Keybindings</h1>
 
->Manual Testing
->You can test the toggle directly from your terminal by running:
+Dashboard toggle:
 
 ```bash
 eww open window_dashboard
 ```
 
-### Example (Hyprland)
-
-Add the following to your `hyprland.lua`:
+Example Hyprland configuration:
 
 ```lua
 hl.bind(mainMod .. " + D", function()
-	hl.dispatch(hl.dsp.exec_cmd("eww close window_dashboard || eww open window_dashboard"))
+  hl.dispatch(hl.dsp.exec_cmd("eww close window_dashboard || eww open window_dashboard"))
 end)
 ```
 
-### Multimedia Keys
+### Multimedia Control
 
-To enable the OSD volume and brightness buttons on your keyboard, add this to `hyprland.lua`. Example:
+To enable the OSD volume and brightness buttons on your keyboard. Example:
 
 ```lua
 -- Volume --
 hl.bind("XF86AudioRaiseVolume", function()
-	hl.dispatch(hl.dsp.exec_cmd("bash " .. home .. "/.config/eww/corner/scripts/osd_vol.sh vol-up"))
+  hl.dispatch(hl.dsp.exec_cmd("bash " .. home .. "/.config/eww/corner/scripts/osd_vol.sh vol-up"))
 end, { repeating = true })
 
 hl.bind("XF86AudioLowerVolume", function()
-	hl.dispatch(hl.dsp.exec_cmd("bash " .. home .. "/.config/eww/corner/scripts/osd_vol.sh vol-down"))
+  hl.dispatch(hl.dsp.exec_cmd("bash " .. home .. "/.config/eww/corner/scripts/osd_vol.sh vol-down"))
 end, { repeating = true })
 
 -- Brightness --
 hl.bind("XF86MonBrightnessUp", function()
-	hl.dispatch(hl.dsp.exec_cmd("bash " .. home .. "/.config/eww/corner/scripts/osd_bright.sh bright-up"))
+  hl.dispatch(hl.dsp.exec_cmd("bash " .. home .. "/.config/eww/corner/scripts/osd_bright.sh bright-up"))
 end, { repeating = true })
 
 hl.bind("XF86MonBrightnessDown", function()
-	hl.dispatch(hl.dsp.exec_cmd("bash " .. home .. "/.config/eww/corner/scripts/osd_bright.sh bright-down"))
+  hl.dispatch(hl.dsp.exec_cmd("bash " .. home .. "/.config/eww/corner/scripts/osd_bright.sh bright-down"))
 end, { repeating = true })
-```
-
----
-
-## Installation
-
-I don't provide automated install scripts or bloated installation wrappers. This repository is meant to be cloned, read, stripped down, and modified according needs.
-
-Clone this repository directly into your local machine:
-
-```bash
-git clone https://github.com/haikal-hakim/athena-eww.git
-cd athena-eww
-cp -r .config/* ~/.config/
-```
-
-Shell (`.zshrc`):
-```bash
-cp .zshrc ~/
 ```
 
 ---
