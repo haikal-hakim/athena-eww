@@ -1,4 +1,4 @@
-<h1 align="center">Athena Elkowars Wacky Widgets</h1>
+<h1 align="center">Athena [Elkowars Wacky Widgets](https://github.com/elkowar/eww)</h1>
 <p align="center">
     <img src="https://img.shields.io/badge/Arch_Linux-1793D1?style=flat-square&logo=arch-linux&logoColor=white" />
   <img src="https://img.shields.io/badge/Hyprland-33CCEE?style=flat-square&logo=hyprland&logoColor=white" />
@@ -80,6 +80,7 @@ To ensure all features of the Athena Eww setup work correctly, make sure the fol
 | **`power-profiles-daemon`** | Manages system power profiles. |
 | **`python`** | Required for helper scripts. |
 | **`socat`** | Real-time socket listener for Hyprland. |
+| **`ttf-jetbrains-mono-nerd`** | Font.|
 | **`wireplumber`** | Audio volume controller (wpctl). |
 
 ### Install (Arch Linux)
@@ -87,7 +88,7 @@ To ensure all features of the Athena Eww setup work correctly, make sure the fol
 You can install the required packages using `pacman`:
 
 ```bash
-sudo pacman -S awk bluez-utils brightnessctl curl dunst hyprshutdown inotify-tools jq libnotify networkmanager power-profiles-daemon python socat wireplumber
+sudo pacman -S awk bluez-utils brightnessctl curl dunst hyprshutdown inotify-tools jq libnotify networkmanager power-profiles-daemon python socat ttf-jetbrains-mono-nerd wireplumber
 ```
 
 </details>
