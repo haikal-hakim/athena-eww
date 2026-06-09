@@ -1,4 +1,4 @@
-<h1 align="center">Athena [Elkowars Wacky Widgets](https://github.com/elkowar/eww)</h1>
+<h1 align="center">Athena Elkowars Wacky Widgets</h1>
 <p align="center">
     <img src="https://img.shields.io/badge/Arch_Linux-1793D1?style=flat-square&logo=arch-linux&logoColor=white" />
   <img src="https://img.shields.io/badge/Hyprland-33CCEE?style=flat-square&logo=hyprland&logoColor=white" />
