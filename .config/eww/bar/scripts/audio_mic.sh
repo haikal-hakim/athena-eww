@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
 
 get_status() {
-  audio_status=$(amixer get Master | grep -o '\[on\]\|\[off\]' | head -n1)
-  if [ "$audio_status" = "[off]" ]; then
+  audio_output=$(wpctl get-volume @DEFAULT_AUDIO_SINK@)
+  if echo "$audio_output" | grep -q "MUTED"; then
     audio="muted"
   else
     audio="unmuted"
   fi
 
-  mic_status=$(amixer get Capture | grep -o '\[on\]\|\[off\]' | head -n1)
-  if [ "$mic_status" = "[off]" ]; then
+  mic_output=$(wpctl get-volume @DEFAULT_AUDIO_SOURCE@)
+  if echo "$mic_output" | grep -q "MUTED"; then
     mic="muted"
   else
     mic="unmuted"
