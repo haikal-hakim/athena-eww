@@ -82,6 +82,7 @@ To ensure all features of the Athena Eww setup work correctly, make sure the fol
 | **`socat`** | Real-time socket listener for Hyprland. |
 | **`ttf-jetbrains-mono-nerd`** | Font.|
 | **`wireplumber`** | Audio volume controller (wpctl). |
+| **`Tela circle dark`** | Icon, optional dependencies.|
 
 ### Install (Arch Linux)
 
@@ -220,28 +221,31 @@ Available themes:
 - Tokyo Night
 - Tokyo Night Light
 
-Theme files `.config/eww/theme/`
-
 1. Create a new .scss palette inside `.config/eww/theme/`, and edit:
 
-`.config/eww/panel/src/switcher.yuck` and `.config/eww/panel/styles/switcher.scss`
+```text
+.config/eww/panel/src/switcher.yuck
+.config/eww/panel/styles/switcher.scss
 
+```
 2. Update:
 
-`.config/eww/toggle_theme.sh`
+```text
+.config/eww/toggle_theme.sh
+```
 
 ### Website Shortcuts (Corner)
 
-1. Widget file:
-
-```text
-.config/eww/corner/src/website.yuck
-```
-
-2. Script Actions:
+1. Script Actions:
 
 ```text
 .config/eww/corner/scripts/website.sh
+```
+
+2. Widget file:
+
+```text
+.config/eww/corner/src/website.yuck
 ```
 
 3. Style Customization:
