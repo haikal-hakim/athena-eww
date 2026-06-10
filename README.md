@@ -1,18 +1,6 @@
 <h1 align="center">Athena Elkowars Wacky Widgets</h1>
 <p align="center">
-    <img src="https://img.shields.io/badge/Arch_Linux-1793D1?style=flat-square&logo=arch-linux&logoColor=white" />
-  <img src="https://img.shields.io/badge/Hyprland-33CCEE?style=flat-square&logo=hyprland&logoColor=white" />
-  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
-  <br />
-    <a href="https://github.com/haikal-hakim/athena-eww/stargazers">
-    <img src="https://img.shields.io/github/stars/haikal-hakim/athena-eww?style=flat-square&color=yellow&logo=github" />
-  </a>
-  <img src="https://img.shields.io/badge/dynamic/json?color=blue&label=Clone&query=count&url=https://gist.githubusercontent.com/haikal-hakim/10a07e69ca0835e5557794011b24b771/raw/clone.json&logo=github&style=flat-square" />
-  <br />
-  <a href="https://github.com/haikal-hakim/athena-eww/blob/main/LICENSE">
-    <img src="https://img.shields.io/badge/License-MIT-orange.svg?style=flat-square" />
-  </a>
-</p>
+
 
 ---
 
@@ -193,7 +181,6 @@ Find section:
 
 > [!TIP]
 > An alternative `battery.yuck` using Eww built-in `magic variables` is available inside the [extras/](./extras/) folder.
-> This version removes polling scripts but does not include notifications or remaining time estimation.
 
 ### Todo Widget File (Dashboard)
 
