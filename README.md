@@ -8,9 +8,6 @@
 ![GitHub Clones](https://img.shields.io/badge/dynamic/json?style=for-the-badge&label=CLONES&query=count&url=https://gist.githubusercontent.com/haikal-hakim/10a07e69ca0835e5557794011b24b771/raw/clone.json&logo=github&labelColor=11111b&color=89dceb)
 
 ![License](https://img.shields.io/badge/License-MIT?style=for-the-badge&labelColor=11111b&color=f38ba8)
-```
-
-
 ---
 
 ## Preview
