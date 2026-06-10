@@ -1,0 +1,48 @@
+(defwidget widget_battery []
+  (box :class "battery-container ${
+       EWW_BATTERY["BAT0"].status == 'Charging' ? 'charging' :
+       EWW_BATTERY["BAT0"].status == 'Full' ? 'full' :
+       EWW_BATTERY["BAT0"].capacity < 11 ? 'critical' :
+       EWW_BATTERY["BAT0"].capacity < 26 ? 'low' :
+       EWW_BATTERY["BAT0"].capacity < 41 ? 'warning-low' :
+       EWW_BATTERY["BAT0"].capacity < 61 ? 'warning-high' :
+       EWW_BATTERY["BAT0"].capacity < 81 ? 'good' :
+       EWW_BATTERY["BAT0"].capacity < 91 ? 'high' :
+       'full'
+       }"
+
+       :orientation "horizontal"
+       :space-evenly false
+
+       :tooltip "${EWW_BATTERY["BAT0"].status}"
+
+       (label :class "battery-icon"
+              :text "${
+              EWW_BATTERY["BAT0"].status == 'Charging'
+              ? '󱐌'
+              : EWW_BATTERY["BAT0"].capacity < 10
+              ? '󰁺'
+              : EWW_BATTERY["BAT0"].capacity < 20
+              ? '󰁻'
+              : EWW_BATTERY["BAT0"].capacity < 30
+              ? '󰁼'
+              : EWW_BATTERY["BAT0"].capacity < 40
+              ? '󰁽'
+              : EWW_BATTERY["BAT0"].capacity < 50
+              ? '󰁾'
+              : EWW_BATTERY["BAT0"].capacity < 60
+              ? '󰁿'
+              : EWW_BATTERY["BAT0"].capacity < 70
+              ? '󰂀'
+              : EWW_BATTERY["BAT0"].capacity < 80
+              ? '󰂁'
+              : EWW_BATTERY["BAT0"].capacity < 90
+              ? '󰂂'
+              : '󰁹'
+              }")
+
+       (label :class "battery-percent"
+              :text "${EWW_BATTERY["BAT0"].capacity}%")
+  )
+)
+
