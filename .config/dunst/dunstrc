@@ -122,18 +122,3 @@ follow = mouse
   timeout = 0
   override_pause_level = 60
   default_icon = dialog-warning
-
-### --- RULES --- ###
-  [battery_low]
-  summary = "Battery Low"
-  body = ".*30%.*"
-  msg_urgency = normal
-  timeout = 10
-  icon = /usr/share/icons/breeze/status/24/battery-caution-symbolic.svg
-
-  [battery_critical]
-  summary = "Battery Low"
-  body = ".*15%.*"
-  msg_urgency = critical
-  timeout = 0
-  icon = /usr/share/icons/breeze/status/24/battery-low-symbolic.svg
