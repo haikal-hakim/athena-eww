@@ -191,6 +191,10 @@ Find section:
 )
 ```
 
+> [!TIP]
+> An alternative `battery.yuck` using Eww built-in `magic variables` is available inside the [extras/](./extras/) folder.
+> This version removes polling scripts but does not include notifications or remaining time estimation.
+
 ### Todo Widget File (Dashboard)
 
 - **Path:** `~/Documents/todo.txt`
