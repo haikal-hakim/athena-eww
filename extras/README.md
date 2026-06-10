@@ -1,6 +1,6 @@
 # Eww Magic Variable Battery
 
-Alternative battery widget using Eww built-in `EWW_BATTERY`.
+Config default eww I actually use a script for the battery. If you're allergic to using script, there's an alternative battery widget using the default `EWW_BATTERY`.
 
 ### Advantages
 
