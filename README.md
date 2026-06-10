@@ -7,7 +7,9 @@
 ![Hyprland](https://img.shields.io/badge/Hyprland-11111b?style=for-the-badge&logo=hyprland&logoColor=89dceb)
 ![GitHub Repo stars](https://img.shields.io/github/stars/haikal-hakim/athena-eww?style=for-the-badge&logo=github&labelColor=11111b&color=cba6f7)
 ![GitHub Clones](https://img.shields.io/badge/dynamic/json?style=for-the-badge&label=CLONES&query=count&url=https://gist.githubusercontent.com/haikal-hakim/10a07e69ca0835e5557794011b24b771/raw/clone.json&logo=github&labelColor=11111b&color=89dceb)
-![License](https://img.shields.io/badge/License-MIT?style=for-the-badge&labelColor=11111b&color=f38ba8)
+<a href="https://github.com/haikal-hakim/athena-eww/blob/main/LICENSE">
+  <img src="https://img.shields.io/github/license/haikal-hakim/athena-eww?style=for-the-badge&labelColor=11111b&color=f38ba8" />
+</a>
 
 </div>
 
