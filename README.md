@@ -13,18 +13,15 @@
 
 </div>
 
----
-
-## Preview
+### Preview
 
 <img src="https://github.com/user-attachments/assets/982cc07f-043e-4050-a1d3-c529204cb0dc" /> <img src="https://github.com/user-attachments/assets/908757bb-3d11-4ee9-af46-e5416faf97fc" />
 
 
 https://github.com/user-attachments/assets/0954f470-4e62-480a-9cf7-3b219e3ee9f1
 
----
 
-## Rofi Preview
+### Rofi
 
 | Rofi Launcher | Clipboard Manager |
 | :---: | :---: |
@@ -56,7 +53,7 @@ athena-eww/
 
 ---
 
-## Dependencies
+### Dependencies
 
 <details>
   <summary><b>Click here to see dependencies</b></summary>
@@ -93,9 +90,7 @@ sudo pacman -S awk bluez-utils brightnessctl curl dunst grep hyprshutdown inotif
 
 </details>
 
----
-
-## Installation
+### Installation
 
 Clone this repository:
 
