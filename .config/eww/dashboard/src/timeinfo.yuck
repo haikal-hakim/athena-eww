@@ -1,5 +1,5 @@
 (defpoll timeinfo :interval "60s"
-  :initial "{\"days\": 0, \"hours\": \"0 hours\", \"minutes\": \"0 minutes\"}"
+  :initial '{"days": 0, "hours": "0 hours", "minutes": "0 minutes"}'
   "bash ~/.config/eww/dashboard/scripts/timeinfo.sh")
 
 (defwidget widget_timeinfo []
