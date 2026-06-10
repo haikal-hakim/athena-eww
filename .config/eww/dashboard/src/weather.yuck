@@ -1,5 +1,5 @@
 (defpoll weather :interval "60m"
-  :initial '{"location":"","temp":"0","desc":"Unknown","type":"day","humidity":"0","wind":"0","forecast":[],"sunrise":"--:--","sunset":"--:--"}'
+  :initial '{"location":"","temp":"0","desc":"Unknown","type":"day","humidity":"0","wind":"0","icon":"","icon_class":"weather-icon unknown","forecast":[],"sunrise":"--:--","sunset":"--:--"}'
   :run-while open_dashboard
   "python3 ~/.config/eww/dashboard/scripts/weather.py")
 
@@ -7,7 +7,6 @@
   (box :class "weather-container"
        :orientation "vertical"
        :space-evenly false
-
        (box :class "weather-card"
             :orientation "vertical"
             :space-evenly false
@@ -15,101 +14,29 @@
             (box :orientation "horizontal"
                  :space-evenly false
                  :width 380
+                 (label :class {weather.icon_class}
+                        :text {weather.icon})
 
-                 ;; ICON
-                 (label :class {
-                        matches(weather.desc, "(?i)clear|sunny") ?
-                        (weather.type == "night"
-                                      ? "weather-icon clear-night"
-                                      : "weather-icon clear-day") :
-
-                        matches(weather.desc, "(?i)few clouds|scattered clouds|broken clouds|partly cloudy") ?
-                        (weather.type == "night"
-                                      ? "weather-icon cloud-night"
-                                      : "weather-icon cloud-day") :
-
-                        matches(weather.desc, "(?i)cloudy|overcast|clouds") ?
-                        "weather-icon cloudy" :
-
-                        matches(weather.desc, "(?i)mist|fog|haze|smoke|dust|sand") ?
-                        "weather-icon mist" :
-
-                        matches(weather.desc, "(?i)light rain|drizzle|patchy") ?
-                        "weather-icon drizzle" :
-
-                        matches(weather.desc, "(?i)rain|shower") ?
-                        "weather-icon rain" :
-
-                        matches(weather.desc, "(?i)thunderstorm|thunder") ?
-                        "weather-icon thunder" :
-
-                        matches(weather.desc, "(?i)snow|sleet|blizzard|ice") ?
-                        "weather-icon snow" :
-
-                        "weather-icon unknown"
-                        }
-
-                        :text {
-                        matches(weather.desc, "(?i)clear|sunny") ?
-                        (weather.type == "night" ? "󰖔" : "") :
-
-                        matches(weather.desc, "(?i)few clouds|scattered clouds|broken clouds|partly cloudy") ?
-                        (weather.type == "night" ? "" : "") :
-
-                        matches(weather.desc, "(?i)cloudy|overcast|clouds") ? "" :
-
-                        matches(weather.desc, "(?i)mist|haze") ? "" :
-
-                        matches(weather.desc, "(?i)fog|smoke|dust") ?
-                        (weather.type == "night" ? "" : "") :
-
-                        matches(weather.desc, "(?i)drizzle|light rain") ? "󰖗" :
-
-                        matches(weather.desc, "(?i)shower") ?
-                        (weather.type == "night" ? "" : "") :
-
-                        matches(weather.desc, "(?i)rain") ?
-                        (weather.type == "night" ? "" : "") :
-
-                        matches(weather.desc, "(?i)thunderstorm.*rain") ?
-                        (weather.type == "night" ? "" : "") :
-
-                        matches(weather.desc, "(?i)thunderstorm") ? "󰖓" :
-
-                        matches(weather.desc, "(?i)heavy snow|blizzard") ? "" :
-
-                        matches(weather.desc, "(?i)snow") ? "󰖘" :
-
-                        matches(weather.desc, "(?i)sleet|ice") ? "󰖒" :
-                        ""
-                        })
-
-                 ;; TEMP
                  (box :orientation "vertical"
                       :space-evenly false
                       :hexpand true
                       :halign "end"
                       :valign "center"
-
                       (label :class "weather-temp"
                              :text "${weather.temp}°C")
-
                       (label :class "win-hum"
                              :halign "center"
                              :text "${weather.humidity}% | ${weather.wind} km/h"))
                  )
 
-            ;; BOTTOM
             (box :class "loc-desc"
                  :orientation "vertical"
                  :halign "center"
                  :spacing 6
-
                  (label :class "weather-loc"
                         :text {weather.location})
-
                  (label :class "weather-desc"
                         :text "${weather.desc}"))
-)
-)
-)
+            )
+       )
+  )

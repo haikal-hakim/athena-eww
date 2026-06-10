@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+
 import json
 import urllib.request
 import os
@@ -15,6 +16,8 @@ FALLBACK_DATA = {
     "type": "day",
     "humidity": "0",
     "wind": "0",
+    "icon": "",
+    "icon_class": "weather-icon unknown",
     "forecast": [],
     "sunrise": "--:--",
     "sunset": "--:--",
@@ -40,25 +43,82 @@ def save_cache(data):
         pass
 
 
-def get_weather_icon(desc):
-    desc = desc.lower()
-    if any(x in desc for x in ["clear", "sunny"]):
-        return ""
-    elif any(x in desc for x in ["few clouds", "scattered", "broken", "partly"]):
-        return ""
-    elif any(x in desc for x in ["cloudy", "overcast", "clouds"]):
-        return ""
-    elif any(x in desc for x in ["drizzle", "light rain"]):
-        return ""
-    elif any(x in desc for x in ["thunderstorm"]):
-        return "󰖓"
-    elif any(x in desc for x in ["snow", "sleet", "blizzard"]):
-        return ""
-    elif any(x in desc for x in ["rain", "shower"]):
-        return ""
-    elif any(x in desc for x in ["mist", "fog", "haze"]):
-        return "󰖑"
-    return ""
+def get_weather_icon(desc, weather_type="day"):
+    desc_lower = desc.lower()
+
+    if any(x in desc_lower for x in ["clear", "sunny"]):
+        return (
+            "󰖔" if weather_type == "night" else "",
+            "weather-icon clear-night"
+            if weather_type == "night"
+            else "weather-icon clear-day",
+        )
+
+    elif any(
+        x in desc_lower
+        for x in [
+            "few clouds",
+            "scattered clouds",
+            "broken clouds",
+            "partly cloudy",
+            "scattered",
+            "broken",
+            "partly",
+        ]
+    ):
+        return (
+            "" if weather_type == "night" else "",
+            "weather-icon cloud-night"
+            if weather_type == "night"
+            else "weather-icon cloud-day",
+        )
+
+    elif any(x in desc_lower for x in ["cloudy", "overcast", "clouds"]):
+        return ("", "weather-icon cloudy")
+
+    elif any(x in desc_lower for x in ["mist", "haze"]):
+        return ("", "weather-icon mist")
+
+    elif any(x in desc_lower for x in ["fog", "smoke", "dust"]):
+        return (
+            "" if weather_type == "night" else "",
+            "weather-icon mist",
+        )
+
+    elif any(x in desc_lower for x in ["drizzle", "light rain"]):
+        return ("󰖗", "weather-icon drizzle")
+
+    elif any(x in desc_lower for x in ["shower"]):
+        return (
+            "" if weather_type == "night" else "",
+            "weather-icon rain",
+        )
+
+    elif "thunderstorm" in desc_lower and "rain" in desc_lower:
+        return (
+            "" if weather_type == "night" else "",
+            "weather-icon thunder",
+        )
+
+    elif "thunderstorm" in desc_lower:
+        return ("󰖓", "weather-icon thunder")
+
+    elif any(x in desc_lower for x in ["heavy snow", "blizzard"]):
+        return ("", "weather-icon snow")
+
+    elif "snow" in desc_lower:
+        return ("󰖘", "weather-icon snow")
+
+    elif any(x in desc_lower for x in ["sleet", "ice"]):
+        return ("󰖒", "weather-icon snow")
+
+    elif any(x in desc_lower for x in ["rain"]):
+        return (
+            "" if weather_type == "night" else "",
+            "weather-icon rain",
+        )
+
+    return ("", "weather-icon unknown")
 
 
 def fetch_current():
@@ -110,6 +170,8 @@ def main():
         sunrise = datetime.fromtimestamp(sunrise_ts).strftime("%H:%M")
         sunset = datetime.fromtimestamp(sunset_ts).strftime("%H:%M")
 
+        current_icon, current_class = get_weather_icon(desc, weather_type)
+
         # Forecast
         today = date.today()
         days = {}
@@ -130,13 +192,17 @@ def main():
                 continue
             f_desc = item["weather"][0]["description"].title()
             f_temp = round(item["main"]["temp"], 1)
+
+            f_icon, f_class = get_weather_icon(f_desc, "day")
+
             forecast_list.append(
                 {
                     "day": dt.strftime("%A"),
                     "date": dt.strftime("%d %b"),
                     "temp": f_temp,
                     "desc": f_desc,
-                    "icon": get_weather_icon(f_desc),
+                    "icon": f_icon,
+                    "icon_class": f_class,
                 }
             )
 
@@ -149,6 +215,8 @@ def main():
             "type": weather_type,
             "humidity": humidity,
             "wind": wind_kmh,
+            "icon": current_icon,
+            "icon_class": current_class,
             "forecast": forecast_list,
             "sunrise": sunrise,
             "sunset": sunset,
