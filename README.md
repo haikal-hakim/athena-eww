@@ -14,7 +14,7 @@
 </div>
 
 <p align="center">
-  Built on freedom, where the user controls the system, not the reverse.
+  Built on freedom, where users control the system, not the other way around.
 </p>
 
 <img src="https://github.com/user-attachments/assets/982cc07f-043e-4050-a1d3-c529204cb0dc" /> <img src="https://github.com/user-attachments/assets/908757bb-3d11-4ee9-af46-e5416faf97fc" />
