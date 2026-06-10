@@ -365,23 +365,6 @@ end, { repeating = true })
 
 ---
 
->[!WARNING]
->Zombie Process & Memory Leak Alert!
->Based on several Eww repository issues, memory spikes can happen due to hanging background processes.
-
-While my personal setup runs completely stable without any leaks, if you happen to experience a RAM spike from the eww daemon (around 200MB+), you must force kill the daemon and restart it normally using the following commands:
-
-```bash
-pkill eww
-eww daemon
-eww open window_bar
-eww open window_launcher
-eww open window_power
-eww open window_website
-```
-
----
-
 ## Acknowledgments
 
 * **[Eww](https://github.com/elkowar/eww)** - Created by **Elkowar**. Huge thanks to the creator and contributors for this amazing widget ecosystem.
