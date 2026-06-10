@@ -1,6 +1,6 @@
 (defpoll os_age :interval "6h"
   :initial "{\"days\": 0}"
-  "python3 ~/.config/eww/dashboard/scripts/os_age.py")
+  "bash ~/.config/eww/dashboard/scripts/os_age.sh")
 
 (defpoll uptime_h :interval "60s"
   "uptime -p | awk -F, '{print $1}' | sed 's/up //; s/ hours\\?/ hours/; s/ minutes\\?/ minutes/' | grep -E 'hours|minutes'")
