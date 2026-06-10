@@ -1,11 +1,6 @@
-(defpoll os_age :interval "6h"
-  :initial "{\"days\": 0}"
-  "bash ~/.config/eww/dashboard/scripts/os_age.sh")
-
-(defpoll uptime_h :interval "60s"
-  "uptime -p | awk -F, '{print $1}' | sed 's/up //; s/ hours\\?/ hours/; s/ minutes\\?/ minutes/' | grep -E 'hours|minutes'")
-(defpoll uptime_m :interval "60s"
-  "uptime -p | awk -F, '{print $2}' | sed 's/ //g; s/minutes\\?/ minutes/'")
+(defpoll timeinfo :interval "60s"
+  :initial "{\"days\": 0, \"hours\": \"0 hours\", \"minutes\": \"0 minutes\"}"
+  "bash ~/.config/eww/dashboard/scripts/timeinfo.sh")
 
 (defwidget widget_timeinfo []
   (box :class "timeinfo-card"
@@ -22,23 +17,20 @@
             :vexpand true
             :halign "fill"
             :valign "fill"
-
             (box :orientation "horizontal"
                  :space-evenly false
                  :spacing 12
                  :halign "center"
                  :valign "center"
-
                  (label :class "os-age-icon"
                         :text " ")
-
                  (box :orientation "vertical"
                       :space-evenly false
                       :spacing 2
                       :valign "center"
                       (label :class "os-age-number"
                              :halign "start"
-                             :text "${os_age.days}")
+                             :text "${timeinfo.days}")
                       (label :class "os-age-label"
                              :halign "start"
                              :text "Days")
@@ -50,10 +42,9 @@
             :orientation "horizontal"
             :space-evenly false
             :hexpand true
-            :vexpand true 
+            :vexpand true
             :halign "fill"
             :valign "fill"
-
             (box :orientation "vertical"
                  :space-evenly false
                  :hexpand true
@@ -61,10 +52,10 @@
                  :valign "center"
                  (label :class "uptime-hours"
                         :halign "center"
-                        :text {uptime_h != "" ? uptime_h : "0 h"})
+                        :text {timeinfo.hours})
                  (label :class "uptime-minutes"
                         :halign "center"
-                        :text {uptime_m != "" ? uptime_m : uptime_h =~ "m" ? "" : "0m"})
+                        :text {timeinfo.minutes})
                  )
             )
        )
