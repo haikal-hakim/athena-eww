@@ -72,6 +72,7 @@ To ensure all features of the Athena Eww setup work correctly, make sure the fol
 | **`brightnessctl`** | Backlight and brightness control. |
 | **`curl`** | HTTP tool to fetch weather data API. |
 | **`dunst`** | Notifications daemon. |
+| **`grep`** | Global Regular Expression Print. |
 | **`hyprshutdown`** | Session and power menu backend. |
 | **`inotify-tools`** | Real-time file & theme change monitor. |
 | **`jq`** | JSON parser for widget data. |
@@ -89,7 +90,7 @@ To ensure all features of the Athena Eww setup work correctly, make sure the fol
 You can install the required packages using `pacman`:
 
 ```bash
-sudo pacman -S awk bluez-utils brightnessctl curl dunst hyprshutdown inotify-tools jq libnotify networkmanager power-profiles-daemon python socat ttf-jetbrains-mono-nerd wireplumber
+sudo pacman -S awk bluez-utils brightnessctl curl dunst grep hyprshutdown inotify-tools jq libnotify networkmanager power-profiles-daemon python socat ttf-jetbrains-mono-nerd wireplumber
 ```
 
 </details>
