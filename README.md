@@ -44,11 +44,11 @@ athena-eww/
 │   │   ├── theme/            # Theme state and color palettes
 │   │   ├── eww.yuck
 │   │   ├── eww.scss
-│   │   └── toggle_theme.sh   # Switcher theme script
+│   │   └── toggle_theme.sh   # Theme switcher script
 │   ├── fastfetch/
 │   ├── kitty/
 │   └── rofi/
-├── extras/                   # File extras for eww
+├── extras/                   # Optional Eww configurations
 └── .zshrc
 ```
 
