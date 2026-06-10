@@ -365,9 +365,9 @@ end, { repeating = true })
 
 ---
 
->[!TIP]
->Stability Note
->This configuration is completely stable. However, if you encounter two pidofs.
+> [!TIP]
+> **Stability Note**
+> This configuration is completely stable. However, if you encounter two pidofs.
 
 Check for duplicate process IDs (PIDs):
 
