@@ -1,262 +1,124 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
-[buf]
-symbol = " "
+format = """
+[╭─](fg:surface2)\
+[](fg:surface1)\
+$os\
+[](bg:peach fg:surface1)\
+$directory\
+[](bg:yellow fg:peach)\
+$git_branch\
+$git_status\
+[](fg:yellow bg:green)\
+$c$rust$golang$nodejs$php$java$kotlin$haskell$python\
+[](fg:green bg:sapphire)\
+$conda\
+[](fg:sapphire bg:lavender)\
+$time\
+[](fg:lavender)\
+$line_break\
+[╰─](fg:surface2)\
+$character"""
 
-[bun]
-symbol = " "
+palette = 'catppuccin_mocha'
 
-[c]
-symbol = " "
+[os]
+disabled = false
+style = "bg:surface1 fg:text"
 
-[cpp]
-symbol = " "
-
-[cmake]
-symbol = " "
-
-[cobol]
-symbol = " "
-
-[conda]
-symbol = " "
-
-[container]
-symbol = " "
-
-[crystal]
-symbol = " "
-
-[dart]
-symbol = " "
-
-[deno]
-symbol = " "
-
-[direnv]
-symbol = " "
+[os.symbols]
+Arch = "   "
+Linux = " 󰌽  "
 
 [directory]
-read_only = " 󰌾"
+style = "bg:peach fg:crust"
+format = "[ $path ]($style)"
+truncation_length = 0
 
-[docker_context]
-symbol = " "
-
-[dotnet]
-symbol = " "
-
-[elixir]
-symbol = " "
-
-[elm]
-symbol = " "
-
-[erlang]
-symbol = " "
-
-[fennel]
-symbol = " "
-
-[fortran]
-symbol = " "
-
-[fossil_branch]
-symbol = " "
-
-[gcloud]
-symbol = "󱇶 "
-
-[gleam]
-symbol = " "
+[directory.substitutions]
+"~" = " "
 
 [git_branch]
 symbol = " "
+style = "bg:yellow fg:crust"
+format = '[ $symbol$branch ]($style)'
 
-[git_commit]
-tag_symbol = '  '
-
-[golang]
-symbol = " "
-
-[gradle]
-symbol = " "
-
-[guix_shell]
-symbol = " "
-
-[haskell]
-symbol = " "
-
-[haxe]
-symbol = " "
-
-[helm]
-symbol = " "
-
-[hg_branch]
-symbol = " "
-
-[hostname]
-ssh_symbol = " "
-
-[java]
-symbol = " "
-
-[julia]
-symbol = " "
-
-[kotlin]
-symbol = " "
-
-[kubernetes]
-symbol = "󱃾 "
-
-[lua]
-symbol = " "
-
-[maven]
-symbol = " "
-
-[meson]
-symbol = "󰔷 "
-
-[mojo]
-symbol = "󰈸 "
-
-[nats]
-symbol = " "
-
-[netns]
-symbol = "󰛳 "
-
-[nim]
-symbol = " "
-
-[nix_shell]
-symbol = " "
+[git_status]
+style = "bg:yellow fg:crust"
+format = '[($all_status$ahead_behind )]($style)'
 
 [nodejs]
-symbol = " "
+symbol = " "
+style = "bg:green"
+format = '[[ $symbol](fg:crust bg:green)]($style)'
 
-[ocaml]
-symbol = " "
+[c]
+symbol = " "
+style = "bg:green"
+format = '[[ $symbol](fg:crust bg:green)]($style)'
 
-[odin]
-symbol = "󰟢 "
+[rust]
+symbol = " "
+style = "bg:green"
+format = '[[ $symbol](fg:crust bg:green)]($style)'
 
-[opa]
-symbol = " "
-
-[openstack]
-symbol = " "
-
-[os.symbols]
-Arch = " "
-Artix = " "
-Debian = " "
-EndeavourOS = " "
-Fedora = " "
-FreeBSD = " "
-Garuda = " "
-Gentoo = " "
-Kali = " "
-Linux = " "
-Manjaro = " "
-Mint = " "
-NixOS = " "
-Nobara = " "
-openSUSE = " "
-PikaOS = " "
-Pop = " "
-Raspbian = " "
-Redhat = "󱄛 "
-RedHatEnterprise = "󱄛 "
-RockyLinux = " "
-Solus = " "
-SUSE = " "
-Ubuntu = " "
-Unknown = " "
-Uos = " "
-Void = " "
-Zorin = " "
-
-[package]
-symbol = "󰏗 "
-
-[perl]
-symbol = " "
+[golang]
+symbol = "󰟓 "
+style = "bg:green"
+format = '[[ $symbol](fg:crust bg:green)]($style)'
 
 [php]
 symbol = " "
+style = "bg:green"
+format = '[[ $symbol](fg:crust bg:green)]($style)'
 
-[pijul_channel]
-symbol = " "
+[java]
+symbol = " "
+style = "bg:green"
+format = '[[ $symbol](fg:crust bg:green)]($style)'
 
-[pixi]
-symbol = "󰏗 "
+[kotlin]
+symbol = " "
+style = "bg:green"
+format = '[[ $symbol](fg:crust bg:green)]($style)'
 
-[pulumi]
-symbol = " "
-
-[purescript]
-symbol = " "
+[haskell]
+symbol = " "
+style = "bg:green"
+format = '[[ $symbol](fg:crust bg:green)]($style)'
 
 [python]
-symbol = " "
+symbol = " "
+style = "bg:green"
+format = '[[ $symbol( $version)(\(#$virtualenv\)) ](fg:crust bg:green)]($style)'
 
-[raku]
-symbol = "󱖊 "
+[conda]
+symbol = " "
+style = "bg:sapphire"
+format = '[[ $symbol( $environment) ](fg:crust bg:sapphire)]($style)'
 
-[red]
-symbol = "󱍼 "
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:lavender"
+format = '[[  $time ](fg:crust bg:lavender)]($style)'
 
-[rlang]
-symbol = "󰟔 "
+[line_break]
+disabled = false
 
-[ruby]
-symbol = " "
+[character]
+success_symbol = '[❯](bold fg:green)'
+error_symbol = '[❯](bold fg:red)'
 
-[rust]
-symbol = "󱘗 "
-
-[scala]
-symbol = " "
-
-[shlvl]
-symbol = "󰹍 "
-
-[singularity]
-symbol = " "
-
-[solidity]
-symbol = " "
-
-[spack]
-symbol = " "
-
-[status]
-symbol = " "
-
-[sudo]
-symbol = " "
-
-[swift]
-symbol = " "
-
-[terraform]
-symbol = " "
-
-[vlang]
-symbol = " "
-
-[typst]
-symbol = " "
-
-[vagrant]
-symbol = " "
-
-[xmake]
-symbol = " "
-
-[zig]
-symbol = " "
+[palettes.catppuccin_mocha]
+red = "#ff5f5f"
+peach = "#ed8796"
+yellow = "#eed49f"
+green = "#a6da95"
+sapphire = "#7dc4e4"
+lavender = "#b4befe"
+crust = "#11111b"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+text = "#1793d1"
