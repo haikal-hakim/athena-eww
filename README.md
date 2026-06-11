@@ -19,9 +19,7 @@
 
 <img src="https://github.com/user-attachments/assets/982cc07f-043e-4050-a1d3-c529204cb0dc" /> <img src="https://github.com/user-attachments/assets/908757bb-3d11-4ee9-af46-e5416faf97fc" />
 
-
-https://github.com/user-attachments/assets/0954f470-4e62-480a-9cf7-3b219e3ee9f1
-
+https://github.com/user-attachments/assets/3565bdf1-7f23-4ce8-869a-8c99b62c28eb
 
 | Rofi Launcher | Clipboard Manager |
 | :---: | :---: |
@@ -48,6 +46,7 @@ athena-eww/
 │   ├── fastfetch/
 │   ├── kitty/
 │   └── rofi/
+│   └── starship/
 ├── extras/                   # Optional Eww configurations
 └── .zshrc
 ```
