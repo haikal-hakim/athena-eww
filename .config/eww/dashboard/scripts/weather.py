@@ -23,6 +23,12 @@ FALLBACK_DATA = {
     "sunset": "--:--",
 }
 
+# Enconde url city = urllib.parse.quote(CITY)
+# Some cities have spaces or special characters that can break the API request, 
+# so we need to encode it properly. This ensures that the city name is correctly 
+# formatted for the URL and prevents potential issues with the API call.
+CITY = urllib.parse.quote(CITY)
+
 
 def load_cache():
     if os.path.exists(CACHE_FILE):
