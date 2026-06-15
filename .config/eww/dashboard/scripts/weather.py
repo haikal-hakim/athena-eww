@@ -4,9 +4,11 @@ import json
 import urllib.request
 import os
 from datetime import datetime, date
+import urllib.parse
 
 API_KEY = "YOUR_API_KEY"
 CITY = "YOUR_CITY"
+ENCODED_CITY = urllib.parse.quote(CITY)
 CACHE_FILE = os.path.expanduser("~/.cache/eww_weather_cache.json")
 
 FALLBACK_DATA = {
@@ -22,12 +24,6 @@ FALLBACK_DATA = {
     "sunrise": "--:--",
     "sunset": "--:--",
 }
-
-# Enconde url city = urllib.parse.quote(CITY)
-# Some cities have spaces or special characters that can break the API request, 
-# so we need to encode it properly. This ensures that the city name is correctly 
-# formatted for the URL and prevents potential issues with the API call.
-CITY = urllib.parse.quote(CITY)
 
 
 def load_cache():
@@ -128,7 +124,7 @@ def get_weather_icon(desc, weather_type="day"):
 
 
 def fetch_current():
-    url = f"https://api.openweathermap.org/data/2.5/weather?q={CITY}&units=metric&appid={API_KEY}"
+    url = f"https://api.openweathermap.org/data/2.5/weather?q={ENCODED_CITY}&units=metric&appid={API_KEY}"
     try:
         req = urllib.request.Request(
             url, headers={"User-Agent": "EwwWeatherWidget/1.0"}
@@ -140,7 +136,7 @@ def fetch_current():
 
 
 def fetch_forecast():
-    url = f"https://api.openweathermap.org/data/2.5/forecast?q={CITY}&units=metric&appid={API_KEY}"
+    url = f"https://api.openweathermap.org/data/2.5/forecast?q={ENCODED_CITY}&units=metric&appid={API_KEY}"
     try:
         req = urllib.request.Request(
             url, headers={"User-Agent": "EwwWeatherWidget/1.0"}
