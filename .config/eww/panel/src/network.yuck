@@ -36,7 +36,7 @@
 
        (eventbox :cursor "pointer"
                  (button :class "right-action"
-                         :onclick "kitty -e nmtui &"
+                         :onclick "pkill -x nm-applet || nm-applet &"
                          (label :class "arrow"
                                 :text "󰅂"))
                  )
