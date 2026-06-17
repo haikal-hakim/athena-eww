@@ -28,11 +28,6 @@ zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.cache/zsh/
 typeset -U PATH path
 
-# --- CUSTOM FUNCTIONS ---
-# Load Wallpaper Selector
-if [ -f ~/.config/zsh/wallpaper.zsh ]; then
-    source ~/.config/zsh/wallpaper.zsh
-fi
 
 # --- TOOLS & EXPORTS ---
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
