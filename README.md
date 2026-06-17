@@ -266,7 +266,7 @@ Example:
 | Module | Action | Command / Function |
 | :--- | :--- | :--- |
 | **`Wi-Fi`** | Click | nmcli radio wifi on/off |
-| | Row Click | `pkill -x nm-applet` or `show nm-applet &` |
+| | Row Click | `pkill -x nm-applet` or `show nm-applet &` in tray bar |
 | **`Power Mode`** | Click | Cycles profiles via `powerprofilesctl` |
 | **`Bluetooth`** | Click | Toggles Bluetooth adapter status |
 | | Row Click | Opens `blueman-manager` |
