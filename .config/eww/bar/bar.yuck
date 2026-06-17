@@ -14,7 +14,7 @@
              (box :class "left-container"
                   :orientation "horizontal"
                   :space-evenly false
-                  :spacing 12
+                  :spacing 4
                   :halign "start"
                   (eventbox :cursor "pointer"
                             (button :class "bar-arch-trigger"
@@ -22,11 +22,18 @@
                                     :style "background: none; box-shadow: none;"
                                     (label :class "arch-icon"
                                            :valign "center"
-                                           :text "󰣇"))
+                                           :text "󰣇")
+                                    )
                             )
 
                   (box :orientation "horizontal"
-                       (widget_workspaces))
+                       :space-evenly false
+                       :spacing 10
+                       (widget_workspaces)
+                       (systray :class "stray"
+                                :orientation "horizontal"
+                                :spacing 12
+                                :icon-size 18))
                   )
 
              ;; CENTER
@@ -56,8 +63,7 @@
                                  (button :class "panel-trigger"
                                          :onclick "${EWW_CMD} open --toggle window_panel"
                                          :style "background: none; box-shadow: none;"
-                                         (label :text "󱧘")))
-                       )
+                                         (label :text "󱁛"))))
                   )
              )
   )
