@@ -266,11 +266,11 @@ Example:
 | Module | Action | Command / Function |
 | :--- | :--- | :--- |
 | **`Wi-Fi`** | Click | Nmcli radio wifi on/off |
-| | Row Click | Open or close popup wifi |
-| **`Power Mode`** | Click | Cycles profiles via `powerprofilesctl` |
-| **`Bluetooth`** | Click | Toggles Bluetooth adapter status |
+| | Row Click | Open or close popup Wifi |
+| **`Bluetooth`** | Click | Toggles on/off |
 | | Row Click | Open or close popup Bluetooth |
-| **`Do Not Disturb`** | Click | Toggles Dunst notifications status |
+| **`Power Mode`** | Click | Cycles profiles via `powerprofilesctl` |
+| **`Do Not Disturb`** | Click | Toggles on/off dnd |
 | **`Screenshot`** | Click | Runs local script `~/.config/hypr/scripts/screenshot.sh` |
 | **`Screen Record`** | Click | Runs local script `~/.config/hypr/scripts/record.sh` |
 | **`System Theme`** | Click | Change the current theme variant|
