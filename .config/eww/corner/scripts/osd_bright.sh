@@ -25,7 +25,7 @@ update_brightness() {
   fi
 
   (
-    sleep 3
+    sleep 2
     $EWW close window_osd
     rm -f "$LOCK_FILE"
   ) &
