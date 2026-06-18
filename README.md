@@ -138,8 +138,8 @@ Open the weather script:
 Set your API key and city:
 
 ```Bash
-API_KEY="YOUR_API_KEY"
-CITY="YOUR_CITY"
+API_KEY="YOUR_API_KEY" #example: API_KEY= "a1b2c3d4blablabla"
+CITY="YOUR_CITY"       #example: CITY = "New York"
 ```
 
 ### Weather Forecast Scale (Dashboard)
