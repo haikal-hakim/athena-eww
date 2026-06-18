@@ -38,7 +38,7 @@
 
        (eventbox :cursor "pointer"
                  (button :class "right-action"
-                         :onclick "~/.config/eww/corner/scripts/toggle_wifi.sh"
+                         :onclick "~/.config/eww/corner/scripts/toggle_popup.sh wifi &"
                          (label :class "arrow"
                                 :text "󰅂"))
                  )
