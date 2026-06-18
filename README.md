@@ -77,8 +77,9 @@ To ensure all features of the Athena Eww setup work correctly, make sure the fol
 | **`power-profiles-daemon`** | Manages system power profiles. |
 | **`python`** | Required for helper scripts. |
 | **`socat`** | Real-time socket listener for Hyprland. |
-| **`ttf-jetbrains-mono-nerd`** | Font.|
 | **`wireplumber`** | Audio volume controller (wpctl). |
+| **`ttf-jetbrains-mono-nerd`** | Font.|
+| **`inter-font`** | Font.|
 | **`Tela circle dark`** | Icon, optional dependencies.|
 
 ### Install (Arch Linux)
@@ -86,7 +87,7 @@ To ensure all features of the Athena Eww setup work correctly, make sure the fol
 You can install the required packages using `pacman`:
 
 ```bash
-sudo pacman -S awk bluez-utils brightnessctl curl dbus dunst grep hyprshutdown inotify-tools jq libnotify networkmanager power-profiles-daemon python socat ttf-jetbrains-mono-nerd wireplumber
+sudo pacman -S awk bluez-utils brightnessctl curl dbus dunst grep hyprshutdown inotify-tools jq libnotify networkmanager power-profiles-daemon python socat ttf-jetbrains-mono-nerd inter-font wireplumber
 ```
 
 </details>
