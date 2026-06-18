@@ -5,6 +5,6 @@ if eww active-windows | grep -q wifi_popup; then
   exit
 fi
 
-~/.config/eww/panel/scripts/networkctl.sh scan
+~/.config/eww/panel/scripts/networkctl.sh scan &
 
 eww open wifi_popup
