@@ -277,7 +277,7 @@ Example:
 > [!TIP]
 > The **Screenshot** and **Screen Record** features are tied to my custom Hyprland scripts. Paths are defined inside `~/.config/eww/panel/src/quicktoggle.yuck`.
 
-> I've added file `rofi` [password.rasi](.config/rofi/password.rasi) to input the wifi password, if you don't use rofi, it's okay, I've fallen back to fuzzel and wofi.
+> **Universal Wi-Fi Input:** Uses a custom Rofi theme [password.rasi](.config/rofi/password.rasi) for password entries, with automatic fallback support for Fuzzel and Wofi.
 
 ---
 
