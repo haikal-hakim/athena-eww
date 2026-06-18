@@ -38,8 +38,9 @@
 
        (eventbox :cursor "pointer"
                  (button :class "right-action"
-                         :onclick "blueman-manager &"
+                         :onclick "~/.config/eww/corner/scripts/toggle_popup.sh bluetooth &"
                          (label :class "arrow"
-                                :text "󰅂")))
+                                :text "󰅂"))
+                 )
        )
   )

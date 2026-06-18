@@ -18,11 +18,11 @@ if [ "$SECURE" = "true" ]; then
       )
     fi
 
-  # fuzzel fallback
+    # fuzzel fallback
   elif type fuzzel >/dev/null 2>&1; then
     PASSWORD=$(fuzzel --dmenu --password --prompt="$SSID: " --lines=0)
 
-  # wofi fallback
+    # wofi fallback
   elif type wofi >/dev/null 2>&1; then
     PASSWORD=$(wofi --dmenu --password --prompt="$SSID" --lines=0 --width=300)
 

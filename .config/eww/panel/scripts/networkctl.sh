@@ -24,8 +24,8 @@ scan_wifi() {
 }
 
 toggle_wifi() {
-  scan_wifi
   eww open wifi_popup
+  scan_wifi &
 }
 
 case "$1" in
