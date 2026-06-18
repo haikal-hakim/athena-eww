@@ -66,6 +66,7 @@ To ensure all features of the Athena Eww setup work correctly, make sure the fol
 | **`bluez-utils`** | Bluetooth management tool (bluetoothctl). |
 | **`brightnessctl`** | Backlight and brightness control. |
 | **`curl`** | HTTP tool to fetch weather data API. |
+| **`dbus`** | Used for bluetooth event listening. |
 | **`dunst`** | Notifications daemon. |
 | **`grep`** | Global Regular Expression Print. |
 | **`hyprshutdown`** | Session and power menu backend. |
@@ -85,7 +86,7 @@ To ensure all features of the Athena Eww setup work correctly, make sure the fol
 You can install the required packages using `pacman`:
 
 ```bash
-sudo pacman -S awk bluez-utils brightnessctl curl dunst grep hyprshutdown inotify-tools jq libnotify networkmanager power-profiles-daemon python socat ttf-jetbrains-mono-nerd wireplumber
+sudo pacman -S awk bluez-utils brightnessctl curl dbus dunst grep hyprshutdown inotify-tools jq libnotify networkmanager power-profiles-daemon python socat ttf-jetbrains-mono-nerd wireplumber
 ```
 
 </details>
@@ -268,7 +269,7 @@ Example:
 | | Row Click | Open or close popup wifi |
 | **`Power Mode`** | Click | Cycles profiles via `powerprofilesctl` |
 | **`Bluetooth`** | Click | Toggles Bluetooth adapter status |
-| | Row Click | Opens `blueman-manager` |
+| | Row Click | Open or close popup Bluetooth |
 | **`Do Not Disturb`** | Click | Toggles Dunst notifications status |
 | **`Screenshot`** | Click | Runs local script `~/.config/hypr/scripts/screenshot.sh` |
 | **`Screen Record`** | Click | Runs local script `~/.config/hypr/scripts/record.sh` |
