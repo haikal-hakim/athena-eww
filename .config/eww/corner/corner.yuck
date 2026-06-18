@@ -1,9 +1,9 @@
+(include "./corner/src/bluetooth_popup.yuck")
 (include "./corner/src/launcher.yuck")
 (include "./corner/src/osd.yuck")
 (include "./corner/src/power.yuck")
 (include "./corner/src/website.yuck")
 (include "./corner/src/wifi_popup.yuck")
-(include "./corner/src/bluetooth_popup.yuck")
 
 ;;launcher
 (defwindow window_launcher
