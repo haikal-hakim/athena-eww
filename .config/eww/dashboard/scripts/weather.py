@@ -169,8 +169,8 @@ def main():
         sunset_ts = current_raw["sys"]["sunset"]
         weather_type = "day" if sunrise_ts <= current_time < sunset_ts else "night"
 
-        sunrise = datetime.fromtimestamp(sunrise_ts).strftime("%H:%M")
-        sunset = datetime.fromtimestamp(sunset_ts).strftime("%H:%M")
+        sunrise = datetime.fromtimestamp(sunrise_ts).strftime("%-I:%M %p")
+        sunset = datetime.fromtimestamp(sunset_ts).strftime("%-I:%M %p")
 
         current_icon, current_class = get_weather_icon(desc, weather_type)
 
