@@ -17,7 +17,7 @@
   Built on freedom, where users control the system, not the other way around.
 </p>
 
-<img src="https://github.com/user-attachments/assets/982cc07f-043e-4050-a1d3-c529204cb0dc" /> <img src="https://github.com/user-attachments/assets/908757bb-3d11-4ee9-af46-e5416faf97fc" />
+<img src="https://github.com/user-attachments/assets/b65c7527-9a86-42e3-bddd-13c6769a6118" /> <img src="https://github.com/user-attachments/assets/2293a2ca-f6bc-42ff-9ca2-442d77297735" />
 
 https://github.com/user-attachments/assets/02678c41-7e7c-4dc8-a5f4-0c05b2a4679c
 
