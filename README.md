@@ -73,7 +73,6 @@ To ensure all features of the Athena Eww setup work correctly, make sure the fol
 | **`jq`** | JSON parser for widget data. |
 | **`libnotify`** | System notification dispatcher (notify-send). |
 | **`networkmanager`** | Network controller backend. |
-| **`network-manager-applet`** | Native Wi-Fi selection pop-up (nm-applet). |
 | **`power-profiles-daemon`** | Manages system power profiles. |
 | **`python`** | Required for helper scripts. |
 | **`socat`** | Real-time socket listener for Hyprland. |
@@ -86,7 +85,7 @@ To ensure all features of the Athena Eww setup work correctly, make sure the fol
 You can install the required packages using `pacman`:
 
 ```bash
-sudo pacman -S awk bluez-utils brightnessctl curl dunst grep hyprshutdown inotify-tools jq libnotify networkmanager network-manager-applet power-profiles-daemon python socat ttf-jetbrains-mono-nerd wireplumber
+sudo pacman -S awk bluez-utils brightnessctl curl dunst grep hyprshutdown inotify-tools jq libnotify networkmanager power-profiles-daemon python socat ttf-jetbrains-mono-nerd wireplumber
 ```
 
 </details>
@@ -265,8 +264,8 @@ Example:
 
 | Module | Action | Command / Function |
 | :--- | :--- | :--- |
-| **`Wi-Fi`** | Click | nmcli radio wifi on/off |
-| | Row Click | `pkill -x nm-applet` or `show nm-applet &` in tray bar |
+| **`Wi-Fi`** | Click | Nmcli radio wifi on/off |
+| | Row Click | Open or close popup wifi |
 | **`Power Mode`** | Click | Cycles profiles via `powerprofilesctl` |
 | **`Bluetooth`** | Click | Toggles Bluetooth adapter status |
 | | Row Click | Opens `blueman-manager` |
