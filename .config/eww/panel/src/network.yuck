@@ -1,3 +1,5 @@
+(defvar wifi_list "[]")
+
 (deflisten network_data
   :initial '{"status": "disconnected", "ssid": "Off", "signal": 0, "icon": "󰤮"}'
   "~/.config/eww/panel/scripts/network.sh")
@@ -36,7 +38,7 @@
 
        (eventbox :cursor "pointer"
                  (button :class "right-action"
-                         :onclick "pkill -x nm-applet || nm-applet &"
+                         :onclick "~/.config/eww/corner/scripts/toggle_wifi.sh"
                          (label :class "arrow"
                                 :text "󰅂"))
                  )

@@ -2,8 +2,7 @@
 (include "./corner/src/osd.yuck")
 (include "./corner/src/power.yuck")
 (include "./corner/src/website.yuck")
-
-
+(include "./corner/src/wifi_popup.yuck")
 
 ;;launcher
 (defwindow window_launcher
@@ -55,6 +54,13 @@
   :namespace "eww-website"
   (widget_website))
 
-
-
-
+(defwindow wifi_popup
+  :monitor 0
+  :geometry (geometry :x "0%"
+                      :y "20px"
+                      :width "280px"
+                      :height "280px"
+                      :anchor "top center")
+  :stacking "fg"
+  :focusable false
+  (wifi_popup))
